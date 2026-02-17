@@ -724,6 +724,17 @@ function switchImg(mainId,src,thumbEl){
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: buttonOpts
       });
+
+      // Force reflow to fix Buy Button rendering issue
+      setTimeout(function() {
+        window.dispatchEvent(new Event('resize'));
+      }, 1000);
+      setTimeout(function() {
+        window.dispatchEvent(new Event('resize'));
+      }, 2500);
+      setTimeout(function() {
+        window.dispatchEvent(new Event('resize'));
+      }, 5000);
     });
   }
 })();
