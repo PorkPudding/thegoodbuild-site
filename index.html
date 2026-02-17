@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Good Build — Custom Gaming PCs</title>
+<title>The Good Build &mdash; Custom Gaming PCs</title>
 <meta name="description" content="Hand-built gaming PCs from Corona, California. Assembled with care, stress-tested, and ready to play.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -65,7 +65,6 @@ section{padding:90px 48px}
 .build-condition{font-size:11px;color:var(--text-light);margin-top:2px}
 .build-buy-btn{background:var(--navy);color:white;border:none;padding:11px 24px;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
 .build-buy-btn:hover{background:var(--navy-light)}
-.how-section{background:var(--off-white)}
 .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1200px;margin:0 auto}
 .how-card{text-align:center}
 .how-number{width:48px;height:48px;margin:0 auto 14px;background:var(--navy);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:18px}
@@ -134,6 +133,10 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 .product-info .includes{margin-top:24px}
 .product-info .includes h3{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px}
 .product-info .includes li{font-size:13px;color:var(--text-secondary);margin-bottom:4px}
+.loading-builds{text-align:center;padding:60px 20px;color:var(--text-light);font-size:15px}
+.loading-spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.no-builds{text-align:center;padding:60px 20px;color:var(--text-secondary);font-size:16px}
 @media(max-width:900px){
   nav{padding:14px 20px}
   .nav-links{display:none}
@@ -160,6 +163,7 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 </style>
 </head>
 <body>
+
 <nav>
   <div class="nav-logo" onclick="showPage('home')">
     <img src="images/logo.png" alt="The Good Build">
@@ -175,20 +179,19 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   </ul>
 </nav>
 
+<!-- HOME -->
 <div id="home" class="page active">
 <section class="hero">
   <div class="hero-content">
     <div class="hero-badge"><div class="hero-badge-dot"></div>Builds available now</div>
     <h1>Gaming PCs built<br>with <em>care</em>.</h1>
-    <p>Hand-built, stress-tested, and ready to play. Every build from The Good Build is assembled by someone who actually knows what they're doing — and stands behind every machine that leaves the bench.</p>
+    <p>Hand-built, stress-tested, and ready to play. Every build from The Good Build is assembled by someone who actually knows what they're doing &mdash; and stands behind every machine that leaves the bench.</p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="scrollToBuilds()">Browse Builds</button>
       <button class="btn-secondary" onclick="showPage('how')">How It Works</button>
     </div>
   </div>
-  <div class="hero-image">
-    <img src="images/pc1_hero.jpg" alt="Custom gaming PC by The Good Build">
-  </div>
+  <div class="hero-image"><img src="images/logo.png" alt="Custom gaming PC by The Good Build"></div>
 </section>
 <div class="trust-bar">
   <div class="trust-bar-inner">
@@ -204,87 +207,8 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
     <div class="section-title">Ready-to-play builds</div>
     <div class="section-subtitle">Each system is fully assembled, stress-tested, and loaded with a fresh Windows install. Pick it up locally or have it shipped.</div>
   </div>
-  <div class="builds-grid">
-    <div class="build-card" onclick="showPage('product-1')">
-      <div class="build-card-gallery">
-        <img src="images/pc1_hero.jpg" alt="The Ember">
-      </div>
-      <div class="build-card-body">
-        <div class="build-card-tag">High Performance</div>
-        <h3>The Ember</h3>
-        <div class="tagline">Ryzen 7 7700X + RTX 4070 Ti — ready for 1440p and beyond</div>
-        <div class="specs-grid">
-          <div class="spec-item"><span class="spec-label">CPU</span> AMD Ryzen 7 7700X</div>
-          <div class="spec-item"><span class="spec-label">GPU</span> NVIDIA RTX 4070 Ti — ASUS TUF Gaming</div>
-          <div class="spec-item"><span class="spec-label">RAM</span> 32GB (2x16GB) G.Skill Ripjaws DDR5 5600MHz CL36</div>
-          <div class="spec-item"><span class="spec-label">Storage</span> 2TB Teamgroup M.2 NVMe SSD</div>
-        </div>
-        <div class="build-card-footer">
-          <div><div class="build-price">$1500</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
-          <button class="build-buy-btn">View Build</button>
-        </div>
-      </div>
-    </div>
-    <div class="build-card" onclick="showPage('product-2')">
-      <div class="build-card-gallery">
-        <img src="images/pc2_hero.jpg" alt="The Frost">
-      </div>
-      <div class="build-card-body">
-        <div class="build-card-tag">High Performance</div>
-        <h3>The Frost</h3>
-        <div class="tagline">i7-13700K + RTX 4070 Ti — clean white build, serious power</div>
-        <div class="specs-grid">
-          <div class="spec-item"><span class="spec-label">CPU</span> Intel Core i7-13700K</div>
-          <div class="spec-item"><span class="spec-label">GPU</span> NVIDIA RTX 4070 Ti — ASUS TUF Gaming</div>
-          <div class="spec-item"><span class="spec-label">RAM</span> 32GB (2x16GB) TEAMGROUP DDR5 5200MHz CL40</div>
-          <div class="spec-item"><span class="spec-label">Storage</span> Samsung 970 EVO Plus 1TB M.2 NVMe SSD</div>
-        </div>
-        <div class="build-card-footer">
-          <div><div class="build-price">$1500</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
-          <button class="build-buy-btn">View Build</button>
-        </div>
-      </div>
-    </div>
-    <div class="build-card" onclick="showPage('product-3')">
-      <div class="build-card-gallery">
-        <img src="images/pc3_hero.jpg" alt="The Shadow">
-      </div>
-      <div class="build-card-body">
-        <div class="build-card-tag">Mid-Range</div>
-        <h3>The Shadow</h3>
-        <div class="tagline">i5-12600K + RTX 3080 — 1080p powerhouse at a great price</div>
-        <div class="specs-grid">
-          <div class="spec-item"><span class="spec-label">CPU</span> Intel Core i5-12600K</div>
-          <div class="spec-item"><span class="spec-label">GPU</span> NVIDIA GeForce RTX 3080</div>
-          <div class="spec-item"><span class="spec-label">RAM</span> 32GB (2x16GB) T-Force DDR4 3200MHz CL16</div>
-          <div class="spec-item"><span class="spec-label">Storage</span> WD Blue 500GB M.2 NVMe SSD + 1TB HDD</div>
-        </div>
-        <div class="build-card-footer">
-          <div><div class="build-price">$1000</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
-          <button class="build-buy-btn">View Build</button>
-        </div>
-      </div>
-    </div>
-    <div class="build-card" onclick="showPage('product-4')">
-      <div class="build-card-gallery">
-        <img src="images/" alt="Dummy">
-      </div>
-      <div class="build-card-body">
-        <div class="build-card-tag">High Performance</div>
-        <h3>Dummy</h3>
-        <div class="tagline">This is a test PC</div>
-        <div class="specs-grid">
-          <div class="spec-item"><span class="spec-label">CPU</span> test</div>
-          <div class="spec-item"><span class="spec-label">GPU</span> test</div>
-          <div class="spec-item"><span class="spec-label">RAM</span> t</div>
-          <div class="spec-item"><span class="spec-label">Storage</span> t</div>
-        </div>
-        <div class="build-card-footer">
-          <div><div class="build-price">$1</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
-          <button class="build-buy-btn">View Build</button>
-        </div>
-      </div>
-    </div>
+  <div class="builds-grid" id="builds-grid">
+    <div class="loading-builds"><div class="loading-spinner"></div>Loading builds...</div>
   </div>
 </section>
 <section>
@@ -297,13 +221,14 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
     <div class="why-card"><div class="why-card-icon">&#9881;&#65039;</div><h3>Built by hand, not a factory</h3><p>Every system is assembled by one person who cares about cable management, airflow, and component quality. No assembly lines, no shortcuts.</p></div>
     <div class="why-card"><div class="why-card-icon">&#128200;</div><h3>Stress tested before it's yours</h3><p>Every build goes through thermal and stability testing before it's listed. If it can't handle the heat, it doesn't ship.</p></div>
     <div class="why-card"><div class="why-card-icon">&#128176;</div><h3>Fair pricing, no fluff</h3><p>We source smart and pass the savings on. Better machine, less money, no bloatware.</p></div>
-    <div class="why-card"><div class="why-card-icon">&#129309;</div><h3>Real support from a real person</h3><p>Got a question? You're talking to the person who built your PC — not a call center.</p></div>
+    <div class="why-card"><div class="why-card-icon">&#129309;</div><h3>Real support from a real person</h3><p>Got a question? You're talking to the person who built your PC &mdash; not a call center.</p></div>
     <div class="why-card"><div class="why-card-icon">&#128230;</div><h3>Ship-ready packaging</h3><p>Every shipped build is packed with custom foam bracing and double-boxed so it arrives exactly how it left.</p></div>
     <div class="why-card"><div class="why-card-icon">&#128077;</div><h3>500+ happy customers</h3><p>Building and selling since 2023. Hundreds of satisfied buyers and counting.</p></div>
   </div>
 </section>
 </div>
 
+<!-- HOW IT WORKS -->
 <div id="how" class="page">
 <section style="padding-top:130px">
   <div class="section-inner"><div class="section-label">How It Works</div><div class="section-title">Dead simple.</div><div class="section-subtitle">No custom order forms. No 6-week wait times. Pick a build, pay, and it's yours.</div></div>
@@ -317,20 +242,21 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 <section style="padding-top:40px">
   <div class="section-inner" style="max-width:700px">
     <h2 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:22px;color:var(--navy);margin-bottom:12px">Shipping Details</h2>
-    <p style="font-size:15px;line-height:1.8;color:var(--text-secondary);margin-bottom:16px">We ship anywhere in the continental US. Every PC is custom-packed with foam bracing, GPU support brackets removed and secured separately, and double-boxed to survive transit. Shipping costs are calculated based on your location — expect roughly $75–$120 depending on distance.</p>
+    <p style="font-size:15px;line-height:1.8;color:var(--text-secondary);margin-bottom:16px">We ship anywhere in the continental US. Every PC is custom-packed with foam bracing, GPU support brackets removed and secured separately, and double-boxed to survive transit. Shipping costs are calculated based on your location &mdash; expect roughly $75&ndash;$120 depending on distance.</p>
     <h2 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:22px;color:var(--navy);margin-bottom:12px">Local Pickup</h2>
     <p style="font-size:15px;line-height:1.8;color:var(--text-secondary)">Free pickup available in Corona, CA. Once your order is confirmed, we'll reach out to schedule a convenient time. Most pickups happen same-day or next-day.</p>
   </div>
 </section>
 </div>
 
+<!-- ABOUT -->
 <div id="about-page" class="page">
 <section class="about-section" style="padding-top:130px">
   <div class="about-inner">
     <div class="about-content">
       <div class="section-label">About</div>
       <div class="section-title">One builder. No BS.</div>
-      <p>The Good Build started in a garage in Corona, California. What began as a hobby — buying, building, and flipping PCs — turned into something bigger when people kept coming back and bringing their friends.</p>
+      <p>The Good Build started in a garage in Corona, California. What began as a hobby &mdash; buying, building, and flipping PCs &mdash; turned into something bigger when people kept coming back and bringing their friends.</p>
       <p>Every system you see on this site was built by me. I source the parts, I assemble the machine, I test it, and I stand behind it. There's no warehouse, no investors, no corporate nonsense. Just good builds at fair prices from someone who genuinely loves doing this.</p>
       <p>All components are thoroughly cleaned, tested, and stress-tested before any build is listed. I treat every system like I'm building it for myself.</p>
       <div class="about-stat-row">
@@ -339,25 +265,27 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
         <div class="about-stat"><h3>Corona</h3><p>Based in CA</p></div>
       </div>
     </div>
-    <div class="about-image"><img src="images/pc2_inside.jpg" alt="Inside a Good Build" style="width:100%;border-radius:16px"></div>
+    <div class="about-image"><img src="images/logo.png" alt="Inside a Good Build" style="width:100%;border-radius:16px"></div>
   </div>
 </section>
 </div>
 
+<!-- FAQ -->
 <div id="faq-page" class="page">
 <section class="faq-section" style="padding-top:130px;min-height:100vh">
-  <div class="section-inner"><div class="section-label">FAQ</div><div class="section-title">Common questions</div><div class="section-subtitle">If yours isn't here, reach out — we respond fast.</div></div>
+  <div class="section-inner"><div class="section-label">FAQ</div><div class="section-title">Common questions</div><div class="section-subtitle">If yours isn't here, reach out &mdash; we respond fast.</div></div>
   <div class="faq-list">
-    <div class="faq-item open"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What's your return policy?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">We offer a 7-day return window from the date of delivery or pickup. If something's wrong, reach out within 7 days and we'll make it right — full refund or exchange. After the return window, we provide ongoing tech support. See our <a href="#" onclick="showPage('policy');return false" style="color:var(--accent)">full Return & Warranty Policy</a>.</div></div>
-    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Do you ship nationwide?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Yes — anywhere in the continental US. Every shipped PC is foam-braced and double-boxed. Shipping runs roughly $75–$120 depending on location. Free local pickup in Corona, CA.</div></div>
-    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Are these new or used parts?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Our builds use refurbished components — previously used parts that have been fully disassembled, cleaned, tested, and stress-tested. Each listing clearly states component details. We only use parts that meet our quality standards.</div></div>
+    <div class="faq-item open"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What's your return policy?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">We offer a 7-day return window from the date of delivery or pickup. If something's wrong, reach out within 7 days and we'll make it right &mdash; full refund or exchange. After the return window, we provide ongoing tech support. See our <a href="#" onclick="showPage('policy');return false" style="color:var(--accent)">full Return &amp; Warranty Policy</a>.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Do you ship nationwide?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Yes &mdash; anywhere in the continental US. Every shipped PC is foam-braced and double-boxed. Shipping runs roughly $75&ndash;$120 depending on location. Free local pickup in Corona, CA.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Are these new or used parts?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Our builds use refurbished components &mdash; previously used parts that have been fully disassembled, cleaned, tested, and stress-tested. Each listing clearly states component details. We only use parts that meet our quality standards.</div></div>
     <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What comes installed?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Every build ships with a clean Windows 11 Pro installation with the latest drivers and updates. No bloatware, no trial software. Just a fresh OS ready to go.</div></div>
-    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Can I request a custom build?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Not at this time — we sell pre-built, ready-to-ship systems. If you have something specific in mind, reach out and we'll let you know if we can make it happen.</div></div>
-    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Do you offer a warranty?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">7-day full return/exchange window on every build. Beyond that, free ongoing tech support. Individual components may carry their own manufacturer warranty — we'll help you navigate those claims if needed.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Can I request a custom build?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Not at this time &mdash; we sell pre-built, ready-to-ship systems. If you have something specific in mind, reach out and we'll let you know if we can make it happen.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Do you offer a warranty?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">7-day full return/exchange window on every build. Beyond that, free ongoing tech support. Individual components may carry their own manufacturer warranty &mdash; we'll help you navigate those claims if needed.</div></div>
   </div>
 </section>
 </div>
 
+<!-- RETURN POLICY -->
 <div id="policy" class="page">
 <div class="page-content">
   <h1>Return &amp; Warranty Policy</h1>
@@ -365,12 +293,12 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   <p>At The Good Build, we stand behind every system that leaves our bench.</p>
   <h2>7-Day Return Window</h2>
   <p>You have 7 calendar days from delivery or pickup to return your PC for a full refund or exchange.</p>
-  <ul><li>System must be in the same condition received — no physical damage or unauthorized modifications.</li><li>All original accessories, cables, and packaging must be included.</li><li>Contact us within 7 days to initiate.</li></ul>
+  <ul><li>System must be in the same condition received &mdash; no physical damage or unauthorized modifications.</li><li>All original accessories, cables, and packaging must be included.</li><li>Contact us within 7 days to initiate.</li></ul>
   <p>For shipped orders, return shipping is the buyer's responsibility unless the return is due to a defect on our end.</p>
   <h2>Defective or Damaged on Arrival</h2>
   <p>If your PC arrives damaged or defective, contact us immediately. We'll cover return shipping and repair, replace, or fully refund at your choice. Please photograph any shipping damage before opening.</p>
   <h2>Ongoing Tech Support</h2>
-  <p>After the 7-day window, we don't disappear. Free ongoing technical support for every system — driver issues, component troubleshooting, upgrade advice. We're here to help.</p>
+  <p>After the 7-day window, we don't disappear. Free ongoing technical support for every system &mdash; driver issues, component troubleshooting, upgrade advice. We're here to help.</p>
   <h2>Manufacturer Warranties</h2>
   <p>Many components carry their own manufacturer warranty. We'll help you identify coverage and navigate claims if needed.</p>
   <h2>What's Not Covered</h2>
@@ -380,172 +308,8 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 </div>
 </div>
 
-
-<!-- ==================== PRODUCT 1: THE EMBER ==================== -->
-<div id="product-1" class="page">
-<div class="product-detail">
-  <div class="product-gallery">
-    <div class="main-img"><img id="p1-main" src="images/pc1_hero.jpg" alt="The Ember"></div>
-    <div class="thumb-row">
-      <div class="thumb active" onclick="switchImg('p1-main','images/pc1_hero.jpg',this)"><img src="images/pc1_hero.jpg"></div>
-      <div class="thumb" onclick="switchImg('p1-main','images/pc1_inside.jpg',this)"><img src="images/pc1_inside.jpg"></div>
-      <div class="thumb" onclick="switchImg('p1-main','images/pc1_angle.jpg',this)"><img src="images/pc1_angle.jpg"></div>
-    </div>
-  </div>
-  <div class="product-info">
-    <div class="build-card-tag">High Performance</div>
-    <h1>The Ember</h1>
-    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">A 1440p beast wrapped in a clean Corsair 4000D with red-accent RGB. Powered by AMD Ryzen 7 7700X and NVIDIA RTX 4070 Ti — this thing eats modern titles for breakfast.</p>
-    <div class="price-row">
-      <div class="build-price">$1500</div>
-      <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
-    </div>
-    <table class="spec-table">
-      <tr><td>CPU</td><td>AMD Ryzen 7 7700X</td></tr>
-      <tr><td>GPU</td><td>NVIDIA RTX 4070 Ti — ASUS TUF Gaming</td></tr>
-      <tr><td>RAM</td><td>32GB (2x16GB) G.Skill Ripjaws DDR5 5600MHz CL36</td></tr>
-      <tr><td>Storage</td><td>2TB Teamgroup M.2 NVMe SSD</td></tr>
-      <tr><td>Motherboard</td><td>ASUS Prime X670-P</td></tr>
-      <tr><td>PSU</td><td>EVGA 850W 80+ Gold</td></tr>
-      <tr><td>Case</td><td>Corsair 4000D</td></tr>
-      <tr><td>Cooling</td><td>EKWB 240mm AIO Liquid Cooler</td></tr>
-      <tr><td>OS</td><td>Windows 11 Pro (activated)</td></tr>
-    </table>
-    <div class="includes">
-      <h3>What's included:</h3>
-      <ul><li>Fully assembled &amp; stress-tested gaming PC</li><li>Power cable</li><li>Clean Windows 11 Pro with latest drivers</li><li>7-day return window + ongoing tech support</li></ul>
-    </div>
-    <div class="buy-section">
-      <div id='product-component-1771309540336'></div>
-      <p style="font-size:13px;color:var(--text-light);margin-top:10px;text-align:center">Free local pickup in Corona, CA &middot; Nationwide shipping available</p>
-    </div>
-  </div>
-</div>
-</div>
-<!-- ==================== PRODUCT 2: THE FROST ==================== -->
-<div id="product-2" class="page">
-<div class="product-detail">
-  <div class="product-gallery">
-    <div class="main-img"><img id="p2-main" src="images/pc2_hero.jpg" alt="The Frost"></div>
-    <div class="thumb-row">
-      <div class="thumb active" onclick="switchImg('p2-main','images/pc2_hero.jpg',this)"><img src="images/pc2_hero.jpg"></div>
-      <div class="thumb" onclick="switchImg('p2-main','images/pc2_inside.jpg',this)"><img src="images/pc2_inside.jpg"></div>
-      <div class="thumb" onclick="switchImg('p2-main','images/pc2_angle.jpg',this)"><img src="images/pc2_angle.jpg"></div>
-    </div>
-  </div>
-  <div class="product-info">
-    <div class="build-card-tag">High Performance</div>
-    <h1>The Frost</h1>
-    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">A stunning all-white Lian Li build with Intel i7-13700K and an RTX 4070 Ti. 360mm AIO cooling keeps everything frosty under load. Looks as good as it performs.</p>
-    <div class="price-row">
-      <div class="build-price">$1500</div>
-      <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
-    </div>
-    <table class="spec-table">
-      <tr><td>CPU</td><td>Intel Core i7-13700K</td></tr>
-      <tr><td>GPU</td><td>NVIDIA RTX 4070 Ti — ASUS TUF Gaming</td></tr>
-      <tr><td>RAM</td><td>32GB (2x16GB) TEAMGROUP DDR5 5200MHz CL40</td></tr>
-      <tr><td>Storage</td><td>Samsung 970 EVO Plus 1TB M.2 NVMe SSD</td></tr>
-      <tr><td>Motherboard</td><td>ASUS Prime Z690-A</td></tr>
-      <tr><td>PSU</td><td>MSI MAG A850GL 850W</td></tr>
-      <tr><td>Case</td><td>Lian Li LANCOOL 216 (White)</td></tr>
-      <tr><td>Cooling</td><td>Kingcool Pure Flow 360mm AIO Liquid Cooler</td></tr>
-      <tr><td>OS</td><td>Windows 11 Pro (activated)</td></tr>
-    </table>
-    <div class="includes">
-      <h3>What's included:</h3>
-      <ul><li>Fully assembled &amp; stress-tested gaming PC</li><li>Power cable</li><li>Clean Windows 11 Pro with latest drivers</li><li>7-day return window + ongoing tech support</li></ul>
-    </div>
-    <div class="buy-section">
-      <div id='product-component-1771309570565'></div>
-      <p style="font-size:13px;color:var(--text-light);margin-top:10px;text-align:center">Free local pickup in Corona, CA &middot; Nationwide shipping available</p>
-    </div>
-  </div>
-</div>
-</div>
-<!-- ==================== PRODUCT 3: THE SHADOW ==================== -->
-<div id="product-3" class="page">
-<div class="product-detail">
-  <div class="product-gallery">
-    <div class="main-img"><img id="p3-main" src="images/pc3_hero.jpg" alt="The Shadow"></div>
-    <div class="thumb-row">
-      <div class="thumb active" onclick="switchImg('p3-main','images/pc3_hero.jpg',this)"><img src="images/pc3_hero.jpg"></div>
-      <div class="thumb" onclick="switchImg('p3-main','images/pc3_inside.jpg',this)"><img src="images/pc3_inside.jpg"></div>
-      <div class="thumb" onclick="switchImg('p3-main','images/pc3_angle.jpg',this)"><img src="images/pc3_angle.jpg"></div>
-    </div>
-  </div>
-  <div class="product-info">
-    <div class="build-card-tag">Mid-Range</div>
-    <h1>The Shadow</h1>
-    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">Stealthy Corsair 4000D build with an i5-12600K and RTX 3080 — a proven 1080p powerhouse that still crushes modern titles. Incredible value for the performance.</p>
-    <div class="price-row">
-      <div class="build-price">$1000</div>
-      <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
-    </div>
-    <table class="spec-table">
-      <tr><td>CPU</td><td>Intel Core i5-12600K</td></tr>
-      <tr><td>GPU</td><td>NVIDIA GeForce RTX 3080</td></tr>
-      <tr><td>RAM</td><td>32GB (2x16GB) T-Force DDR4 3200MHz CL16</td></tr>
-      <tr><td>Storage</td><td>WD Blue 500GB M.2 NVMe SSD + 1TB HDD</td></tr>
-      <tr><td>Motherboard</td><td>MSI Pro B760-P WiFi DDR4</td></tr>
-      <tr><td>PSU</td><td>EVGA SuperNOVA 850W 80+ Gold</td></tr>
-      <tr><td>Case</td><td>Corsair 4000D</td></tr>
-      <tr><td>Cooling</td><td>DeepCool AK620</td></tr>
-      <tr><td>OS</td><td>Windows 11 Pro (activated)</td></tr>
-      <tr><td>Extras</td><td>Built-in WiFi (motherboard)</td></tr>
-    </table>
-    <div class="includes">
-      <h3>What's included:</h3>
-      <ul><li>Fully assembled &amp; stress-tested gaming PC</li><li>Power cable</li><li>Clean Windows 11 Pro with latest drivers</li><li>7-day return window + ongoing tech support</li></ul>
-    </div>
-    <div class="buy-section">
-      <div id='product-component-1771309586627'></div>
-      <p style="font-size:13px;color:var(--text-light);margin-top:10px;text-align:center">Free local pickup in Corona, CA &middot; Nationwide shipping available</p>
-    </div>
-  </div>
-</div>
-</div>
-<!-- ==================== PRODUCT 4: DUMMY ==================== -->
-<div id="product-4" class="page">
-<div class="product-detail">
-  <div class="product-gallery">
-    <div class="main-img"><img id="p4-main" src="images/" alt="Dummy"></div>
-    <div class="thumb-row">
-      <div class="thumb active" onclick="switchImg('p4-main','images/',this)"><img src="images/"></div>
-      <div class="thumb" onclick="switchImg('p4-main','images/',this)"><img src="images/"></div>
-      <div class="thumb" onclick="switchImg('p4-main','images/',this)"><img src="images/"></div>
-    </div>
-  </div>
-  <div class="product-info">
-    <div class="build-card-tag">High Performance</div>
-    <h1>Dummy</h1>
-    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">Test</p>
-    <div class="price-row">
-      <div class="build-price">$1</div>
-      <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
-    </div>
-    <table class="spec-table">
-      <tr><td>CPU</td><td>test</td></tr>
-      <tr><td>GPU</td><td>test</td></tr>
-      <tr><td>RAM</td><td>t</td></tr>
-      <tr><td>Storage</td><td>t</td></tr>
-      <tr><td>Motherboard</td><td>t</td></tr>
-      <tr><td>PSU</td><td>t</td></tr>
-      <tr><td>Case</td><td>t</td></tr>
-      <tr><td>Cooling</td><td>t</td></tr>
-      <tr><td>OS</td><td>t</td></tr>
-    </table>
-    <div class="includes">
-      <h3>What's included:</h3>
-      <ul><li>Fully assembled &amp; stress-tested gaming PC</li><li>Power cable</li><li>Clean Windows 11 Pro with latest drivers</li><li>7-day return window + ongoing tech support</li><li>test</li></ul>
-    </div>
-    <div class="buy-section">
-      <div id='product-component-1771318637647'></div>
-      <p style="font-size:13px;color:var(--text-light);margin-top:10px;text-align:center">Free local pickup in Corona, CA &middot; Nationwide shipping available</p>
-    </div>
-  </div>
-</div>
-</div>
+<!-- DYNAMIC PRODUCT DETAIL PAGE (populated by JS) -->
+<div id="product-detail-page" class="page"></div>
 
 <footer>
   <div class="footer-inner">
@@ -561,85 +325,412 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 </footer>
 
 <script>
-function showPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
-  document.querySelector('.nav-links').classList.remove('open');
+
+// ============================================================
+// CONFIG
+// ============================================================
+var SHOPIFY_DOMAIN = 'h9badh-1p.myshopify.com';
+var STOREFRONT_TOKEN = 'd59f5d8d4b0d229f23df6fc9776e1cda';
+var STOREFRONT_API = 'https://' + SHOPIFY_DOMAIN + '/api/2024-10/graphql.json';
+
+// Global state
+var allProducts = [];
+var buyButtonUI = null;
+
+// ============================================================
+// STOREFRONT API — Fetch all active products
+// ============================================================
+async function fetchProducts() {
+  var query = `{
+    products(first: 20, sortKey: PRICE, reverse: true) {
+      edges {
+        node {
+          id
+          title
+          descriptionHtml
+          productType
+          tags
+          availableForSale
+          images(first: 10) {
+            edges {
+              node {
+                url
+                altText
+              }
+            }
+          }
+          variants(first: 1) {
+            edges {
+              node {
+                id
+                price {
+                  amount
+                  currencyCode
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }`;
+
+  try {
+    var resp = await fetch(STOREFRONT_API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': STOREFRONT_TOKEN
+      },
+      body: JSON.stringify({ query: query })
+    });
+    var data = await resp.json();
+    return data.data.products.edges.map(function(e) { return e.node; })
+      .filter(function(p) { return p.availableForSale; });
+  } catch (err) {
+    console.error('Failed to fetch products:', err);
+    return [];
+  }
 }
-function scrollToBuilds(){
-  showPage('home');
-  setTimeout(()=>{var el=document.getElementById('builds-section');if(el)el.scrollIntoView({behavior:'smooth'});},50);
+
+// ============================================================
+// PARSE PRODUCT DESCRIPTION
+// Expects format:
+//   Description text here...
+//   ---SPECS---
+//   CPU: AMD Ryzen 7 7700X
+//   GPU: NVIDIA RTX 4070 Ti
+//   ...
+//   ---EXTRAS---          (optional)
+//   WiFi adapter
+//   Extra fans
+// ============================================================
+function parseDescription(desc) {
+  if (!desc) return { text: '', tagline: '', specs: [], extras: [] };
+
+  // Normalize: Shopify rich text may use <br>, <br/>, <p> tags instead of newlines
+  var normalized = desc
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/p>/gi, '\n')
+    .replace(/<[^>]+>/g, '')  // strip remaining HTML tags
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&mdash;/g, '\u2014')
+    .replace(/&ndash;/g, '\u2013')
+    .replace(/&middot;/g, '\u00B7');
+
+  var parts = normalized.split('---SPECS---');
+  var text = (parts[0] || '').trim();
+  var specSection = parts[1] || '';
+
+  // Split tagline (first line) from description (rest)
+  var lines = text.split('\n').filter(function(l) { return l.trim(); });
+  var tagline = lines[0] || '';
+  var description = lines.slice(1).join(' ').trim();
+
+  // Parse specs
+  var extrasParts = specSection.split('---EXTRAS---');
+  var specLines = (extrasParts[0] || '').trim().split('\n').filter(function(l) { return l.trim(); });
+  var specs = specLines.map(function(line) {
+    var idx = line.indexOf(':');
+    if (idx === -1) return null;
+    return { label: line.substring(0, idx).trim(), value: line.substring(idx + 1).trim() };
+  }).filter(Boolean);
+
+  // Parse extras
+  var extras = [];
+  if (extrasParts[1]) {
+    extras = extrasParts[1].trim().split('\n').filter(function(l) { return l.trim(); }).map(function(l) { return l.trim(); });
+  }
+
+  return { tagline: tagline, text: description, specs: specs, extras: extras };
 }
-function switchImg(mainId,src,thumbEl){
-  document.getElementById(mainId).src=src;
-  thumbEl.parentElement.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
+
+// ============================================================
+// GET TIER FROM TAGS
+// Use Shopify tags: "High Performance", "Mid-Range", "Budget", etc.
+// ============================================================
+function getTier(product) {
+  var tiers = ['High Performance', 'High-End', 'Mid-Range', 'Budget'];
+  for (var i = 0; i < product.tags.length; i++) {
+    for (var j = 0; j < tiers.length; j++) {
+      if (product.tags[i].toLowerCase() === tiers[j].toLowerCase()) return tiers[j];
+    }
+  }
+  return product.productType || 'Gaming PC';
+}
+
+// ============================================================
+// RENDER PRODUCT CARDS ON HOMEPAGE
+// ============================================================
+function renderProductCards(products) {
+  var grid = document.getElementById('builds-grid');
+  if (!products.length) {
+    grid.innerHTML = '<div class="no-builds">No builds available right now. Check back soon!</div>';
+    return;
+  }
+
+  // Adjust grid columns based on product count
+  if (products.length === 1) grid.style.gridTemplateColumns = '1fr';
+  else if (products.length === 2) grid.style.gridTemplateColumns = 'repeat(2,1fr)';
+  else grid.style.gridTemplateColumns = 'repeat(3,1fr)';
+
+  // Set hero image to first product's first image
+  var heroImg = document.querySelector('.hero-image img');
+  if (products[0].images.edges.length) {
+    heroImg.src = products[0].images.edges[0].node.url;
+    heroImg.alt = products[0].title;
+  }
+
+  // Set about image to second product's second image (or first product)
+  var aboutImg = document.querySelector('.about-image img');
+  var aboutProduct = products[1] || products[0];
+  var aboutImgNode = aboutProduct.images.edges[1] || aboutProduct.images.edges[0];
+  if (aboutImgNode) {
+    aboutImg.src = aboutImgNode.node.url;
+    aboutImg.alt = 'Inside a Good Build';
+  }
+
+  grid.innerHTML = '';
+  products.forEach(function(product, idx) {
+    var parsed = parseDescription(product.descriptionHtml);
+    var tier = getTier(product);
+    var price = product.variants.edges[0] ? Math.round(parseFloat(product.variants.edges[0].node.price.amount)) : 0;
+    var heroImgUrl = product.images.edges[0] ? product.images.edges[0].node.url : '';
+    var shortSpecs = parsed.specs.slice(0, 4);
+
+    var card = document.createElement('div');
+    card.className = 'build-card';
+    card.onclick = function() { showProductDetail(idx); };
+    card.innerHTML =
+      '<div class="build-card-gallery"><img src="' + heroImgUrl + '" alt="' + esc(product.title) + '"></div>' +
+      '<div class="build-card-body">' +
+        '<div class="build-card-tag">' + esc(tier) + '</div>' +
+        '<h3>' + esc(product.title) + '</h3>' +
+        '<div class="tagline">' + esc(parsed.tagline) + '</div>' +
+        '<div class="specs-grid">' +
+          shortSpecs.map(function(s) {
+            return '<div class="spec-item"><span class="spec-label">' + esc(s.label) + '</span> ' + esc(s.value) + '</div>';
+          }).join('') +
+        '</div>' +
+        '<div class="build-card-footer">' +
+          '<div><div class="build-price">$' + price.toLocaleString() + '</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>' +
+          '<button class="build-buy-btn">View Build</button>' +
+        '</div>' +
+      '</div>';
+    grid.appendChild(card);
+  });
+}
+
+// ============================================================
+// RENDER PRODUCT DETAIL PAGE (dynamically)
+// ============================================================
+function showProductDetail(idx) {
+  var product = allProducts[idx];
+  if (!product) return;
+  var parsed = parseDescription(product.descriptionHtml);
+  var tier = getTier(product);
+  var price = product.variants.edges[0] ? Math.round(parseFloat(product.variants.edges[0].node.price.amount)) : 0;
+  var images = product.images.edges.map(function(e) { return e.node; });
+  var mainImg = images[0] ? images[0].url : '';
+
+  var container = document.getElementById('product-detail-page');
+
+  container.innerHTML =
+    '<div class="product-detail">' +
+      '<div class="product-gallery">' +
+        '<div class="main-img"><img id="detail-main-img" src="' + mainImg + '" alt="' + esc(product.title) + '"></div>' +
+        '<div class="thumb-row">' +
+          images.map(function(img, i) {
+            return '<div class="thumb' + (i === 0 ? ' active' : '') + '" onclick="switchDetailImg(\'' + img.url.replace(/'/g, "\\'") + '\', this)">' +
+              '<img src="' + img.url + '" alt="' + esc(img.altText || product.title) + '">' +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+      '<div class="product-info">' +
+        '<div class="build-card-tag">' + esc(tier) + '</div>' +
+        '<h1>' + esc(product.title) + '</h1>' +
+        '<p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">' + esc(parsed.text || parsed.tagline) + '</p>' +
+        '<div class="price-row">' +
+          '<div class="build-price">$' + price.toLocaleString() + '</div>' +
+          '<span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>' +
+        '</div>' +
+        '<table class="spec-table">' +
+          parsed.specs.map(function(s) {
+            return '<tr><td>' + esc(s.label) + '</td><td>' + esc(s.value) + '</td></tr>';
+          }).join('') +
+        '</table>' +
+        '<div class="includes">' +
+          '<h3>What\'s included:</h3>' +
+          '<ul>' +
+            '<li>Fully assembled &amp; stress-tested gaming PC</li>' +
+            '<li>Power cable</li>' +
+            '<li>Clean Windows 11 Pro with latest drivers</li>' +
+            '<li>7-day return window + ongoing tech support</li>' +
+            parsed.extras.map(function(e) { return '<li>' + esc(e) + '</li>'; }).join('') +
+          '</ul>' +
+        '</div>' +
+        '<div class="buy-section">' +
+          '<div id="buy-button-' + idx + '"></div>' +
+          '<p style="font-size:13px;color:var(--text-light);margin-top:10px;text-align:center">Free local pickup in Corona, CA &middot; Nationwide shipping available</p>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+
+  showPage('product-detail-page');
+
+  // Mount buy button for this product
+  mountBuyButton(idx, product);
+}
+
+function switchDetailImg(url, thumbEl) {
+  document.getElementById('detail-main-img').src = url;
+  thumbEl.parentElement.querySelectorAll('.thumb').forEach(function(t) { t.classList.remove('active'); });
   thumbEl.classList.add('active');
 }
-</script>
-<script type="text/javascript">
-/*<![CDATA[*/
-(function () {
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
-  } else { loadScript(); }
-  function loadScript() {
+
+// ============================================================
+// SHOPIFY BUY BUTTON SDK — Initialize once, create per product
+// ============================================================
+function initBuyButtonSDK() {
+  return new Promise(function(resolve) {
+    if (window.ShopifyBuy && window.ShopifyBuy.UI) {
+      resolve();
+      return;
+    }
     var script = document.createElement('script');
     script.async = true;
-    script.src = scriptURL;
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-    script.onload = ShopifyBuyInit;
-  }
-  function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({
-      domain: 'h9badh-1p.myshopify.com',
-      storefrontAccessToken: 'd59f5d8d4b0d229f23df6fc9776e1cda',
+    script.src = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+    script.onload = function() { resolve(); };
+    document.head.appendChild(script);
+  });
+}
+
+async function mountBuyButton(idx, product) {
+  await initBuyButtonSDK();
+
+  var client = ShopifyBuy.buildClient({
+    domain: SHOPIFY_DOMAIN,
+    storefrontAccessToken: STOREFRONT_TOKEN
+  });
+
+  // Extract numeric product ID from GID
+  var gid = product.id; // "gid://shopify/Product/XXXXX"
+  var numericId = gid.split('/').pop();
+
+  var node = document.getElementById('buy-button-' + idx);
+  if (!node) return;
+
+  ShopifyBuy.UI.onReady(client).then(function(ui) {
+    ui.createComponent('product', {
+      id: numericId,
+      node: node,
+      moneyFormat: '%24%7B%7Bamount%7D%7D',
+      options: {
+        product: {
+          contents: { img: false, title: false, price: false },
+          styles: {
+            product: { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } },
+            button: {
+              "background-color": "#1b2a4a",
+              "font-family": "'DM Sans', sans-serif",
+              "font-size": "16px",
+              "font-weight": "600",
+              "padding-top": "16px",
+              "padding-bottom": "16px",
+              "width": "100%",
+              "border-radius": "8px",
+              ":hover": { "background-color": "#2A3F6B" },
+              ":focus": { "background-color": "#2A3F6B" }
+            }
+          },
+          text: { button: "Add to Cart" }
+        },
+        modalProduct: {
+          contents: { img: false, imgWithCarousel: false, button: false, buttonWithQuantity: true },
+          styles: {
+            product: { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
+            button: {
+              "background-color": "#1b2a4a",
+              "font-family": "'DM Sans', sans-serif",
+              "font-size": "16px",
+              "font-weight": "600",
+              "border-radius": "8px",
+              ":hover": { "background-color": "#2A3F6B" },
+              ":focus": { "background-color": "#2A3F6B" }
+            }
+          },
+          text: { button: "Add to cart" }
+        },
+        option: {},
+        cart: {
+          styles: {
+            button: {
+              "background-color": "#1b2a4a",
+              "font-family": "'DM Sans', sans-serif",
+              "font-weight": "600",
+              "border-radius": "8px",
+              ":hover": { "background-color": "#2A3F6B" },
+              ":focus": { "background-color": "#2A3F6B" }
+            }
+          },
+          text: { total: "Subtotal", button: "Checkout" }
+        },
+        toggle: {
+          styles: {
+            toggle: {
+              "background-color": "#1b2a4a",
+              ":hover": { "background-color": "#2A3F6B" },
+              ":focus": { "background-color": "#2A3F6B" }
+            }
+          }
+        }
+      }
     });
-    var buttonOpts = {
-      "product":{"contents":{"img":false,"title":false,"price":false},"styles":{"product":{"@media (min-width: 601px)":{"max-width":"100%","margin-left":"0","margin-bottom":"0"}},"button":{"background-color":"#1b2a4a","font-family":"'DM Sans', sans-serif","font-size":"16px","font-weight":"600","padding-top":"16px","padding-bottom":"16px","width":"100%","border-radius":"8px",":hover":{"background-color":"#2A3F6B"},":focus":{"background-color":"#2A3F6B"}}},"text":{"button":"Add to Cart"}},
-      "productSet":{"styles":{"products":{"@media (min-width: 601px)":{"margin-left":"-20px"}}}},
-      "modalProduct":{"contents":{"img":false,"imgWithCarousel":false,"button":false,"buttonWithQuantity":true},"styles":{"product":{"@media (min-width: 601px)":{"max-width":"100%","margin-left":"0px","margin-bottom":"0px"}},"button":{"background-color":"#1b2a4a","font-family":"'DM Sans', sans-serif","font-size":"16px","font-weight":"600","border-radius":"8px",":hover":{"background-color":"#2A3F6B"},":focus":{"background-color":"#2A3F6B"}}},"text":{"button":"Add to cart"}},
-      "option":{},
-      "cart":{"styles":{"button":{"background-color":"#1b2a4a","font-family":"'DM Sans', sans-serif","font-weight":"600","border-radius":"8px",":hover":{"background-color":"#2A3F6B"},":focus":{"background-color":"#2A3F6B"}}},"text":{"total":"Subtotal","button":"Checkout"}},
-      "toggle":{"styles":{"toggle":{"background-color":"#1b2a4a",":hover":{"background-color":"#2A3F6B"},":focus":{"background-color":"#2A3F6B"}}}}
-    };
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
-      // The Ember
-      ui.createComponent('product', {
-        id: '10602831642934',
-        node: document.getElementById('product-component-1771309540336'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: buttonOpts
-      });
-      // The Frost
-      ui.createComponent('product', {
-        id: '10602831675702',
-        node: document.getElementById('product-component-1771309570565'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: buttonOpts
-      });
-      // The Shadow
-      ui.createComponent('product', {
-        id: '10602831708470',
-        node: document.getElementById('product-component-1771309586627'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: buttonOpts
-      });
-      // Dummy
-      ui.createComponent('product', {
-        id: '10602882728246',
-        node: document.getElementById('product-component-1771318637647'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: buttonOpts
-      });
-      setTimeout(function(){window.dispatchEvent(new Event('resize'));},1000);
-      setTimeout(function(){window.dispatchEvent(new Event('resize'));},2500);
-      setTimeout(function(){window.dispatchEvent(new Event('resize'));},5000);
-    });
-  }
-})();
-/*]]>*/
+
+    // Force reflow fix
+    setTimeout(function() { window.dispatchEvent(new Event('resize')); }, 1000);
+    setTimeout(function() { window.dispatchEvent(new Event('resize')); }, 2500);
+  });
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+  document.querySelector('.nav-links').classList.remove('open');
+}
+function scrollToBuilds() {
+  showPage('home');
+  setTimeout(function() {
+    var el = document.getElementById('builds-section');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }, 50);
+}
+function esc(s) {
+  if (!s) return '';
+  var d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+// ============================================================
+// INIT — Load products on page load
+// ============================================================
+async function init() {
+  allProducts = await fetchProducts();
+  renderProductCards(allProducts);
+}
+
+init();
+
 </script>
 </body>
 </html>
