@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Good Build — Custom Gaming PCs</title>
+<meta name="description" content="Hand-built gaming PCs from Corona, California. Assembled with care, stress-tested, and ready to play.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2A4A;--navy-deep:#0F1B33;--navy-light:#2A3F6B;--white:#FFF;--off-white:#F5F6FA;--cream:#E8EAF0;--accent:#4A9EDE;--accent-hover:#3A8ED0;--text-primary:#1B2A4A;--text-secondary:#5A6A8A;--text-light:#8A96B0;--success:#34C759;--border:#D8DCE8;--shadow-md:0 4px 20px rgba(27,42,74,.08);--shadow-lg:0 8px 40px rgba(27,42,74,.12);--radius-sm:8px;--radius-md:12px;--radius-lg:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;color:var(--text-primary);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(27,42,74,.06)}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-logo img{height:36px;width:auto}
+.nav-logo-text{font-family:'Outfit',sans-serif;font-weight:700;font-size:19px;color:var(--navy);letter-spacing:-.3px}
+.nav-logo-text span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{background:var(--navy)!important;color:white!important;padding:10px 22px!important;border-radius:var(--radius-sm)!important;font-weight:600!important;font-size:13px!important;letter-spacing:.3px;transition:background .2s!important}
+.nav-cta:hover{background:var(--navy-light)!important}
+.nav-mobile-toggle{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:var(--navy)}
+
+/* HERO */
+.hero{padding:140px 48px 80px;max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:60px}
+.hero-content{max-width:500px;flex-shrink:0}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--off-white);border:1px solid var(--border);padding:6px 14px;border-radius:100px;margin-bottom:24px;font-size:13px;font-weight:500;color:var(--text-secondary)}
+.hero-badge-dot{width:7px;height:7px;background:var(--success);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:'Outfit',sans-serif;font-weight:800;font-size:50px;line-height:1.08;letter-spacing:-1.5px;color:var(--navy);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero>p,.hero-content>p{font-size:17px;line-height:1.7;color:var(--text-secondary);margin-bottom:32px;max-width:440px}
+.hero-actions{display:flex;gap:14px}
+.btn-primary{background:var(--navy);color:white;border:none;padding:15px 32px;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-primary:hover{background:var(--navy-light);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--text-secondary);border:1.5px solid var(--border);padding:14px 28px;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s}
+.btn-secondary:hover{border-color:var(--navy);color:var(--navy)}
+.hero-image{flex:1;max-width:520px;border-radius:var(--radius-lg);overflow:hidden}
+.hero-image img{width:100%;height:auto;display:block;border-radius:var(--radius-lg)}
+
+/* TRUST BAR */
+.trust-bar{padding:36px 48px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--off-white)}
+.trust-bar-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:12px}
+.trust-icon{width:42px;height:42px;background:white;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px}
+.trust-text h4{font-size:14px;font-weight:600;color:var(--navy)}
+.trust-text p{font-size:12px;color:var(--text-light);margin-top:1px}
+
+/* SECTIONS */
+section{padding:90px 48px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:10px}
+.section-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.8px;color:var(--navy);margin-bottom:14px}
+.section-subtitle{font-size:16px;line-height:1.7;color:var(--text-secondary);max-width:540px;margin-bottom:44px}
+
+/* PRODUCT CARDS */
+.builds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.build-card{background:white;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;transition:all .25s;cursor:pointer}
+.build-card:hover{border-color:var(--accent);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.build-card-gallery{position:relative;width:100%;height:280px;overflow:hidden;background:#0a0a0a}
+.build-card-gallery img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.build-card-gallery .gallery-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
+.build-card-gallery .gallery-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .2s}
+.build-card-gallery .gallery-dot.active{background:white}
+.build-card-gallery .gallery-nav{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;background:rgba(0,0,0,.5);border:none;border-radius:50%;color:white;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
+.build-card:hover .gallery-nav{opacity:1}
+.gallery-nav.prev{left:8px}
+.gallery-nav.next{right:8px}
+.build-card-body{padding:24px}
+.build-card-tag{display:inline-block;padding:4px 10px;background:var(--off-white);border-radius:100px;font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
+.build-card-body h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:20px;color:var(--navy);margin-bottom:6px}
+.build-card-body .tagline{font-size:13px;color:var(--text-light);margin-bottom:12px}
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;margin-bottom:18px}
+.spec-item{font-size:12.5px;color:var(--text-secondary);padding:3px 0}
+.spec-label{font-weight:600;color:var(--navy)}
+.build-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border)}
+.build-price{font-family:'Outfit',sans-serif;font-weight:700;font-size:26px;color:var(--navy)}
+.build-condition{font-size:11px;color:var(--text-light);margin-top:2px}
+.build-buy-btn{background:var(--navy);color:white;border:none;padding:11px 24px;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+.build-buy-btn:hover{background:var(--navy-light)}
+
+/* HOW IT WORKS */
+.how-section{background:var(--off-white)}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1200px;margin:0 auto}
+.how-card{text-align:center}
+.how-number{width:48px;height:48px;margin:0 auto 14px;background:var(--navy);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:18px}
+.how-card h3{font-family:'Outfit',sans-serif;font-weight:600;font-size:16px;color:var(--navy);margin-bottom:8px}
+.how-card p{font-size:14px;line-height:1.6;color:var(--text-secondary)}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.why-card{padding:28px;background:var(--off-white);border-radius:var(--radius-md);border:1px solid var(--border)}
+.why-card-icon{font-size:26px;margin-bottom:14px}
+.why-card h3{font-family:'Outfit',sans-serif;font-weight:600;font-size:16px;color:var(--navy);margin-bottom:8px}
+.why-card p{font-size:14px;line-height:1.65;color:var(--text-secondary)}
+
+/* ABOUT */
+.about-section{background:var(--navy-deep);color:white}
+.about-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:60px}
+.about-content{max-width:540px}
+.about-content .section-label{color:var(--accent)}
+.about-content .section-title{color:white}
+.about-content p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:14px}
+.about-stat-row{display:flex;gap:36px;margin-top:28px}
+.about-stat h3{font-family:'Outfit',sans-serif;font-weight:800;font-size:34px;color:var(--accent)}
+.about-stat p{font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
+.about-image{flex:1;border-radius:var(--radius-lg);overflow:hidden;max-width:460px}
+.about-image img{width:100%;height:auto;display:block}
+
+/* FAQ */
+.faq-section{background:var(--off-white)}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:22px 26px;margin-bottom:10px;cursor:pointer;transition:border-color .2s}
+.faq-item:hover{border-color:var(--accent)}
+.faq-question{display:flex;align-items:center;justify-content:space-between}
+.faq-question h3{font-size:15px;font-weight:600;color:var(--navy)}
+.faq-arrow{font-size:14px;color:var(--text-light);transition:transform .2s}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-answer{display:none;padding-top:14px;border-top:1px solid var(--border);margin-top:14px;font-size:14px;line-height:1.7;color:var(--text-secondary)}
+.faq-item.open .faq-answer{display:block}
+
+/* FOOTER */
+footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255,.6);border-top:1px solid rgba(255,255,255,.06)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px}
+.footer-brand p{font-size:13px;line-height:1.6;max-width:260px;margin-top:12px;color:rgba(255,255,255,.4)}
+.footer-links h4{font-size:12px;font-weight:600;color:white;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+.footer-links a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:9px;transition:color .2s}
+.footer-links a:hover{color:white}
+.footer-bottom{max-width:1200px;margin:36px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.3)}
+
+/* PAGES */
+.page-content{max-width:720px;margin:0 auto;padding:140px 48px 80px}
+.page-content h1{font-family:'Outfit',sans-serif;font-weight:700;font-size:32px;color:var(--navy);margin-bottom:8px}
+.page-content .updated{font-size:13px;color:var(--text-light);margin-bottom:32px}
+.page-content h2{font-family:'Outfit',sans-serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
+.page-content p,.page-content li{font-size:15px;line-height:1.8;color:var(--text-secondary);margin-bottom:10px}
+.page-content ul{padding-left:20px;margin-bottom:14px}
+
+/* PRODUCT DETAIL */
+.product-detail{max-width:1100px;margin:0 auto;padding:130px 48px 80px;display:flex;gap:48px}
+.product-gallery{flex:1;max-width:520px}
+.product-gallery .main-img{width:100%;border-radius:var(--radius-md);overflow:hidden;background:#0a0a0a;margin-bottom:12px}
+.product-gallery .main-img img{width:100%;height:auto;display:block}
+.product-gallery .thumb-row{display:flex;gap:10px}
+.product-gallery .thumb{width:80px;height:80px;border-radius:var(--radius-sm);overflow:hidden;border:2px solid var(--border);cursor:pointer;transition:border-color .2s}
+.product-gallery .thumb:hover,.product-gallery .thumb.active{border-color:var(--accent)}
+.product-gallery .thumb img{width:100%;height:100%;object-fit:cover}
+.product-info{flex:1}
+.product-info .build-card-tag{margin-bottom:14px}
+.product-info h1{font-family:'Outfit',sans-serif;font-weight:700;font-size:30px;color:var(--navy);margin-bottom:8px}
+.product-info .price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+.product-info .price-row .build-price{font-size:32px}
+.product-info .condition-badge{font-size:12px;color:var(--text-light);background:var(--off-white);padding:4px 10px;border-radius:100px}
+.spec-table{width:100%;margin:20px 0}
+.spec-table tr{border-bottom:1px solid var(--border)}
+.spec-table td{padding:10px 0;font-size:14px}
+.spec-table td:first-child{font-weight:600;color:var(--navy);width:140px}
+.spec-table td:last-child{color:var(--text-secondary)}
+.product-info .buy-section{margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
+.product-info .buy-section .btn-primary{width:100%;text-align:center;font-size:16px;padding:16px}
+.product-info .buy-section p{font-size:13px;color:var(--text-light);margin-top:10px;text-align:center}
+.product-info .includes{margin-top:24px}
+.product-info .includes h3{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.product-info .includes li{font-size:13px;color:var(--text-secondary);margin-bottom:4px}
+
+/* NAVIGATION SYSTEM */
+.page{display:none}
+.page.active{display:block}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:white;padding:20px;border-bottom:1px solid var(--border);gap:16px}
+  .nav-mobile-toggle{display:block}
+  .hero{flex-direction:column;padding:120px 24px 50px;text-align:center}
+  .hero-content>p{margin:0 auto 28px}
+  .hero-actions{justify-content:center}
+  .hero-image{max-width:100%}
+  section{padding:60px 24px}
+  .builds-grid{grid-template-columns:1fr}
+  .how-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .about-inner{flex-direction:column}
+  .about-image{max-width:100%}
+  .trust-bar-inner{gap:20px}
+  .trust-bar{padding:28px 20px}
+  .footer-inner{flex-direction:column}
+  .page-content{padding:120px 24px 60px}
+  .product-detail{flex-direction:column;padding:120px 24px 60px}
+  .product-gallery{max-width:100%}
+  .footer-bottom{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">
+    <img src="images/logo.png" alt="The Good Build">
+    <div class="nav-logo-text">the<span>good</span>build</div>
+  </div>
+  <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home');return false">Builds</a></li>
+    <li><a href="#" onclick="showPage('how');return false">How It Works</a></li>
+    <li><a href="#" onclick="showPage('about-page');return false">About</a></li>
+    <li><a href="#" onclick="showPage('faq-page');return false">FAQ</a></li>
+    <li><a href="#" onclick="showPage('home');scrollToBuilds();return false" class="nav-cta">SHOP NOW</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div id="home" class="page active">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><div class="hero-badge-dot"></div>Builds available now</div>
+    <h1>Gaming PCs built<br>with <em>care</em>.</h1>
+    <p>Hand-built, stress-tested, and ready to play. Every build from The Good Build is assembled by someone who actually knows what they're doing — and stands behind every machine that leaves the bench.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="scrollToBuilds()">Browse Builds</button>
+      <button class="btn-secondary" onclick="showPage('how')">How It Works</button>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="images/pc2_hero.jpg" alt="Custom gaming PC by The Good Build">
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><div class="trust-icon">&#128295;</div><div class="trust-text"><h4>500+ Builds</h4><p>Proven track record</p></div></div>
+    <div class="trust-item"><div class="trust-icon">&#128170;</div><div class="trust-text"><h4>Stress Tested</h4><p>Every single system</p></div></div>
+    <div class="trust-item"><div class="trust-icon">&#128274;</div><div class="trust-text"><h4>7-Day Returns</h4><p>No questions asked</p></div></div>
+    <div class="trust-item"><div class="trust-icon">&#128666;</div><div class="trust-text"><h4>Pickup or Ship</h4><p>Corona, CA + nationwide</p></div></div>
+  </div>
+</div>
+
+<!-- BUILDS -->
+<section id="builds-section">
+  <div class="section-inner">
+    <div class="section-label">Available Now</div>
+    <div class="section-title">Ready-to-play builds</div>
+    <div class="section-subtitle">Each system is fully assembled, stress-tested, and loaded with a fresh Windows install. Pick it up locally or have it shipped.</div>
+  </div>
+  <div class="builds-grid">
+
+    <!-- PC 1: The Ember -->
+    <div class="build-card" onclick="showPage('product-1')">
+      <div class="build-card-gallery">
+        <img src="images/pc1_hero.jpg" alt="The Ember - RTX 4070 Ti Gaming PC">
+      </div>
+      <div class="build-card-body">
+        <div class="build-card-tag">High Performance</div>
+        <h3>The Ember</h3>
+        <div class="tagline">Ryzen 7 7700X + RTX 4070 Ti — ready for 1440p and beyond</div>
+        <div class="specs-grid">
+          <div class="spec-item"><span class="spec-label">CPU</span> Ryzen 7 7700X</div>
+          <div class="spec-item"><span class="spec-label">GPU</span> RTX 4070 Ti</div>
+          <div class="spec-item"><span class="spec-label">RAM</span> 32GB DDR5</div>
+          <div class="spec-item"><span class="spec-label">Storage</span> 2TB NVMe</div>
+        </div>
+        <div class="build-card-footer">
+          <div><div class="build-price">$1,500</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
+          <button class="build-buy-btn">View Build</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PC 2: The Frost -->
+    <div class="build-card" onclick="showPage('product-2')">
+      <div class="build-card-gallery">
+        <img src="images/pc2_hero.jpg" alt="The Frost - i7-13700K Gaming PC">
+      </div>
+      <div class="build-card-body">
+        <div class="build-card-tag">High Performance</div>
+        <h3>The Frost</h3>
+        <div class="tagline">i7-13700K + RTX 4070 Ti — clean white build, serious power</div>
+        <div class="specs-grid">
+          <div class="spec-item"><span class="spec-label">CPU</span> i7-13700K</div>
+          <div class="spec-item"><span class="spec-label">GPU</span> RTX 4070 Ti</div>
+          <div class="spec-item"><span class="spec-label">RAM</span> 32GB DDR5</div>
+          <div class="spec-item"><span class="spec-label">Storage</span> 1TB NVMe</div>
+        </div>
+        <div class="build-card-footer">
+          <div><div class="build-price">$1,500</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
+          <button class="build-buy-btn">View Build</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PC 3: The Shadow -->
+    <div class="build-card" onclick="showPage('product-3')">
+      <div class="build-card-gallery">
+        <img src="images/pc3_hero.jpg" alt="The Shadow - RTX 3080 Gaming PC">
+      </div>
+      <div class="build-card-body">
+        <div class="build-card-tag">Mid-Range</div>
+        <h3>The Shadow</h3>
+        <div class="tagline">i5-12600K + RTX 3080 — 1080p powerhouse at a great price</div>
+        <div class="specs-grid">
+          <div class="spec-item"><span class="spec-label">CPU</span> i5-12600K</div>
+          <div class="spec-item"><span class="spec-label">GPU</span> RTX 3080</div>
+          <div class="spec-item"><span class="spec-label">RAM</span> 32GB DDR4</div>
+          <div class="spec-item"><span class="spec-label">Storage</span> 500GB + 1TB</div>
+        </div>
+        <div class="build-card-footer">
+          <div><div class="build-price">$1,000</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
+          <button class="build-buy-btn">View Build</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">Why Us</div>
+    <div class="section-title">Not your average pre-built.</div>
+    <div class="section-subtitle">Big box pre-builts cut corners. We don't.</div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-card-icon">&#9881;&#65039;</div><h3>Built by hand, not a factory</h3><p>Every system is assembled by one person who cares about cable management, airflow, and component quality. No assembly lines, no shortcuts.</p></div>
+    <div class="why-card"><div class="why-card-icon">&#128200;</div><h3>Stress tested before it's yours</h3><p>Every build goes through thermal and stability testing before it's listed. If it can't handle the heat, it doesn't ship.</p></div>
+    <div class="why-card"><div class="why-card-icon">&#128176;</div><h3>Fair pricing, no fluff</h3><p>We source smart and pass the savings on. Better machine, less money, no bloatware.</p></div>
+    <div class="why-card"><div class="why-card-icon">&#129309;</div><h3>Real support from a real person</h3><p>Got a question? You're talking to the person who built your PC — not a call center.</p></div>
+    <div class="why-card"><div class="why-card-icon">&#128230;</div><h3>Ship-ready packaging</h3><p>Every shipped build is packed with custom foam bracing and double-boxed so it arrives exactly how it left.</p></div>
+    <div class="why-card"><div class="why-card-icon">&#128077;</div><h3>500+ happy customers</h3><p>Building and selling since 2023. Hundreds of satisfied buyers and counting.</p></div>
+  </div>
+</section>
+</div>
+
+<!-- ==================== HOW IT WORKS PAGE ==================== -->
+<div id="how" class="page">
+<section style="padding-top:130px">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">Dead simple.</div>
+    <div class="section-subtitle">No custom order forms. No 6-week wait times. Pick a build, pay, and it's yours.</div>
+  </div>
+  <div class="how-grid">
+    <div class="how-card"><div class="how-number">1</div><h3>Browse</h3><p>Check out what's currently available. Each listing has full specs, photos, and component details.</p></div>
+    <div class="how-card"><div class="how-number">2</div><h3>Purchase</h3><p>Buy directly through the site. Secure checkout powered by Shopify. No sketchy DMs required.</p></div>
+    <div class="how-card"><div class="how-number">3</div><h3>Pick Up or Ship</h3><p>Local to Corona, CA? Pick it up same-day. Otherwise, we'll pack it right and ship it to your door.</p></div>
+    <div class="how-card"><div class="how-number">4</div><h3>Game On</h3><p>Plug in, power on, and play. Windows is installed, drivers are updated, and it's ready to go.</p></div>
+  </div>
+</section>
+<section style="padding-top:40px">
+  <div class="section-inner" style="max-width:700px">
+    <h2 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:22px;color:var(--navy);margin-bottom:12px">Shipping Details</h2>
+    <p style="font-size:15px;line-height:1.8;color:var(--text-secondary);margin-bottom:16px">We ship anywhere in the continental US. Every PC is custom-packed with foam bracing, GPU support brackets removed and secured separately, and double-boxed to survive transit. Shipping costs are calculated based on your location — expect roughly $75–$120 depending on distance.</p>
+    <h2 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:22px;color:var(--navy);margin-bottom:12px">Local Pickup</h2>
+    <p style="font-size:15px;line-height:1.8;color:var(--text-secondary)">Free pickup available in Corona, CA. Once your order is confirmed, we'll reach out to schedule a convenient time. Most pickups happen same-day or next-day.</p>
+  </div>
+</section>
+</div>
+
+<!-- ==================== ABOUT PAGE ==================== -->
+<div id="about-page" class="page">
+<section class="about-section" style="padding-top:130px">
+  <div class="about-inner">
+    <div class="about-content">
+      <div class="section-label">About</div>
+      <div class="section-title">One builder. No BS.</div>
+      <p>The Good Build started in a garage in Corona, California. What began as a hobby — buying, building, and flipping PCs — turned into something bigger when people kept coming back and bringing their friends.</p>
+      <p>Every system you see on this site was built by me. I source the parts, I assemble the machine, I test it, and I stand behind it. There's no warehouse, no investors, no corporate nonsense. Just good builds at fair prices from someone who genuinely loves doing this.</p>
+      <p>All components are thoroughly cleaned, tested, and stress-tested before any build is listed. I treat every system like I'm building it for myself.</p>
+      <div class="about-stat-row">
+        <div class="about-stat"><h3>500+</h3><p>Builds completed</p></div>
+        <div class="about-stat"><h3>2+ yrs</h3><p>In business</p></div>
+        <div class="about-stat"><h3>Corona</h3><p>Based in CA</p></div>
+      </div>
+    </div>
+    <div class="about-image"><img src="images/pc2_inside.jpg" alt="Inside a Good Build" style="width:100%;border-radius:16px"></div>
+  </div>
+</section>
+</div>
+
+<!-- ==================== FAQ PAGE ==================== -->
+<div id="faq-page" class="page">
+<section class="faq-section" style="padding-top:130px;min-height:100vh">
+  <div class="section-inner"><div class="section-label">FAQ</div><div class="section-title">Common questions</div><div class="section-subtitle">If yours isn't here, reach out — we respond fast.</div></div>
+  <div class="faq-list">
+    <div class="faq-item open"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What's your return policy?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">We offer a 7-day return window from the date of delivery or pickup. If something's wrong, reach out within 7 days and we'll make it right — full refund or exchange. After the return window, we provide ongoing tech support. See our <a href="#" onclick="showPage('policy');return false" style="color:var(--accent)">full Return & Warranty Policy</a>.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Do you ship nationwide?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Yes — anywhere in the continental US. Every shipped PC is foam-braced and double-boxed. Shipping runs roughly $75–$120 depending on location. Free local pickup in Corona, CA.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Are these new or used parts?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Our builds use refurbished components — previously used parts that have been fully disassembled, cleaned, tested, and stress-tested. Each listing clearly states component details. We only use parts that meet our quality standards.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What comes installed?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Every build ships with a clean Windows 11 Pro installation with the latest drivers and updates. No bloatware, no trial software. Just a fresh OS ready to go.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Can I request a custom build?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Not at this time — we sell pre-built, ready-to-ship systems. If you have something specific in mind, reach out and we'll let you know if we can make it happen.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Do you offer a warranty?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">7-day full return/exchange window on every build. Beyond that, free ongoing tech support. Individual components may carry their own manufacturer warranty — we'll help you navigate those claims if needed.</div></div>
+  </div>
+</section>
+</div>
+
+<!-- ==================== RETURN POLICY PAGE ==================== -->
+<div id="policy" class="page">
+<div class="page-content">
+  <h1>Return &amp; Warranty Policy</h1>
+  <p class="updated">Last updated: February 2026</p>
+  <p>At The Good Build, we stand behind every system that leaves our bench.</p>
+  <h2>7-Day Return Window</h2>
+  <p>You have 7 calendar days from delivery or pickup to return your PC for a full refund or exchange.</p>
+  <ul><li>System must be in the same condition received — no physical damage or unauthorized modifications.</li><li>All original accessories, cables, and packaging must be included.</li><li>Contact us within 7 days to initiate.</li></ul>
+  <p>For shipped orders, return shipping is the buyer's responsibility unless the return is due to a defect on our end.</p>
+  <h2>Defective or Damaged on Arrival</h2>
+  <p>If your PC arrives damaged or defective, contact us immediately. We'll cover return shipping and repair, replace, or fully refund at your choice. Please photograph any shipping damage before opening.</p>
+  <h2>Ongoing Tech Support</h2>
+  <p>After the 7-day window, we don't disappear. Free ongoing technical support for every system — driver issues, component troubleshooting, upgrade advice. We're here to help.</p>
+  <h2>Manufacturer Warranties</h2>
+  <p>Many components carry their own manufacturer warranty. We'll help you identify coverage and navigate claims if needed.</p>
+  <h2>What's Not Covered</h2>
+  <ul><li>Physical damage after delivery (drops, spills, power surges)</li><li>Software issues unrelated to our installation</li><li>Modifications by someone other than The Good Build</li><li>Normal wear and tear</li></ul>
+  <h2>Contact</h2>
+  <p>For returns, warranty, or support: email <strong>support@thegoodbuild.shop</strong></p>
+</div>
+</div>
+
+<!-- ==================== PRODUCT 1: THE EMBER ==================== -->
+<div id="product-1" class="page">
+<div class="product-detail">
+  <div class="product-gallery">
+    <div class="main-img"><img id="p1-main" src="images/pc1_hero.jpg" alt="The Ember"></div>
+    <div class="thumb-row">
+      <div class="thumb active" onclick="switchImg('p1-main','images/pc1_hero.jpg',this)"><img src="images/pc1_hero.jpg"></div>
+      <div class="thumb" onclick="switchImg('p1-main','images/pc1_inside.jpg',this)"><img src="images/pc1_inside.jpg"></div>
+      <div class="thumb" onclick="switchImg('p1-main','images/pc1_angle.jpg',this)"><img src="images/pc1_angle.jpg"></div>
+    </div>
+  </div>
+  <div class="product-info">
+    <div class="build-card-tag">High Performance</div>
+    <h1>The Ember</h1>
+    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">A 1440p beast wrapped in a clean Corsair 4000D with red-accent RGB. Powered by AMD's Ryzen 7 7700X and NVIDIA's RTX 4070 Ti — this thing eats modern titles for breakfast.</p>
+    <div class="price-row">
+      <div class="build-price">$1,500</div>
+      <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
+    </div>
+    <table class="spec-table">
+      <tr><td>CPU</td><td>AMD Ryzen 7 7700X</td></tr>
+      <tr><td>GPU</td><td>NVIDIA RTX 4070 Ti — ASUS TUF Gaming</td></tr>
+      <tr><td>RAM</td><td>32GB (2x16GB) G.Skill Ripjaws DDR5 5600MHz CL36</td></tr>
+      <tr><td>Storage</td><td>2TB Teamgroup M.2 NVMe SSD</td></tr>
+      <tr><td>Motherboard</td><td>ASUS Prime X670-P</td></tr>
+      <tr><td>PSU</td><td>EVGA 850W 80+ Gold</td></tr>
+      <tr><td>Case</td><td>Corsair 4000D</td></tr>
+      <tr><td>Cooling</td><td>EKWB 240mm AIO Liquid Cooler</td></tr>
+      <tr><td>OS</td><td>Windows 11 Pro (activated)</td></tr>
+    </table>
+    <div class="includes">
+      <h3>What's included:</h3>
+      <ul><li>Fully assembled &amp; stress-tested gaming PC</li><li>Power cable</li><li>Clean Windows 11 Pro with latest drivers</li><li>7-day return window + ongoing tech support</li></ul>
+    </div>
+    <div class="buy-section">
+      <!-- SHOPIFY BUY BUTTON GOES HERE -->
+      <button class="btn-primary" style="width:100%;text-align:center;font-size:16px;padding:16px">Buy Now — $1,500</button>
+      <p>Free local pickup in Corona, CA &middot; Nationwide shipping available</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ==================== PRODUCT 2: THE FROST ==================== -->
+<div id="product-2" class="page">
+<div class="product-detail">
+  <div class="product-gallery">
+    <div class="main-img"><img id="p2-main" src="images/pc2_hero.jpg" alt="The Frost"></div>
+    <div class="thumb-row">
+      <div class="thumb active" onclick="switchImg('p2-main','images/pc2_hero.jpg',this)"><img src="images/pc2_hero.jpg"></div>
+      <div class="thumb" onclick="switchImg('p2-main','images/pc2_inside.jpg',this)"><img src="images/pc2_inside.jpg"></div>
+      <div class="thumb" onclick="switchImg('p2-main','images/pc2_angle.jpg',this)"><img src="images/pc2_angle.jpg"></div>
+    </div>
+  </div>
+  <div class="product-info">
+    <div class="build-card-tag">High Performance</div>
+    <h1>The Frost</h1>
+    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">A stunning all-white Lian Li build with Intel's i7-13700K and an RTX 4070 Ti. 360mm AIO cooling keeps everything frosty under load. Looks as good as it performs.</p>
+    <div class="price-row">
+      <div class="build-price">$1,500</div>
+      <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
+    </div>
+    <table class="spec-table">
+      <tr><td>CPU</td><td>Intel Core i7-13700K</td></tr>
+      <tr><td>GPU</td><td>NVIDIA RTX 4070 Ti — ASUS TUF Gaming</td></tr>
+      <tr><td>RAM</td><td>32GB (2x16GB) TEAMGROUP DDR5 5200MHz CL40</td></tr>
+      <tr><td>Storage</td><td>Samsung 970 EVO Plus 1TB M.2 NVMe SSD</td></tr>
+      <tr><td>Motherboard</td><td>ASUS Prime Z690-A</td></tr>
+      <tr><td>PSU</td><td>MSI MAG A850GL 850W</td></tr>
+      <tr><td>Case</td><td>Lian Li LANCOOL 216 (White)</td></tr>
+      <tr><td>Cooling</td><td>Kingcool Pure Flow 360mm AIO Liquid Cooler</td></tr>
+      <tr><td>OS</td><td>Windows 11 Pro (activated)</td></tr>
+    </table>
+    <div class="includes">
+      <h3>What's included:</h3>
+      <ul><li>Fully assembled &amp; stress-tested gaming PC</li><li>Power cable</li><li>Clean Windows 11 Pro with latest drivers</li><li>7-day return window + ongoing tech support</li></ul>
+    </div>
+    <div class="buy-section">
+      <button class="btn-primary" style="width:100%;text-align:center;font-size:16px;padding:16px">Buy Now — $1,500</button>
+      <p>Free local pickup in Corona, CA &middot; Nationwide shipping available</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ==================== PRODUCT 3: THE SHADOW ==================== -->
+<div id="product-3" class="page">
+<div class="product-detail">
+  <div class="product-gallery">
+    <div class="main-img"><img id="p3-main" src="images/pc3_hero.jpg" alt="The Shadow"></div>
+    <div class="thumb-row">
+      <div class="thumb active" onclick="switchImg('p3-main','images/pc3_hero.jpg',this)"><img src="images/pc3_hero.jpg"></div>
+      <div class="thumb" onclick="switchImg('p3-main','images/pc3_inside.jpg',this)"><img src="images/pc3_inside.jpg"></div>
+      <div class="thumb" onclick="switchImg('p3-main','images/pc3_angle.jpg',this)"><img src="images/pc3_angle.jpg"></div>
+    </div>
+  </div>
+  <div class="product-info">
+    <div class="build-card-tag">Mid-Range</div>
+    <h1>The Shadow</h1>
+    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">Stealthy Corsair 4000D build with an i5-12600K and RTX 3080 — a proven 1080p powerhouse that still crushes modern titles. Incredible value for the performance.</p>
+    <div class="price-row">
+      <div class="build-price">$1,000</div>
+      <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
+    </div>
+    <table class="spec-table">
+      <tr><td>CPU</td><td>Intel Core i5-12600K</td></tr>
+      <tr><td>GPU</td><td>NVIDIA GeForce RTX 3080</td></tr>
+      <tr><td>RAM</td><td>32GB (2x16GB) T-Force DDR4 3200MHz CL16</td></tr>
+      <tr><td>Storage</td><td>WD Blue 500GB M.2 NVMe SSD + 1TB HDD</td></tr>
+      <tr><td>Motherboard</td><td>MSI Pro B760-P WiFi DDR4</td></tr>
+      <tr><td>PSU</td><td>EVGA SuperNOVA 850W 80+ Gold</td></tr>
+      <tr><td>Case</td><td>Corsair 4000D</td></tr>
+      <tr><td>Cooling</td><td>DeepCool AK620</td></tr>
+      <tr><td>OS</td><td>Windows 11 Pro (activated)</td></tr>
+      <tr><td>Extras</td><td>Built-in WiFi (motherboard)</td></tr>
+    </table>
+    <div class="includes">
+      <h3>What's included:</h3>
+      <ul><li>Fully assembled &amp; stress-tested gaming PC</li><li>Power cable</li><li>Clean Windows 11 Pro with latest drivers</li><li>7-day return window + ongoing tech support</li></ul>
+    </div>
+    <div class="buy-section">
+      <button class="btn-primary" style="width:100%;text-align:center;font-size:16px;padding:16px">Buy Now — $1,000</button>
+      <p>Free local pickup in Corona, CA &middot; Nationwide shipping available</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER (always visible) -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo-text" style="color:white">the<span style="color:var(--accent)">good</span>build</div>
+      <p>Hand-built gaming PCs from Corona, California. Assembled with care, stress-tested, and ready to play.</p>
+    </div>
+    <div class="footer-links"><h4>Shop</h4><a href="#" onclick="showPage('home');return false">Available Builds</a><a href="#" onclick="showPage('how');return false">How It Works</a></div>
+    <div class="footer-links"><h4>Info</h4><a href="#" onclick="showPage('about-page');return false">About</a><a href="#" onclick="showPage('faq-page');return false">FAQ</a><a href="#" onclick="showPage('policy');return false">Return Policy</a></div>
+    <div class="footer-links"><h4>Connect</h4><a href="#">Instagram</a><a href="#">Facebook</a><a href="mailto:support@thegoodbuild.shop">Email Us</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2026 The Good Build. All rights reserved.</span><span>Corona, California</span></div>
+</footer>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+  document.querySelector('.nav-links').classList.remove('open');
+}
+function scrollToBuilds(){
+  showPage('home');
+  setTimeout(()=>{
+    const el=document.getElementById('builds-section');
+    if(el)el.scrollIntoView({behavior:'smooth'});
+  },50);
+}
+function switchImg(mainId,src,thumbEl){
+  document.getElementById(mainId).src=src;
+  thumbEl.parentElement.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
+  thumbEl.classList.add('active');
+}
+</script>
+</body>
+</html>
