@@ -11,8 +11,6 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'DM Sans',sans-serif;color:var(--text-primary);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(27,42,74,.06)}
 .nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
 .nav-logo img{height:36px;width:auto}
@@ -24,8 +22,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 48px;display:fl
 .nav-cta{background:var(--navy)!important;color:white!important;padding:10px 22px!important;border-radius:var(--radius-sm)!important;font-weight:600!important;font-size:13px!important;letter-spacing:.3px;transition:background .2s!important}
 .nav-cta:hover{background:var(--navy-light)!important}
 .nav-mobile-toggle{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:var(--navy)}
-
-/* HERO */
 .hero{padding:140px 48px 80px;max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:60px}
 .hero-content{max-width:500px;flex-shrink:0}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--off-white);border:1px solid var(--border);padding:6px 14px;border-radius:100px;margin-bottom:24px;font-size:13px;font-weight:500;color:var(--text-secondary)}
@@ -41,35 +37,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 48px;display:fl
 .btn-secondary:hover{border-color:var(--navy);color:var(--navy)}
 .hero-image{flex:1;max-width:520px;border-radius:var(--radius-lg);overflow:hidden}
 .hero-image img{width:100%;height:auto;display:block;border-radius:var(--radius-lg)}
-
-/* TRUST BAR */
 .trust-bar{padding:36px 48px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--off-white)}
 .trust-bar-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
 .trust-item{display:flex;align-items:center;gap:12px}
 .trust-icon{width:42px;height:42px;background:white;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px}
 .trust-text h4{font-size:14px;font-weight:600;color:var(--navy)}
 .trust-text p{font-size:12px;color:var(--text-light);margin-top:1px}
-
-/* SECTIONS */
 section{padding:90px 48px}
 .section-inner{max-width:1200px;margin:0 auto}
 .section-label{font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:10px}
 .section-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.8px;color:var(--navy);margin-bottom:14px}
 .section-subtitle{font-size:16px;line-height:1.7;color:var(--text-secondary);max-width:540px;margin-bottom:44px}
-
-/* PRODUCT CARDS */
 .builds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
 .build-card{background:white;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;transition:all .25s;cursor:pointer}
 .build-card:hover{border-color:var(--accent);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
 .build-card-gallery{position:relative;width:100%;height:280px;overflow:hidden;background:#0a0a0a}
-.build-card-gallery img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
-.build-card-gallery .gallery-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
-.build-card-gallery .gallery-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .2s}
-.build-card-gallery .gallery-dot.active{background:white}
-.build-card-gallery .gallery-nav{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;background:rgba(0,0,0,.5);border:none;border-radius:50%;color:white;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
-.build-card:hover .gallery-nav{opacity:1}
-.gallery-nav.prev{left:8px}
-.gallery-nav.next{right:8px}
+.build-card-gallery img{width:100%;height:100%;object-fit:cover}
 .build-card-body{padding:24px}
 .build-card-tag{display:inline-block;padding:4px 10px;background:var(--off-white);border-radius:100px;font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
 .build-card-body h3{font-family:'Outfit',sans-serif;font-weight:700;font-size:20px;color:var(--navy);margin-bottom:6px}
@@ -82,23 +65,17 @@ section{padding:90px 48px}
 .build-condition{font-size:11px;color:var(--text-light);margin-top:2px}
 .build-buy-btn{background:var(--navy);color:white;border:none;padding:11px 24px;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
 .build-buy-btn:hover{background:var(--navy-light)}
-
-/* HOW IT WORKS */
 .how-section{background:var(--off-white)}
 .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1200px;margin:0 auto}
 .how-card{text-align:center}
 .how-number{width:48px;height:48px;margin:0 auto 14px;background:var(--navy);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:18px}
 .how-card h3{font-family:'Outfit',sans-serif;font-weight:600;font-size:16px;color:var(--navy);margin-bottom:8px}
 .how-card p{font-size:14px;line-height:1.6;color:var(--text-secondary)}
-
-/* WHY US */
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
 .why-card{padding:28px;background:var(--off-white);border-radius:var(--radius-md);border:1px solid var(--border)}
 .why-card-icon{font-size:26px;margin-bottom:14px}
 .why-card h3{font-family:'Outfit',sans-serif;font-weight:600;font-size:16px;color:var(--navy);margin-bottom:8px}
 .why-card p{font-size:14px;line-height:1.65;color:var(--text-secondary)}
-
-/* ABOUT */
 .about-section{background:var(--navy-deep);color:white}
 .about-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:60px}
 .about-content{max-width:540px}
@@ -110,8 +87,6 @@ section{padding:90px 48px}
 .about-stat p{font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
 .about-image{flex:1;border-radius:var(--radius-lg);overflow:hidden;max-width:460px}
 .about-image img{width:100%;height:auto;display:block}
-
-/* FAQ */
 .faq-section{background:var(--off-white)}
 .faq-list{max-width:700px;margin:0 auto}
 .faq-item{background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:22px 26px;margin-bottom:10px;cursor:pointer;transition:border-color .2s}
@@ -122,8 +97,6 @@ section{padding:90px 48px}
 .faq-item.open .faq-arrow{transform:rotate(180deg)}
 .faq-answer{display:none;padding-top:14px;border-top:1px solid var(--border);margin-top:14px;font-size:14px;line-height:1.7;color:var(--text-secondary)}
 .faq-item.open .faq-answer{display:block}
-
-/* FOOTER */
 footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255,.6);border-top:1px solid rgba(255,255,255,.06)}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px}
 .footer-brand p{font-size:13px;line-height:1.6;max-width:260px;margin-top:12px;color:rgba(255,255,255,.4)}
@@ -131,16 +104,13 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 .footer-links a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:9px;transition:color .2s}
 .footer-links a:hover{color:white}
 .footer-bottom{max-width:1200px;margin:36px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.3)}
-
-/* PAGES */
+.page{display:none}.page.active{display:block}
 .page-content{max-width:720px;margin:0 auto;padding:140px 48px 80px}
 .page-content h1{font-family:'Outfit',sans-serif;font-weight:700;font-size:32px;color:var(--navy);margin-bottom:8px}
 .page-content .updated{font-size:13px;color:var(--text-light);margin-bottom:32px}
 .page-content h2{font-family:'Outfit',sans-serif;font-weight:600;font-size:20px;color:var(--navy);margin:28px 0 10px}
 .page-content p,.page-content li{font-size:15px;line-height:1.8;color:var(--text-secondary);margin-bottom:10px}
 .page-content ul{padding-left:20px;margin-bottom:14px}
-
-/* PRODUCT DETAIL */
 .product-detail{max-width:1100px;margin:0 auto;padding:130px 48px 80px;display:flex;gap:48px}
 .product-gallery{flex:1;max-width:520px}
 .product-gallery .main-img{width:100%;border-radius:var(--radius-md);overflow:hidden;background:#0a0a0a;margin-bottom:12px}
@@ -161,17 +131,9 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 .spec-table td:first-child{font-weight:600;color:var(--navy);width:140px}
 .spec-table td:last-child{color:var(--text-secondary)}
 .product-info .buy-section{margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
-.product-info .buy-section .btn-primary{width:100%;text-align:center;font-size:16px;padding:16px}
-.product-info .buy-section p{font-size:13px;color:var(--text-light);margin-top:10px;text-align:center}
 .product-info .includes{margin-top:24px}
 .product-info .includes h3{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px}
 .product-info .includes li{font-size:13px;color:var(--text-secondary);margin-bottom:4px}
-
-/* NAVIGATION SYSTEM */
-.page{display:none}
-.page.active{display:block}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:14px 20px}
   .nav-links{display:none}
@@ -198,8 +160,6 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
   <div class="nav-logo" onclick="showPage('home')">
     <img src="images/logo.png" alt="The Good Build">
@@ -215,10 +175,7 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   </ul>
 </nav>
 
-<!-- ==================== HOME PAGE ==================== -->
 <div id="home" class="page active">
-
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-badge"><div class="hero-badge-dot"></div>Builds available now</div>
@@ -230,11 +187,9 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
     </div>
   </div>
   <div class="hero-image">
-    <img src="images/pc2_hero.jpg" alt="Custom gaming PC by The Good Build">
+    <img src="images/pc1_hero.jpg" alt="Custom gaming PC by The Good Build">
   </div>
 </section>
-
-<!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
     <div class="trust-item"><div class="trust-icon">&#128295;</div><div class="trust-text"><h4>500+ Builds</h4><p>Proven track record</p></div></div>
@@ -243,8 +198,6 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
     <div class="trust-item"><div class="trust-icon">&#128666;</div><div class="trust-text"><h4>Pickup or Ship</h4><p>Corona, CA + nationwide</p></div></div>
   </div>
 </div>
-
-<!-- BUILDS -->
 <section id="builds-section">
   <div class="section-inner">
     <div class="section-label">Available Now</div>
@@ -252,76 +205,88 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
     <div class="section-subtitle">Each system is fully assembled, stress-tested, and loaded with a fresh Windows install. Pick it up locally or have it shipped.</div>
   </div>
   <div class="builds-grid">
-
-    <!-- PC 1: The Ember -->
     <div class="build-card" onclick="showPage('product-1')">
       <div class="build-card-gallery">
-        <img src="images/pc1_hero.jpg" alt="The Ember - RTX 4070 Ti Gaming PC">
+        <img src="images/pc1_hero.jpg" alt="The Ember">
       </div>
       <div class="build-card-body">
         <div class="build-card-tag">High Performance</div>
         <h3>The Ember</h3>
         <div class="tagline">Ryzen 7 7700X + RTX 4070 Ti — ready for 1440p and beyond</div>
         <div class="specs-grid">
-          <div class="spec-item"><span class="spec-label">CPU</span> Ryzen 7 7700X</div>
-          <div class="spec-item"><span class="spec-label">GPU</span> RTX 4070 Ti</div>
-          <div class="spec-item"><span class="spec-label">RAM</span> 32GB DDR5</div>
-          <div class="spec-item"><span class="spec-label">Storage</span> 2TB NVMe</div>
+          <div class="spec-item"><span class="spec-label">CPU</span> AMD Ryzen 7 7700X</div>
+          <div class="spec-item"><span class="spec-label">GPU</span> NVIDIA RTX 4070 Ti — ASUS TUF Gaming</div>
+          <div class="spec-item"><span class="spec-label">RAM</span> 32GB (2x16GB) G.Skill Ripjaws DDR5 5600MHz CL36</div>
+          <div class="spec-item"><span class="spec-label">Storage</span> 2TB Teamgroup M.2 NVMe SSD</div>
         </div>
         <div class="build-card-footer">
-          <div><div class="build-price">$1,500</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
+          <div><div class="build-price">$1500</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
           <button class="build-buy-btn">View Build</button>
         </div>
       </div>
     </div>
-
-    <!-- PC 2: The Frost -->
     <div class="build-card" onclick="showPage('product-2')">
       <div class="build-card-gallery">
-        <img src="images/pc2_hero.jpg" alt="The Frost - i7-13700K Gaming PC">
+        <img src="images/pc2_hero.jpg" alt="The Frost">
       </div>
       <div class="build-card-body">
         <div class="build-card-tag">High Performance</div>
         <h3>The Frost</h3>
         <div class="tagline">i7-13700K + RTX 4070 Ti — clean white build, serious power</div>
         <div class="specs-grid">
-          <div class="spec-item"><span class="spec-label">CPU</span> i7-13700K</div>
-          <div class="spec-item"><span class="spec-label">GPU</span> RTX 4070 Ti</div>
-          <div class="spec-item"><span class="spec-label">RAM</span> 32GB DDR5</div>
-          <div class="spec-item"><span class="spec-label">Storage</span> 1TB NVMe</div>
+          <div class="spec-item"><span class="spec-label">CPU</span> Intel Core i7-13700K</div>
+          <div class="spec-item"><span class="spec-label">GPU</span> NVIDIA RTX 4070 Ti — ASUS TUF Gaming</div>
+          <div class="spec-item"><span class="spec-label">RAM</span> 32GB (2x16GB) TEAMGROUP DDR5 5200MHz CL40</div>
+          <div class="spec-item"><span class="spec-label">Storage</span> Samsung 970 EVO Plus 1TB M.2 NVMe SSD</div>
         </div>
         <div class="build-card-footer">
-          <div><div class="build-price">$1,500</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
+          <div><div class="build-price">$1500</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
           <button class="build-buy-btn">View Build</button>
         </div>
       </div>
     </div>
-
-    <!-- PC 3: The Shadow -->
     <div class="build-card" onclick="showPage('product-3')">
       <div class="build-card-gallery">
-        <img src="images/pc3_hero.jpg" alt="The Shadow - RTX 3080 Gaming PC">
+        <img src="images/pc3_hero.jpg" alt="The Shadow">
       </div>
       <div class="build-card-body">
         <div class="build-card-tag">Mid-Range</div>
         <h3>The Shadow</h3>
         <div class="tagline">i5-12600K + RTX 3080 — 1080p powerhouse at a great price</div>
         <div class="specs-grid">
-          <div class="spec-item"><span class="spec-label">CPU</span> i5-12600K</div>
-          <div class="spec-item"><span class="spec-label">GPU</span> RTX 3080</div>
-          <div class="spec-item"><span class="spec-label">RAM</span> 32GB DDR4</div>
-          <div class="spec-item"><span class="spec-label">Storage</span> 500GB + 1TB</div>
+          <div class="spec-item"><span class="spec-label">CPU</span> Intel Core i5-12600K</div>
+          <div class="spec-item"><span class="spec-label">GPU</span> NVIDIA GeForce RTX 3080</div>
+          <div class="spec-item"><span class="spec-label">RAM</span> 32GB (2x16GB) T-Force DDR4 3200MHz CL16</div>
+          <div class="spec-item"><span class="spec-label">Storage</span> WD Blue 500GB M.2 NVMe SSD + 1TB HDD</div>
         </div>
         <div class="build-card-footer">
-          <div><div class="build-price">$1,000</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
+          <div><div class="build-price">$1000</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
+          <button class="build-buy-btn">View Build</button>
+        </div>
+      </div>
+    </div>
+    <div class="build-card" onclick="showPage('product-4')">
+      <div class="build-card-gallery">
+        <img src="images/" alt="Dummy">
+      </div>
+      <div class="build-card-body">
+        <div class="build-card-tag">High Performance</div>
+        <h3>Dummy</h3>
+        <div class="tagline">This is a test PC</div>
+        <div class="specs-grid">
+          <div class="spec-item"><span class="spec-label">CPU</span> test</div>
+          <div class="spec-item"><span class="spec-label">GPU</span> test</div>
+          <div class="spec-item"><span class="spec-label">RAM</span> t</div>
+          <div class="spec-item"><span class="spec-label">Storage</span> t</div>
+        </div>
+        <div class="build-card-footer">
+          <div><div class="build-price">$1</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>
           <button class="build-buy-btn">View Build</button>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- WHY US -->
 <section>
   <div class="section-inner">
     <div class="section-label">Why Us</div>
@@ -339,14 +304,9 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 </section>
 </div>
 
-<!-- ==================== HOW IT WORKS PAGE ==================== -->
 <div id="how" class="page">
 <section style="padding-top:130px">
-  <div class="section-inner">
-    <div class="section-label">How It Works</div>
-    <div class="section-title">Dead simple.</div>
-    <div class="section-subtitle">No custom order forms. No 6-week wait times. Pick a build, pay, and it's yours.</div>
-  </div>
+  <div class="section-inner"><div class="section-label">How It Works</div><div class="section-title">Dead simple.</div><div class="section-subtitle">No custom order forms. No 6-week wait times. Pick a build, pay, and it's yours.</div></div>
   <div class="how-grid">
     <div class="how-card"><div class="how-number">1</div><h3>Browse</h3><p>Check out what's currently available. Each listing has full specs, photos, and component details.</p></div>
     <div class="how-card"><div class="how-number">2</div><h3>Purchase</h3><p>Buy directly through the site. Secure checkout powered by Shopify. No sketchy DMs required.</p></div>
@@ -364,7 +324,6 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 </section>
 </div>
 
-<!-- ==================== ABOUT PAGE ==================== -->
 <div id="about-page" class="page">
 <section class="about-section" style="padding-top:130px">
   <div class="about-inner">
@@ -385,7 +344,6 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 </section>
 </div>
 
-<!-- ==================== FAQ PAGE ==================== -->
 <div id="faq-page" class="page">
 <section class="faq-section" style="padding-top:130px;min-height:100vh">
   <div class="section-inner"><div class="section-label">FAQ</div><div class="section-title">Common questions</div><div class="section-subtitle">If yours isn't here, reach out — we respond fast.</div></div>
@@ -400,7 +358,6 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 </section>
 </div>
 
-<!-- ==================== RETURN POLICY PAGE ==================== -->
 <div id="policy" class="page">
 <div class="page-content">
   <h1>Return &amp; Warranty Policy</h1>
@@ -423,6 +380,7 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 </div>
 </div>
 
+
 <!-- ==================== PRODUCT 1: THE EMBER ==================== -->
 <div id="product-1" class="page">
 <div class="product-detail">
@@ -437,9 +395,9 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   <div class="product-info">
     <div class="build-card-tag">High Performance</div>
     <h1>The Ember</h1>
-    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">A 1440p beast wrapped in a clean Corsair 4000D with red-accent RGB. Powered by AMD's Ryzen 7 7700X and NVIDIA's RTX 4070 Ti — this thing eats modern titles for breakfast.</p>
+    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">A 1440p beast wrapped in a clean Corsair 4000D with red-accent RGB. Powered by AMD Ryzen 7 7700X and NVIDIA RTX 4070 Ti — this thing eats modern titles for breakfast.</p>
     <div class="price-row">
-      <div class="build-price">$1,500</div>
+      <div class="build-price">$1500</div>
       <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
     </div>
     <table class="spec-table">
@@ -464,7 +422,6 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   </div>
 </div>
 </div>
-
 <!-- ==================== PRODUCT 2: THE FROST ==================== -->
 <div id="product-2" class="page">
 <div class="product-detail">
@@ -479,9 +436,9 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   <div class="product-info">
     <div class="build-card-tag">High Performance</div>
     <h1>The Frost</h1>
-    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">A stunning all-white Lian Li build with Intel's i7-13700K and an RTX 4070 Ti. 360mm AIO cooling keeps everything frosty under load. Looks as good as it performs.</p>
+    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">A stunning all-white Lian Li build with Intel i7-13700K and an RTX 4070 Ti. 360mm AIO cooling keeps everything frosty under load. Looks as good as it performs.</p>
     <div class="price-row">
-      <div class="build-price">$1,500</div>
+      <div class="build-price">$1500</div>
       <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
     </div>
     <table class="spec-table">
@@ -506,7 +463,6 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   </div>
 </div>
 </div>
-
 <!-- ==================== PRODUCT 3: THE SHADOW ==================== -->
 <div id="product-3" class="page">
 <div class="product-detail">
@@ -523,7 +479,7 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
     <h1>The Shadow</h1>
     <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">Stealthy Corsair 4000D build with an i5-12600K and RTX 3080 — a proven 1080p powerhouse that still crushes modern titles. Incredible value for the performance.</p>
     <div class="price-row">
-      <div class="build-price">$1,000</div>
+      <div class="build-price">$1000</div>
       <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
     </div>
     <table class="spec-table">
@@ -549,8 +505,48 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   </div>
 </div>
 </div>
+<!-- ==================== PRODUCT 4: DUMMY ==================== -->
+<div id="product-4" class="page">
+<div class="product-detail">
+  <div class="product-gallery">
+    <div class="main-img"><img id="p4-main" src="images/" alt="Dummy"></div>
+    <div class="thumb-row">
+      <div class="thumb active" onclick="switchImg('p4-main','images/',this)"><img src="images/"></div>
+      <div class="thumb" onclick="switchImg('p4-main','images/',this)"><img src="images/"></div>
+      <div class="thumb" onclick="switchImg('p4-main','images/',this)"><img src="images/"></div>
+    </div>
+  </div>
+  <div class="product-info">
+    <div class="build-card-tag">High Performance</div>
+    <h1>Dummy</h1>
+    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">Test</p>
+    <div class="price-row">
+      <div class="build-price">$1</div>
+      <span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>
+    </div>
+    <table class="spec-table">
+      <tr><td>CPU</td><td>test</td></tr>
+      <tr><td>GPU</td><td>test</td></tr>
+      <tr><td>RAM</td><td>t</td></tr>
+      <tr><td>Storage</td><td>t</td></tr>
+      <tr><td>Motherboard</td><td>t</td></tr>
+      <tr><td>PSU</td><td>t</td></tr>
+      <tr><td>Case</td><td>t</td></tr>
+      <tr><td>Cooling</td><td>t</td></tr>
+      <tr><td>OS</td><td>t</td></tr>
+    </table>
+    <div class="includes">
+      <h3>What's included:</h3>
+      <ul><li>Fully assembled &amp; stress-tested gaming PC</li><li>Power cable</li><li>Clean Windows 11 Pro with latest drivers</li><li>7-day return window + ongoing tech support</li><li>test</li></ul>
+    </div>
+    <div class="buy-section">
+      <div id='product-component-1771318637647'></div>
+      <p style="font-size:13px;color:var(--text-light);margin-top:10px;text-align:center">Free local pickup in Corona, CA &middot; Nationwide shipping available</p>
+    </div>
+  </div>
+</div>
+</div>
 
-<!-- FOOTER (always visible) -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -573,10 +569,7 @@ function showPage(id){
 }
 function scrollToBuilds(){
   showPage('home');
-  setTimeout(()=>{
-    const el=document.getElementById('builds-section');
-    if(el)el.scrollIntoView({behavior:'smooth'});
-  },50);
+  setTimeout(()=>{var el=document.getElementById('builds-section');if(el)el.scrollIntoView({behavior:'smooth'});},50);
 }
 function switchImg(mainId,src,thumbEl){
   document.getElementById(mainId).src=src;
@@ -584,20 +577,13 @@ function switchImg(mainId,src,thumbEl){
   thumbEl.classList.add('active');
 }
 </script>
-<!-- SHOPIFY BUY BUTTON SCRIPTS -->
 <script type="text/javascript">
 /*<![CDATA[*/
 (function () {
   var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
   if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) {
-      ShopifyBuyInit();
-    } else {
-      loadScript();
-    }
-  } else {
-    loadScript();
-  }
+    if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
+  } else { loadScript(); }
   function loadScript() {
     var script = document.createElement('script');
     script.async = true;
@@ -610,98 +596,14 @@ function switchImg(mainId,src,thumbEl){
       domain: 'h9badh-1p.myshopify.com',
       storefrontAccessToken: 'd59f5d8d4b0d229f23df6fc9776e1cda',
     });
-
     var buttonOpts = {
-      "product": {
-        "contents": {
-          "img": false,
-          "title": false,
-          "price": false
-        },
-        "styles": {
-          "product": {
-            "@media (min-width: 601px)": {
-              "max-width": "100%",
-              "margin-left": "0",
-              "margin-bottom": "0"
-            }
-          },
-          "button": {
-            "background-color": "#1b2a4a",
-            "font-family": "'DM Sans', sans-serif",
-            "font-size": "16px",
-            "font-weight": "600",
-            "padding-top": "16px",
-            "padding-bottom": "16px",
-            "width": "100%",
-            "border-radius": "8px",
-            ":hover": { "background-color": "#2A3F6B" },
-            ":focus": { "background-color": "#2A3F6B" }
-          }
-        },
-        "text": {
-          "button": "Add to Cart"
-        }
-      },
-      "productSet": {
-        "styles": {
-          "products": {
-            "@media (min-width: 601px)": { "margin-left": "-20px" }
-          }
-        }
-      },
-      "modalProduct": {
-        "contents": {
-          "img": false,
-          "imgWithCarousel": false,
-          "button": false,
-          "buttonWithQuantity": true
-        },
-        "styles": {
-          "product": {
-            "@media (min-width: 601px)": {
-              "max-width": "100%",
-              "margin-left": "0px",
-              "margin-bottom": "0px"
-            }
-          },
-          "button": {
-            "background-color": "#1b2a4a",
-            "font-family": "'DM Sans', sans-serif",
-            "font-size": "16px",
-            "font-weight": "600",
-            "border-radius": "8px",
-            ":hover": { "background-color": "#2A3F6B" },
-            ":focus": { "background-color": "#2A3F6B" }
-          }
-        },
-        "text": { "button": "Add to cart" }
-      },
-      "option": {},
-      "cart": {
-        "styles": {
-          "button": {
-            "background-color": "#1b2a4a",
-            "font-family": "'DM Sans', sans-serif",
-            "font-weight": "600",
-            "border-radius": "8px",
-            ":hover": { "background-color": "#2A3F6B" },
-            ":focus": { "background-color": "#2A3F6B" }
-          }
-        },
-        "text": { "total": "Subtotal", "button": "Checkout" }
-      },
-      "toggle": {
-        "styles": {
-          "toggle": {
-            "background-color": "#1b2a4a",
-            ":hover": { "background-color": "#2A3F6B" },
-            ":focus": { "background-color": "#2A3F6B" }
-          }
-        }
-      }
+      "product":{"contents":{"img":false,"title":false,"price":false},"styles":{"product":{"@media (min-width: 601px)":{"max-width":"100%","margin-left":"0","margin-bottom":"0"}},"button":{"background-color":"#1b2a4a","font-family":"'DM Sans', sans-serif","font-size":"16px","font-weight":"600","padding-top":"16px","padding-bottom":"16px","width":"100%","border-radius":"8px",":hover":{"background-color":"#2A3F6B"},":focus":{"background-color":"#2A3F6B"}}},"text":{"button":"Add to Cart"}},
+      "productSet":{"styles":{"products":{"@media (min-width: 601px)":{"margin-left":"-20px"}}}},
+      "modalProduct":{"contents":{"img":false,"imgWithCarousel":false,"button":false,"buttonWithQuantity":true},"styles":{"product":{"@media (min-width: 601px)":{"max-width":"100%","margin-left":"0px","margin-bottom":"0px"}},"button":{"background-color":"#1b2a4a","font-family":"'DM Sans', sans-serif","font-size":"16px","font-weight":"600","border-radius":"8px",":hover":{"background-color":"#2A3F6B"},":focus":{"background-color":"#2A3F6B"}}},"text":{"button":"Add to cart"}},
+      "option":{},
+      "cart":{"styles":{"button":{"background-color":"#1b2a4a","font-family":"'DM Sans', sans-serif","font-weight":"600","border-radius":"8px",":hover":{"background-color":"#2A3F6B"},":focus":{"background-color":"#2A3F6B"}}},"text":{"total":"Subtotal","button":"Checkout"}},
+      "toggle":{"styles":{"toggle":{"background-color":"#1b2a4a",":hover":{"background-color":"#2A3F6B"},":focus":{"background-color":"#2A3F6B"}}}}
     };
-
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       // The Ember
       ui.createComponent('product', {
@@ -724,17 +626,16 @@ function switchImg(mainId,src,thumbEl){
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: buttonOpts
       });
-
-      // Force reflow to fix Buy Button rendering issue
-      setTimeout(function() {
-        window.dispatchEvent(new Event('resize'));
-      }, 1000);
-      setTimeout(function() {
-        window.dispatchEvent(new Event('resize'));
-      }, 2500);
-      setTimeout(function() {
-        window.dispatchEvent(new Event('resize'));
-      }, 5000);
+      // Dummy
+      ui.createComponent('product', {
+        id: '10602882728246',
+        node: document.getElementById('product-component-1771318637647'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: buttonOpts
+      });
+      setTimeout(function(){window.dispatchEvent(new Event('resize'));},1000);
+      setTimeout(function(){window.dispatchEvent(new Event('resize'));},2500);
+      setTimeout(function(){window.dispatchEvent(new Event('resize'));},5000);
     });
   }
 })();
