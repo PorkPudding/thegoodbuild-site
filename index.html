@@ -131,6 +131,8 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 .spec-table td:first-child{font-weight:600;color:var(--navy);width:140px}
 .spec-table td:last-child{color:var(--text-secondary)}
 .product-info .buy-section{margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
+.warranty-badge{display:inline-flex;align-items:center;gap:6px;background:#EAF6EE;border:1px solid #B8E0C4;color:#2D7A4A;padding:6px 12px;border-radius:100px;font-size:12px;font-weight:600;margin-bottom:20px}
+.warranty-badge svg{width:14px;height:14px;flex-shrink:0}
 .product-info .includes{margin-top:24px}
 .product-info .includes h3{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px}
 .product-info .includes li{font-size:13px;color:var(--text-secondary);margin-bottom:4px}
@@ -162,6 +164,20 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   .footer-bottom{flex-direction:column;gap:8px}
 }
 </style>
+<!-- ============================================================
+     GOOGLE ANALYTICS — Add your GA4 measurement ID here
+     1. Go to analytics.google.com and create a GA4 property
+     2. Replace G-XXXXXXXXXX below with your Measurement ID
+     3. Uncomment the two script tags
+     ============================================================
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
 </head>
 <body>
 
@@ -198,8 +214,8 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   <div class="trust-bar-inner">
     <div class="trust-item"><div class="trust-icon">&#128295;</div><div class="trust-text"><h4>500+ Builds</h4><p>Proven track record</p></div></div>
     <div class="trust-item"><div class="trust-icon">&#128170;</div><div class="trust-text"><h4>Stress Tested</h4><p>Every single system</p></div></div>
-    <div class="trust-item"><div class="trust-icon">&#128274;</div><div class="trust-text"><h4>7-Day Returns</h4><p>No questions asked</p></div></div>
-    <div class="trust-item"><div class="trust-icon">&#128666;</div><div class="trust-text"><h4>Pickup or Ship</h4><p>Corona, CA + nationwide</p></div></div>
+    <div class="trust-item"><div class="trust-icon">&#128274;</div><div class="trust-text"><h4>30-Day Returns</h4><p>Full refund, no hassle</p></div></div>
+    <div class="trust-item"><div class="trust-icon">&#128666;</div><div class="trust-text"><h4>Ships Nationwide</h4><p>Fully insured, double-boxed</p></div></div>
   </div>
 </div>
 <section id="builds-section">
@@ -276,12 +292,12 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 <section class="faq-section" style="padding-top:130px;min-height:100vh">
   <div class="section-inner"><div class="section-label">FAQ</div><div class="section-title">Common questions</div><div class="section-subtitle">If yours isn't here, reach out &mdash; we respond fast.</div></div>
   <div class="faq-list">
-    <div class="faq-item open"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What's your return policy?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">We offer a 7-day return window from the date of delivery or pickup. If something's wrong, reach out within 7 days and we'll make it right &mdash; full refund or exchange. After the return window, we provide ongoing tech support. See our <a href="#" onclick="showPage('policy');return false" style="color:var(--accent)">full Return &amp; Warranty Policy</a>.</div></div>
+    <div class="faq-item open"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What's your return policy?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">We offer a 30-day return window from the date of delivery or pickup. If something's wrong, reach out within 30 days and we'll make it right &mdash; full refund. Defective or damaged units ship back on us. Change of mind returns are accepted with buyer covering return shipping. See our <a href="#" onclick="showPage('policy');return false" style="color:var(--accent)">full Return &amp; Warranty Policy</a>.</div></div>
     <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Do you ship nationwide?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Yes &mdash; anywhere in the continental US. Every shipped PC is foam-braced and double-boxed. Shipping runs roughly $75&ndash;$120 depending on location. Free local pickup in Corona, CA.</div></div>
     <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Are these new or used parts?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Our builds use refurbished components &mdash; previously used parts that have been fully disassembled, cleaned, tested, and stress-tested. Each listing clearly states component details. We only use parts that meet our quality standards.</div></div>
     <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What comes installed?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Every build ships with a clean Windows 11 Pro installation with the latest drivers and updates. No bloatware, no trial software. Just a fresh OS ready to go.</div></div>
     <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Can I request a custom build?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Not at this time &mdash; we sell pre-built, ready-to-ship systems. If you have something specific in mind, reach out and we'll let you know if we can make it happen.</div></div>
-    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Do you offer a warranty?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">7-day full return/exchange window on every build. Beyond that, free ongoing tech support. Individual components may carry their own manufacturer warranty &mdash; we'll help you navigate those claims if needed.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Do you offer a warranty?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">90-day hardware warranty on every build covering parts and labor. Plus free ongoing tech support. Individual components may carry their own manufacturer warranty &mdash; we'll help you navigate those claims if needed.</div></div>
   </div>
 </section>
 </div>
@@ -291,24 +307,46 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 <div class="page-content">
   <h1>Return &amp; Warranty Policy</h1>
   <p class="updated">Last updated: February 2026</p>
-  <p>At The Good Build, we stand behind every system that leaves our bench.</p>
-  <h2>7-Day Return Window</h2>
-  <p>You have 7 calendar days from delivery or pickup to return your PC for a full refund or exchange.</p>
-  <ul><li>System must be in the same condition received &mdash; no physical damage or unauthorized modifications.</li><li>All original accessories, cables, and packaging must be included.</li><li>Contact us within 7 days to initiate.</li></ul>
-  <p>For shipped orders, return shipping is the buyer's responsibility unless the return is due to a defect on our end.</p>
-  <h2>Defective or Damaged on Arrival</h2>
-  <p>If your PC arrives damaged or defective, contact us immediately. We'll cover return shipping and repair, replace, or fully refund at your choice. Please photograph any shipping damage before opening.</p>
-  <h2>Ongoing Tech Support</h2>
-  <p>After the 7-day window, we don't disappear. Free ongoing technical support for every system &mdash; driver issues, component troubleshooting, upgrade advice. We're here to help.</p>
-  <h2>Manufacturer Warranties</h2>
-  <p>Many components carry their own manufacturer warranty. We'll help you identify coverage and navigate claims if needed.</p>
-  <h2>What's Not Covered</h2>
-  <ul><li>Physical damage after delivery (drops, spills, power surges)</li><li>Software issues unrelated to our installation</li><li>Modifications by someone other than The Good Build</li><li>Normal wear and tear</li></ul>
-  <h2>Contact</h2>
-  <p>For returns, warranty, or support: email <strong>support@thegoodbuild.shop</strong></p>
-</div>
-</div>
+  <p>At TheGoodBuild LLC, we stand behind every system that leaves our bench. Here's exactly what you're covered for.</p>
 
+  <h2>30-Day Return Window</h2>
+  <p>You have 30 days from the date of delivery to initiate a return.</p>
+  <ul>
+    <li>System must be returned in the same condition received &mdash; no physical damage, no missing components.</li>
+    <li>All original packaging must be used for return shipping.</li>
+    <li>Contact us within 30 days to initiate &mdash; do not ship anything back without authorization.</li>
+  </ul>
+  <p><strong>Defective or damaged?</strong> We cover return shipping both ways &mdash; full refund upon inspection.</p>
+  <p><strong>Change of mind?</strong> We still accept the return &mdash; buyer covers return shipping, full refund issued upon inspection.</p>
+
+  <h2>90-Day Hardware Warranty</h2>
+  <p>Every build includes a 90-day hardware warranty covering parts and labor on manufacturer defects and hardware failures under normal use.</p>
+  <ul>
+    <li>Coverage begins on the date of delivery.</li>
+    <li>Covers: component failure, DOA issues, intermittent hardware faults (crashes, BSODs, artifacting).</li>
+    <li>If a warranty issue arises, contact us first &mdash; most issues can be diagnosed remotely before any shipping is needed.</li>
+    <li>Confirmed warranty repairs ship back to us on our dime.</li>
+  </ul>
+
+  <h2>What's Not Covered</h2>
+  <ul>
+    <li>Physical damage caused by the buyer &mdash; drops, liquid spills, bent pins, broken components.</li>
+    <li>Software issues caused by the buyer &mdash; viruses, corrupted OS, driver conflicts from third-party installs.</li>
+    <li>Damage from improper use &mdash; overclocking, unauthorized component removal, inadequate ventilation.</li>
+    <li>Damage from external factors &mdash; power surges, lightning, flooding.</li>
+    <li>Parts failure outside the 90-day warranty window.</li>
+  </ul>
+
+  <h2>Ongoing Tech Support</h2>
+  <p>After the warranty window, we don't disappear. Free ongoing technical support for every system &mdash; driver issues, upgrade advice, troubleshooting. You're talking to the person who built your PC.</p>
+
+  <h2>Manufacturer Warranties</h2>
+  <p>Many components carry their own manufacturer warranty that may extend beyond our 90-day coverage. We'll help you identify and navigate those claims if needed.</p>
+
+  <h2>Contact</h2>
+  <p>For returns, warranty, or support: <strong><a href="mailto:support@thegoodbuild.shop" style="color:var(--accent)">support@thegoodbuild.shop</a></strong><br>We respond within 1 business day.</p>
+</div>
+</div>
 <!-- DYNAMIC PRODUCT DETAIL PAGE (populated by JS) -->
 <div id="product-detail-page" class="page"></div>
 
@@ -320,12 +358,12 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
     </div>
     <div class="footer-links"><h4>Shop</h4><a href="#" onclick="showPage('home');return false">Available Builds</a><a href="#" onclick="showPage('how');return false">How It Works</a></div>
     <div class="footer-links"><h4>Info</h4><a href="#" onclick="showPage('about-page');return false">About</a><a href="#" onclick="showPage('faq-page');return false">FAQ</a><a href="#" onclick="showPage('policy');return false">Return Policy</a></div>
-    <div class="footer-links"><h4>Connect</h4><a href="#">Instagram</a><a href="#">Facebook</a><a href="mailto:support@thegoodbuild.shop">Email Us</a></div>
+    <div class="footer-links"><h4>Connect</h4><a href="https://www.instagram.com/romans_goodbuild" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@thegoodbuild" target="_blank" rel="noopener">TikTok</a><a href="mailto:support@thegoodbuild.shop">Email Us</a></div>
   </div>
   <div class="footer-bottom"><span>&copy; 2026 The Good Build. All rights reserved.</span><span>Corona, California</span></div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 // ============================================================
 // CONFIG
@@ -564,6 +602,10 @@ function showProductDetail(idx) {
           '<div class="build-price">$' + price.toLocaleString() + '</div>' +
           '<span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>' +
         '</div>' +
+        '<div class="warranty-badge">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' +
+          '90-Day Hardware Warranty' +
+        '</div>' +
         '<table class="spec-table">' +
           parsed.specs.map(function(s) {
             return '<tr><td>' + esc(s.label) + '</td><td>' + esc(s.value) + '</td></tr>';
@@ -575,7 +617,7 @@ function showProductDetail(idx) {
             '<li>Fully assembled &amp; stress-tested gaming PC</li>' +
             '<li>Power cable</li>' +
             '<li>Clean Windows 11 Pro with latest drivers</li>' +
-            '<li>7-day return window + ongoing tech support</li>' +
+            '<li>30-day return window + 90-day hardware warranty</li>' +
             parsed.extras.map(function(e) { return '<li>' + esc(e) + '</li>'; }).join('') +
           '</ul>' +
         '</div>' +
@@ -742,16 +784,4 @@ function updateGridColumns() {
 window.addEventListener('resize', updateGridColumns);
 
 
-// ============================================================
-// INIT â€” Load products on page load
-// ============================================================
-async function init() {
-  allProducts = await fetchProducts();
-  renderProductCards(allProducts);
-}
-
-init();
-
-</script>
-</body>
-</html>
+// =====================
