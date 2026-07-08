@@ -366,6 +366,12 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
       <select id="inq-build"><option value="">General question / future build</option></select>
       <label for="inq-msg">Message</label>
       <textarea id="inq-msg" rows="5" placeholder="What are you looking for? Budget, games you play, timeline &mdash; whatever helps."></textarea>
+      <!-- Honeypot: hidden from humans; bots that auto-fill every field trip it.
+           The server silently swallows submissions where this is non-empty. -->
+      <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+        <label for="inq-company">Company</label>
+        <input id="inq-company" type="text" name="company" tabindex="-1" autocomplete="off">
+      </div>
       <button id="inq-submit" type="submit" class="btn-primary" style="width:100%">Send Message</button>
       <div id="inq-status" class="form-status"></div>
     </form>
@@ -403,8 +409,8 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 // Later this points at the dashboard endpoint (e.g.
 // https://thegoodbuild.vercel.app/api/public-listings)
 var CONFIG = {
-  LISTINGS_URL: '',
-  INQUIRY_ENDPOINT: '',   // future dashboard /api/inquiry; empty = mailto fallback
+  LISTINGS_URL: 'https://thegoodbuild.vercel.app/api/public-listings',
+  INQUIRY_ENDPOINT: 'https://thegoodbuild.vercel.app/api/inquiry',   // falls back to mailto on any failure
   CONTACT_EMAIL: 'support@thegoodbuild.shop'
 };
 
@@ -621,7 +627,8 @@ async function submitInquiry(ev) {
       var resp = await fetch(CONFIG.INQUIRY_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, contact: contact, build: build, message: msg })
+        body: JSON.stringify({ name: name, contact: contact, build: build, message: msg,
+                               company: (document.getElementById('inq-company') || { value: '' }).value })
       });
       if (!resp.ok) throw new Error('HTTP ' + resp.status);
       status.textContent = "Got it — I'll get back to you fast. Usually same day.";

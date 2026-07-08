@@ -34,19 +34,30 @@ reach out. Concretely:
 
 Build listings are data, not markup:
 
-- `builds.json` — current source of truth for listings. Each build:
+- **LIVE (since 2026-07-08): the dashboard is the source of truth.**
+  `CONFIG.LISTINGS_URL` in `index.html` points at
+  `https://thegoodbuild.vercel.app/api/public-listings` — a public read-only
+  endpoint in Roman's private `PorkPudding/thegoodbuild-dashboard` repo (Vite
+  PWA on Vercel, Google Sheet backend). It returns JSON in exactly the
+  `builds.json` shape: `available` cards are builds Roman explicitly published
+  to the "Website" target in his dashboard's Publish modal; `sold` cards come
+  from his curated portfolio (newest-first, capped server-side at 12). Photo
+  URLs are absolute (Vercel Blob). The feed is CDN-cached ~5 min
+  (s-maxage=300, SWR 600), so dashboard changes appear within minutes.
+- `builds.json` stays in this repo as the shape's documentation AND the
+  automatic fallback: the renderer falls back to it if the endpoint is
+  unreachable. Don't delete it. Each build:
   `id, title, tagline, description, tier, price, status ("available"|"sold"),
-  images[], specs[{label,value}], extras[]`. Photos live in `images/builds/`.
-- `index.html` fetches `builds.json` and renders cards; `status:"available"`
-  builds show under "Available now", `status:"sold"` under recent builds
-  (social proof).
-- **Planned**: Roman has a separate private repo, `PorkPudding/thegoodbuild-dashboard`
-  (Vite PWA on Vercel at thegoodbuild.vercel.app, Google Sheet backend, has a
-  publish workflow). The plan is a public read-only endpoint there
-  (e.g. `/api/public-listings`) returning JSON in the same shape as
-  `builds.json`; the site's `CONFIG.LISTINGS_URL` in `index.html` switches the
-  data source to it. An `/api/inquiry` endpoint may later receive contact-form
-  posts (`CONFIG.INQUIRY_ENDPOINT`); until then the form falls back to mailto.
+  images[], specs[{label,value}], extras[]`.
+- `status:"available"` builds show under "Available now", `status:"sold"`
+  under recent builds (social proof).
+- The contact form POSTs to `CONFIG.INQUIRY_ENDPOINT`
+  (`https://thegoodbuild.vercel.app/api/inquiry`) → lands in an "Inquiries"
+  tab of Roman's dashboard Sheet. On ANY failure (non-2xx, network) the form
+  falls back to the prefilled mailto — never remove that fallback. The form
+  includes a hidden `company` honeypot field (position:absolute off-screen);
+  the server silently swallows submissions where it's non-empty. Keep the
+  field name `company` in sync with the dashboard's inquiry validator.
 
 ## Brand voice
 
