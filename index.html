@@ -3,8 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Good Build &mdash; Custom Gaming PCs</title>
-<meta name="description" content="Hand-built gaming PCs from Corona, California. Assembled with care, stress-tested, and ready to play.">
+<title>The Good Build &mdash; Custom Gaming PCs in Corona, CA</title>
+<meta name="description" content="Hand-built gaming PCs in Corona, California. Assembled with care, stress-tested, and sold locally. Message me about available builds.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "The Good Build",
+  "description": "Hand-built custom gaming PCs, stress-tested and sold locally in Corona, California.",
+  "email": "support@thegoodbuild.shop",
+  "url": "https://thegoodbuild.shop",
+  "address": {"@type": "PostalAddress", "addressLocality": "Corona", "addressRegion": "CA", "addressCountry": "US"},
+  "areaServed": ["Corona CA", "Riverside County CA", "Inland Empire", "Orange County CA"],
+  "sameAs": ["https://www.instagram.com/romans_goodbuild", "https://www.tiktok.com/@thegoodbuild"]
+}
+</script>
+<link rel="icon" type="image/png" href="images/logo.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#1B2A4A;--navy-deep:#0F1B33;--navy-light:#2A3F6B;--white:#FFF;--off-white:#F5F6FA;--cream:#E8EAF0;--accent:#4A9EDE;--accent-hover:#3A8ED0;--text-primary:#1B2A4A;--text-secondary:#5A6A8A;--text-light:#8A96B0;--success:#34C759;--border:#D8DCE8;--shadow-md:0 4px 20px rgba(27,42,74,.08);--shadow-lg:0 8px 40px rgba(27,42,74,.12);--radius-sm:8px;--radius-md:12px;--radius-lg:20px}
@@ -136,7 +150,24 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 .loading-builds{text-align:center;padding:60px 20px;color:var(--text-light);font-size:15px}
 .loading-spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.no-builds{text-align:center;padding:60px 20px;color:var(--text-secondary);font-size:16px}
+.no-builds{text-align:center;padding:60px 20px;color:var(--text-secondary);font-size:16px;grid-column:1/-1}
+.sold-badge{position:absolute;top:14px;right:14px;background:rgba(15,27,51,.85);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:11px;letter-spacing:1.5px;padding:6px 12px;border-radius:100px;backdrop-filter:blur(4px)}
+.build-card.sold .build-price{color:var(--text-light)}
+.sold-note{background:var(--off-white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;font-size:14px;line-height:1.6;color:var(--text-secondary);margin-bottom:14px}
+.contact-card{background:white;border:1px solid var(--border);border-radius:var(--radius-md);padding:32px;box-shadow:var(--shadow-md)}
+.contact-card label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin:16px 0 6px}
+.contact-card label:first-child{margin-top:0}
+.contact-card input,.contact-card select,.contact-card textarea{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;color:var(--text-primary);background:var(--white);transition:border-color .2s}
+.contact-card input:focus,.contact-card select:focus,.contact-card textarea:focus{outline:none;border-color:var(--accent)}
+.contact-card button{margin-top:20px}
+.form-status{font-size:14px;line-height:1.6;margin-top:12px;text-align:center;color:var(--text-secondary)}
+.form-status.success{color:var(--success);font-weight:600}
+.form-status.error{color:#D9534F;font-weight:600}
+.contact-alt{text-align:center;margin-top:28px}
+.contact-alt p{font-size:14px;color:var(--text-light);margin-bottom:10px}
+.contact-alt-links{display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+.contact-alt-links a{font-size:14px;font-weight:500;color:var(--text-secondary);transition:color .2s}
+.contact-alt-links a:hover{color:var(--accent)}
 @media(max-width:900px){
   nav{padding:14px 20px}
   .nav-links{display:none}
@@ -175,7 +206,7 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
     <li><a href="#" onclick="showPage('how');return false">How It Works</a></li>
     <li><a href="#" onclick="showPage('about-page');return false">About</a></li>
     <li><a href="#" onclick="showPage('faq-page');return false">FAQ</a></li>
-    <li><a href="#" onclick="showPage('home');scrollToBuilds();return false" class="nav-cta">SHOP NOW</a></li>
+    <li><a href="#" onclick="showPage('contact');return false" class="nav-cta">GET IN TOUCH</a></li>
   </ul>
 </nav>
 
@@ -183,12 +214,12 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 <div id="home" class="page active">
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-badge"><div class="hero-badge-dot"></div>Builds available now</div>
+    <div class="hero-badge"><div class="hero-badge-dot"></div>Local to Corona, CA</div>
     <h1>Gaming PCs built<br>with <em>care</em>.</h1>
-    <p>Hand-built, stress-tested, and ready to play. Every build from The Good Build is assembled by someone who actually knows what they're doing &mdash; and stands behind every machine that leaves the bench.</p>
+    <p>Hand-built, stress-tested, and ready to play. Every build from The Good Build is assembled by someone who actually knows what they're doing &mdash; and sold face-to-face, right here in Corona, California.</p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="scrollToBuilds()">Browse Builds</button>
-      <button class="btn-secondary" onclick="showPage('how')">How It Works</button>
+      <button class="btn-secondary" onclick="showPage('contact')">Get in Touch</button>
     </div>
   </div>
   <div class="hero-image"><img src="images/logo.png" alt="Custom gaming PC by The Good Build"></div>
@@ -198,18 +229,26 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
     <div class="trust-item"><div class="trust-icon">&#128295;</div><div class="trust-text"><h4>500+ Builds</h4><p>Proven track record</p></div></div>
     <div class="trust-item"><div class="trust-icon">&#128170;</div><div class="trust-text"><h4>Stress Tested</h4><p>Every single system</p></div></div>
     <div class="trust-item"><div class="trust-icon">&#128274;</div><div class="trust-text"><h4>30-Day Returns</h4><p>Full refund, no hassle</p></div></div>
-    <div class="trust-item"><div class="trust-icon">&#128666;</div><div class="trust-text"><h4>Ships Nationwide</h4><p>Fully insured, double-boxed</p></div></div>
+    <div class="trust-item"><div class="trust-icon">&#128205;</div><div class="trust-text"><h4>Local to Corona, CA</h4><p>Meet the builder in person</p></div></div>
   </div>
 </div>
 <section id="builds-section">
   <div class="section-inner">
     <div class="section-label">Available Now</div>
     <div class="section-title">Ready-to-play builds</div>
-    <div class="section-subtitle">Each system is fully assembled, stress-tested, and loaded with a fresh Windows install. Pick it up locally or have it shipped.</div>
+    <div class="section-subtitle">Each system is fully assembled, stress-tested, and loaded with a fresh Windows install. See one you like? Message me and pick it up locally.</div>
   </div>
   <div class="builds-grid" id="builds-grid">
     <div class="loading-builds"><div class="loading-spinner"></div>Loading builds...</div>
   </div>
+</section>
+<section id="recent-section" style="background:var(--off-white);display:none">
+  <div class="section-inner">
+    <div class="section-label">Recent Builds</div>
+    <div class="section-title">Sold &mdash; but this is the standard.</div>
+    <div class="section-subtitle">A look at machines that recently left the bench. Want something like one of these? Reach out and I'll tell you what I can put together.</div>
+  </div>
+  <div class="builds-grid" id="sold-grid"></div>
 </section>
 <section>
   <div class="section-inner">
@@ -219,10 +258,10 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
   </div>
   <div class="why-grid">
     <div class="why-card"><div class="why-card-icon">&#9881;&#65039;</div><h3>Built by hand, not a factory</h3><p>Every system is assembled by one person who cares about cable management, airflow, and component quality. No assembly lines, no shortcuts.</p></div>
-    <div class="why-card"><div class="why-card-icon">&#128200;</div><h3>Stress tested before it's yours</h3><p>Every build goes through thermal and stability testing before it's listed. If it can't handle the heat, it doesn't ship.</p></div>
+    <div class="why-card"><div class="why-card-icon">&#128200;</div><h3>Stress tested before it's yours</h3><p>Every build goes through thermal and stability testing before it's listed. If it can't handle the heat, it doesn't leave the bench.</p></div>
     <div class="why-card"><div class="why-card-icon">&#128176;</div><h3>Fair pricing, no fluff</h3><p>We source smart and pass the savings on. Better machine, less money, no bloatware.</p></div>
     <div class="why-card"><div class="why-card-icon">&#129309;</div><h3>Real support from a real person</h3><p>Got a question? You're talking to the person who built your PC &mdash; not a call center.</p></div>
-    <div class="why-card"><div class="why-card-icon">&#128230;</div><h3>Ship-ready packaging</h3><p>Every shipped build is packed with custom foam bracing and double-boxed so it arrives exactly how it left.</p></div>
+    <div class="why-card"><div class="why-card-icon">&#128205;</div><h3>Buy local, skip the gamble</h3><p>See the PC running before you pay. No shipping damage, no mystery sellers &mdash; meet in Corona, CA, test it, and take it home. Trade-ins welcome.</p></div>
     <div class="why-card"><div class="why-card-icon">&#128077;</div><h3>500+ happy customers</h3><p>Building and selling since 2023. Hundreds of satisfied buyers and counting.</p></div>
   </div>
 </section>
@@ -231,20 +270,20 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 <!-- HOW IT WORKS -->
 <div id="how" class="page">
 <section style="padding-top:130px">
-  <div class="section-inner"><div class="section-label">How It Works</div><div class="section-title">Dead simple.</div><div class="section-subtitle">No custom order forms. No 6-week wait times. Pick a build, pay, and it's yours.</div></div>
+  <div class="section-inner"><div class="section-label">How It Works</div><div class="section-title">Dead simple.</div><div class="section-subtitle">No custom order forms. No 6-week wait times. See a build you like, message me, and it's yours.</div></div>
   <div class="how-grid">
     <div class="how-card"><div class="how-number">1</div><h3>Browse</h3><p>Check out what's currently available. Each listing has full specs, photos, and component details.</p></div>
-    <div class="how-card"><div class="how-number">2</div><h3>Purchase</h3><p>Buy directly through the site. Secure checkout powered by Shopify. No sketchy DMs required.</p></div>
-    <div class="how-card"><div class="how-number">3</div><h3>Pick Up or Ship</h3><p>Local to Corona, CA? Pick it up same-day. Otherwise, we'll pack it right and ship it to your door.</p></div>
+    <div class="how-card"><div class="how-number">2</div><h3>Reach Out</h3><p>Send a message through the site or DM me on Instagram. I respond fast &mdash; usually same day.</p></div>
+    <div class="how-card"><div class="how-number">3</div><h3>Meet Up Locally</h3><p>We meet in Corona, CA. You see the PC running, ask anything you want, and pay in person. Most pickups happen same-day or next-day.</p></div>
     <div class="how-card"><div class="how-number">4</div><h3>Game On</h3><p>Plug in, power on, and play. Windows is installed, drivers are updated, and it's ready to go.</p></div>
   </div>
 </section>
 <section style="padding-top:40px">
   <div class="section-inner" style="max-width:700px">
-    <h2 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:22px;color:var(--navy);margin-bottom:12px">Shipping Details</h2>
-    <p style="font-size:15px;line-height:1.8;color:var(--text-secondary);margin-bottom:16px">We ship anywhere in the continental US. Every PC is custom-packed with foam bracing, GPU support brackets removed and secured separately, and double-boxed to survive transit. Shipping costs are calculated based on your location &mdash; expect roughly $75&ndash;$120 depending on distance.</p>
     <h2 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:22px;color:var(--navy);margin-bottom:12px">Local Pickup</h2>
-    <p style="font-size:15px;line-height:1.8;color:var(--text-secondary)">Free pickup available in Corona, CA. Once your order is confirmed, we'll reach out to schedule a convenient time. Most pickups happen same-day or next-day.</p>
+    <p style="font-size:15px;line-height:1.8;color:var(--text-secondary);margin-bottom:16px">The Good Build sells locally in and around Corona, CA &mdash; Riverside, the Inland Empire, and Orange County. You get to see your PC running before you hand over a dime, and I get to hand it to you knowing it arrived in one piece.</p>
+    <h2 style="font-family:'Outfit',sans-serif;font-weight:600;font-size:22px;color:var(--navy);margin-bottom:12px">Trade-Ins</h2>
+    <p style="font-size:15px;line-height:1.8;color:var(--text-secondary)">Got an old PC collecting dust? Trade it in for a discount toward your next build. Mention it when you reach out and I'll give you a quote.</p>
   </div>
 </section>
 </div>
@@ -275,8 +314,9 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 <section class="faq-section" style="padding-top:130px;min-height:100vh">
   <div class="section-inner"><div class="section-label">FAQ</div><div class="section-title">Common questions</div><div class="section-subtitle">If yours isn't here, reach out &mdash; we respond fast.</div></div>
   <div class="faq-list">
-    <div class="faq-item open"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What's your return policy?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">We offer a 30-day return window from the date of delivery or pickup. If something's wrong, reach out within 30 days and we'll make it right &mdash; full refund. Defective or damaged units ship back on us. See our <a href="#" onclick="showPage('policy');return false" style="color:var(--accent)">full Return &amp; Warranty Policy</a>.</div></div>
-    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Do you ship nationwide?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Yes &mdash; anywhere in the continental US. Every shipped PC is foam-braced and double-boxed. Shipping runs roughly $75&ndash;$120 depending on location. Free local pickup in Corona, CA.</div></div>
+    <div class="faq-item open"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>How do I buy one of your PCs?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Message me through the <a href="#" onclick="showPage('contact');return false" style="color:var(--accent)">contact page</a> or DM <a href="https://www.instagram.com/romans_goodbuild" target="_blank" style="color:var(--accent)">@romans_goodbuild</a> on Instagram. We'll set up a local meetup in Corona, CA &mdash; you see the PC running, then pay in person. No online checkout, no shipping roulette.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What's your return policy?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">We offer a 30-day return window from the date of pickup. If something's wrong, reach out within 30 days and we'll make it right &mdash; full refund. See our <a href="#" onclick="showPage('policy');return false" style="color:var(--accent)">full Return &amp; Warranty Policy</a>.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Where are you located? Do you ship?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Corona, California. Sales are local &mdash; Corona, Riverside, the Inland Empire, and Orange County. Buying in person means you see the machine running before you pay. Not local? Reach out anyway; if it's a good fit we can talk options.</div></div>
     <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Are these new or used parts?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Our builds use refurbished components &mdash; previously used parts that have been fully disassembled, cleaned, tested, and stress-tested. Each listing clearly states component details. We only use parts that meet our quality standards.</div></div>
     <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>What comes installed?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Every build ships with a clean Windows 11 Pro installation with the latest drivers and updates. No bloatware, no trial software. Just a fresh OS ready to go.</div></div>
     <div class="faq-item"><div class="faq-question" onclick="this.parentElement.classList.toggle('open')"><h3>Can I request a custom build?</h3><span class="faq-arrow">&#9660;</span></div><div class="faq-answer">Not at this time &mdash; we sell pre-built, ready-to-ship systems. If you have something specific in mind, reach out and we'll let you know if we can make it happen.</div></div>
@@ -289,14 +329,13 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 <div id="policy" class="page">
 <div class="page-content">
   <h1>Return &amp; Warranty Policy</h1>
-  <p class="updated">Last updated: February 2026</p>
+  <p class="updated">Last updated: July 2026</p>
   <p>At The Good Build, we stand behind every system that leaves our bench.</p>
   <h2>30-Day Return Window</h2>
-  <p>You have 30 calendar days from delivery or pickup to return your PC for a full refund.</p>
+  <p>You have 30 calendar days from pickup to return your PC for a full refund.</p>
   <ul><li>System must be in the same condition received &mdash; no physical damage or unauthorized modifications.</li><li>All original accessories, cables, and packaging must be included.</li><li>Contact us within 30 days to initiate.</li></ul>
-  <p>For shipped orders, return shipping is the buyer's responsibility unless the return is due to a defect on our end.</p>
-  <h2>Defective or Damaged on Arrival</h2>
-  <p>If your PC arrives damaged or defective, contact us immediately. We'll cover return shipping and repair, replace, or fully refund at your choice. Please photograph any shipping damage before opening.</p>
+  <h2>Defective Hardware</h2>
+  <p>If something turns out to be defective, contact us immediately. We'll repair, replace, or fully refund at your choice.</p>
   <h2>Ongoing Tech Support</h2>
   <p>After the warranty window, we don't disappear. Free ongoing technical support for every system &mdash; driver issues, component troubleshooting, upgrade advice. We're here to help.</p>
   <h2>Manufacturer Warranties</h2>
@@ -311,13 +350,44 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 <!-- DYNAMIC PRODUCT DETAIL PAGE (populated by JS) -->
 <div id="product-detail-page" class="page"></div>
 
+<!-- CONTACT -->
+<div id="contact" class="page">
+<section style="padding-top:130px;min-height:100vh;background:var(--off-white)">
+  <div class="section-inner" style="max-width:640px">
+    <div class="section-label">Contact</div>
+    <div class="section-title">Let's talk PCs.</div>
+    <div class="section-subtitle">Interested in a build, want something custom-ish, or have a trade-in? Send a message &mdash; I usually reply the same day.</div>
+    <form id="inquiry-form" class="contact-card" onsubmit="return submitInquiry(event)">
+      <label for="inq-name">Your name</label>
+      <input id="inq-name" type="text" autocomplete="name" placeholder="First name is fine">
+      <label for="inq-contact">Email or phone</label>
+      <input id="inq-contact" type="text" autocomplete="email" placeholder="So I can get back to you">
+      <label for="inq-build">What are you interested in?</label>
+      <select id="inq-build"><option value="">General question / future build</option></select>
+      <label for="inq-msg">Message</label>
+      <textarea id="inq-msg" rows="5" placeholder="What are you looking for? Budget, games you play, timeline &mdash; whatever helps."></textarea>
+      <button id="inq-submit" type="submit" class="btn-primary" style="width:100%">Send Message</button>
+      <div id="inq-status" class="form-status"></div>
+    </form>
+    <div class="contact-alt">
+      <p>Prefer to reach out directly?</p>
+      <div class="contact-alt-links">
+        <a href="mailto:support@thegoodbuild.shop">&#9993;&#65039; support@thegoodbuild.shop</a>
+        <a href="https://www.instagram.com/romans_goodbuild" target="_blank">&#128247; @romans_goodbuild</a>
+        <a href="https://www.tiktok.com/@thegoodbuild" target="_blank">&#127925; @thegoodbuild</a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="nav-logo-text" style="color:white">the<span style="color:var(--accent)">good</span>build</div>
-      <p>Hand-built gaming PCs from Corona, California. Assembled with care, stress-tested, and ready to play.</p>
+      <p>Hand-built gaming PCs from Corona, California. Assembled with care, stress-tested, and sold locally.</p>
     </div>
-    <div class="footer-links"><h4>Shop</h4><a href="#" onclick="showPage('home');return false">Available Builds</a><a href="#" onclick="showPage('how');return false">How It Works</a></div>
+    <div class="footer-links"><h4>Builds</h4><a href="#" onclick="showPage('home');return false">Available Builds</a><a href="#" onclick="showPage('how');return false">How It Works</a><a href="#" onclick="showPage('contact');return false">Contact</a></div>
     <div class="footer-links"><h4>Info</h4><a href="#" onclick="showPage('about-page');return false">About</a><a href="#" onclick="showPage('faq-page');return false">FAQ</a><a href="#" onclick="showPage('policy');return false">Return Policy</a></div>
     <div class="footer-links"><h4>Connect</h4><a href="https://www.instagram.com/romans_goodbuild" target="_blank">Instagram</a><a href="https://www.tiktok.com/@thegoodbuild" target="_blank">TikTok</a><a href="mailto:support@thegoodbuild.shop">Email Us</a></div>
   </div>
@@ -329,266 +399,184 @@ footer{padding:56px 48px 28px;background:var(--navy-deep);color:rgba(255,255,255
 // ============================================================
 // CONFIG
 // ============================================================
-var SHOPIFY_DOMAIN = 'h9badh-1p.myshopify.com';
-var STOREFRONT_TOKEN = 'd59f5d8d4b0d229f23df6fc9776e1cda';
-var STOREFRONT_API = 'https://' + SHOPIFY_DOMAIN + '/api/2024-10/graphql.json';
+// LISTINGS_URL: where build data comes from. Empty = local builds.json.
+// Later this points at the dashboard endpoint (e.g.
+// https://thegoodbuild.vercel.app/api/public-listings)
+var CONFIG = {
+  LISTINGS_URL: '',
+  INQUIRY_ENDPOINT: '',   // future dashboard /api/inquiry; empty = mailto fallback
+  CONTACT_EMAIL: 'support@thegoodbuild.shop'
+};
 
 // Global state
-var allProducts = [];
-var buyButtonUI = null;
+var allBuilds = [];      // available builds
+var soldBuilds = [];     // recent (sold) builds
 
 // ============================================================
-// STOREFRONT API â€” Fetch all active products
+// FETCH BUILDS — from dashboard endpoint or local builds.json
 // ============================================================
-async function fetchProducts() {
-  var query = `{
-    products(first: 20, sortKey: PRICE, reverse: true) {
-      edges {
-        node {
-          id
-          title
-          descriptionHtml
-          productType
-          tags
-          availableForSale
-          images(first: 10) {
-            edges {
-              node {
-                url
-                altText
-              }
-            }
-          }
-          variants(first: 1) {
-            edges {
-              node {
-                id
-                price {
-                  amount
-                  currencyCode
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }`;
-
+async function fetchBuilds() {
+  var url = CONFIG.LISTINGS_URL || 'builds.json';
   try {
-    var resp = await fetch(STOREFRONT_API, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Shopify-Storefront-Access-Token': STOREFRONT_TOKEN
-      },
-      body: JSON.stringify({ query: query })
-    });
+    var resp = await fetch(url, { cache: 'no-cache' });
     var data = await resp.json();
-    return data.data.products.edges.map(function(e) { return e.node; })
-      .filter(function(p) { return p.availableForSale; });
+    return data.builds || [];
   } catch (err) {
-    console.error('Failed to fetch products:', err);
+    console.error('Failed to fetch builds:', err);
     return [];
   }
 }
 
 // ============================================================
-// PARSE PRODUCT DESCRIPTION
-// Expects format:
-//   Description text here...
-//   ---SPECS---
-//   CPU: AMD Ryzen 7 7700X
-//   GPU: NVIDIA RTX 4070 Ti
-//   ...
-//   ---EXTRAS---          (optional)
-//   WiFi adapter
-//   Extra fans
+// RENDER BUILD CARDS
 // ============================================================
-function parseDescription(desc) {
-  if (!desc) return { text: '', tagline: '', specs: [], extras: [] };
-
-  // Normalize: Shopify rich text may use <br>, <br/>, <p> tags instead of newlines
-  var normalized = desc
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/p>/gi, '\n')
-    .replace(/<[^>]+>/g, '')  // strip remaining HTML tags
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&mdash;/g, '\u2014')
-    .replace(/&ndash;/g, '\u2013')
-    .replace(/&middot;/g, '\u00B7');
-
-  var parts = normalized.split('---SPECS---');
-  var text = (parts[0] || '').trim();
-  var specSection = parts[1] || '';
-
-  // Split tagline (first line) from description (rest)
-  var lines = text.split('\n').filter(function(l) { return l.trim(); });
-  var tagline = lines[0] || '';
-  var description = lines.slice(1).join(' ').trim();
-
-  // Parse specs
-  var extrasParts = specSection.split('---EXTRAS---');
-  var specLines = (extrasParts[0] || '').trim().split('\n').filter(function(l) { return l.trim(); });
-  var specs = specLines.map(function(line) {
-    var idx = line.indexOf(':');
-    if (idx === -1) return null;
-    return { label: line.substring(0, idx).trim(), value: line.substring(idx + 1).trim() };
-  }).filter(Boolean);
-
-  // Parse extras
-  var extras = [];
-  if (extrasParts[1]) {
-    extras = extrasParts[1].trim().split('\n').filter(function(l) { return l.trim(); }).map(function(l) { return l.trim(); });
-  }
-
-  return { tagline: tagline, text: description, specs: specs, extras: extras };
+function buildCard(build, list, idx, sold) {
+  var shortSpecs = (build.specs || []).slice(0, 4);
+  var card = document.createElement('div');
+  card.className = 'build-card' + (sold ? ' sold' : '');
+  card.onclick = function() { showBuildDetail(list, idx); };
+  card.innerHTML =
+    '<div class="build-card-gallery">' +
+      '<img src="' + esc(build.images && build.images[0] || 'images/logo.png') + '" alt="' + esc(build.title) + '" loading="lazy">' +
+      (sold ? '<div class="sold-badge">SOLD</div>' : '') +
+    '</div>' +
+    '<div class="build-card-body">' +
+      '<div class="build-card-tag">' + esc(build.tier || 'Gaming PC') + '</div>' +
+      '<h3>' + esc(shortTitle(build.title)) + '</h3>' +
+      '<div class="tagline">' + esc(build.tagline || '') + '</div>' +
+      '<div class="specs-grid">' +
+        shortSpecs.map(function(s) {
+          return '<div class="spec-item"><span class="spec-label">' + esc(s.label) + '</span> ' + esc(s.value) + '</div>';
+        }).join('') +
+      '</div>' +
+      '<div class="build-card-footer">' +
+        '<div><div class="build-price">' + (build.price ? '$' + Number(build.price).toLocaleString() : '') + '</div>' +
+        '<div class="build-condition">Refurbished &middot; Fully tested</div></div>' +
+        '<button class="build-buy-btn">' + (sold ? 'See Build' : 'View Build') + '</button>' +
+      '</div>' +
+    '</div>';
+  return card;
 }
 
-// ============================================================
-// GET TIER FROM TAGS
-// Use Shopify tags: "High Performance", "Mid-Range", "Budget", etc.
-// ============================================================
-function getTier(product) {
-  var tiers = ['High Performance', 'High-End', 'Mid-Range', 'Budget'];
-  for (var i = 0; i < product.tags.length; i++) {
-    for (var j = 0; j < tiers.length; j++) {
-      if (product.tags[i].toLowerCase() === tiers[j].toLowerCase()) return tiers[j];
+function shortTitle(t) {
+  if (!t) return '';
+  var cut = t.split('—')[0].split(' - ')[0].trim();
+  return cut.length > 40 ? cut.slice(0, 40) + '…' : cut;
+}
+
+function renderBuilds() {
+  var grid = document.getElementById('builds-grid');
+  var soldGrid = document.getElementById('sold-grid');
+  var soldSection = document.getElementById('recent-section');
+
+  // Available builds
+  grid.innerHTML = '';
+  if (!allBuilds.length) {
+    grid.innerHTML = '<div class="no-builds">Nothing listed right now &mdash; builds go fast. ' +
+      '<a href="#" onclick="showPage(\'contact\');return false" style="color:var(--accent);font-weight:600">Message me</a> to hear what\'s on the bench.</div>';
+  } else {
+    allBuilds.forEach(function(b, i) { grid.appendChild(buildCard(b, allBuilds, i, false)); });
+    // Hero image = first available build's first photo
+    var heroImg = document.querySelector('.hero-image img');
+    if (allBuilds[0].images && allBuilds[0].images.length) {
+      heroImg.src = allBuilds[0].images[0];
+      heroImg.alt = allBuilds[0].title;
     }
   }
-  return product.productType || 'Gaming PC';
-}
+  updateGridColumns();
 
-// ============================================================
-// RENDER PRODUCT CARDS ON HOMEPAGE
-// ============================================================
-function renderProductCards(products) {
-  var grid = document.getElementById('builds-grid');
-  if (!products.length) {
-    grid.innerHTML = '<div class="no-builds">No builds available right now. Check back soon!</div>';
-    return;
-  }
-
-  // Adjust grid columns based on product count (desktop only)
-  if (window.innerWidth > 900) {
-    if (products.length === 1) grid.style.gridTemplateColumns = '1fr';
-    else if (products.length === 2) grid.style.gridTemplateColumns = 'repeat(2,1fr)';
-    else grid.style.gridTemplateColumns = 'repeat(3,1fr)';
+  // Recent (sold) builds
+  if (soldBuilds.length) {
+    soldSection.style.display = '';
+    soldGrid.innerHTML = '';
+    soldBuilds.forEach(function(b, i) { soldGrid.appendChild(buildCard(b, soldBuilds, i, true)); });
+    // About image = a sold build interior shot
+    var aboutImg = document.querySelector('.about-image img');
+    var ab = soldBuilds[0];
+    if (ab.images && ab.images.length > 1) { aboutImg.src = ab.images[1]; aboutImg.alt = 'Inside a Good Build'; }
+    // If no available builds, use a sold build photo as hero
+    if (!allBuilds.length && soldBuilds[0].images && soldBuilds[0].images.length) {
+      var heroImg2 = document.querySelector('.hero-image img');
+      heroImg2.src = soldBuilds[0].images[0];
+      heroImg2.alt = soldBuilds[0].title;
+    }
   } else {
-    grid.style.gridTemplateColumns = '';
+    soldSection.style.display = 'none';
   }
 
-  // Set hero image to first product's first image
-  var heroImg = document.querySelector('.hero-image img');
-  if (products[0].images.edges.length) {
-    heroImg.src = products[0].images.edges[0].node.url;
-    heroImg.alt = products[0].title;
+  // Contact form "interested in" dropdown
+  var sel = document.getElementById('inq-build');
+  if (sel) {
+    sel.innerHTML = '<option value="">General question / future build</option>' +
+      allBuilds.map(function(b) { return '<option>' + esc(shortTitle(b.title)) + '</option>'; }).join('') +
+      '<option>A build like one of your previous ones</option>';
   }
-
-  // Set about image to second product's second image (or first product)
-  var aboutImg = document.querySelector('.about-image img');
-  var aboutProduct = products[1] || products[0];
-  var aboutImgNode = aboutProduct.images.edges[1] || aboutProduct.images.edges[0];
-  if (aboutImgNode) {
-    aboutImg.src = aboutImgNode.node.url;
-    aboutImg.alt = 'Inside a Good Build';
-  }
-
-  grid.innerHTML = '';
-  products.forEach(function(product, idx) {
-    var parsed = parseDescription(product.descriptionHtml);
-    var tier = getTier(product);
-    var price = product.variants.edges[0] ? Math.round(parseFloat(product.variants.edges[0].node.price.amount)) : 0;
-    var heroImgUrl = product.images.edges[0] ? product.images.edges[0].node.url : '';
-    var shortSpecs = parsed.specs.slice(0, 4);
-
-    var card = document.createElement('div');
-    card.className = 'build-card';
-    card.onclick = function() { showProductDetail(idx); };
-    card.innerHTML =
-      '<div class="build-card-gallery"><img src="' + heroImgUrl + '" alt="' + esc(product.title) + '"></div>' +
-      '<div class="build-card-body">' +
-        '<div class="build-card-tag">' + esc(tier) + '</div>' +
-        '<h3>' + esc(product.title) + '</h3>' +
-        '<div class="tagline">' + esc(parsed.tagline) + '</div>' +
-        '<div class="specs-grid">' +
-          shortSpecs.map(function(s) {
-            return '<div class="spec-item"><span class="spec-label">' + esc(s.label) + '</span> ' + esc(s.value) + '</div>';
-          }).join('') +
-        '</div>' +
-        '<div class="build-card-footer">' +
-          '<div><div class="build-price">$' + price.toLocaleString() + '</div><div class="build-condition">Refurbished &middot; Fully tested</div></div>' +
-          '<button class="build-buy-btn">View Build</button>' +
-        '</div>' +
-      '</div>';
-    grid.appendChild(card);
-  });
 }
 
 // ============================================================
-// RENDER PRODUCT DETAIL PAGE (dynamically)
+// BUILD DETAIL PAGE
 // ============================================================
-function showProductDetail(idx) {
-  var product = allProducts[idx];
-  if (!product) return;
-  var parsed = parseDescription(product.descriptionHtml);
-  var tier = getTier(product);
-  var price = product.variants.edges[0] ? Math.round(parseFloat(product.variants.edges[0].node.price.amount)) : 0;
-  var images = product.images.edges.map(function(e) { return e.node; });
-  var mainImg = images[0] ? images[0].url : '';
-
+function showBuildDetail(list, idx) {
+  var build = list[idx];
+  if (!build) return;
+  var sold = build.status === 'sold';
+  var images = build.images || [];
+  var mainImg = images[0] || 'images/logo.png';
   var container = document.getElementById('product-detail-page');
+
+  var cta;
+  if (sold) {
+    cta = '<div class="sold-note">This build found a home. Want something similar? I can put together a build like this one.</div>' +
+      '<button class="btn-primary" style="width:100%" onclick="openInquiry(\'A build like one of your previous ones\')">Ask About a Similar Build</button>';
+  } else {
+    cta = '<button class="btn-primary" style="width:100%" onclick="openInquiry(\'' + esc(shortTitle(build.title)).replace(/'/g, "\\'") + '\')">I\'m Interested &mdash; Get in Touch</button>';
+  }
 
   container.innerHTML =
     '<div class="product-detail">' +
       '<div class="product-gallery">' +
-        '<div class="main-img"><img id="detail-main-img" src="' + mainImg + '" alt="' + esc(product.title) + '"></div>' +
+        '<div class="main-img"><img id="detail-main-img" src="' + esc(mainImg) + '" alt="' + esc(build.title) + '"></div>' +
         '<div class="thumb-row">' +
           images.map(function(img, i) {
-            return '<div class="thumb' + (i === 0 ? ' active' : '') + '" onclick="switchDetailImg(\'' + img.url.replace(/'/g, "\\'") + '\', this)">' +
-              '<img src="' + img.url + '" alt="' + esc(img.altText || product.title) + '">' +
+            return '<div class="thumb' + (i === 0 ? ' active' : '') + '" onclick="switchDetailImg(\'' + img.replace(/'/g, "\\'") + '\', this)">' +
+              '<img src="' + esc(img) + '" alt="' + esc(build.title) + '" loading="lazy">' +
             '</div>';
           }).join('') +
         '</div>' +
       '</div>' +
       '<div class="product-info">' +
-        '<div class="build-card-tag">' + esc(tier) + '</div>' +
-        '<h1>' + esc(product.title) + '</h1>' +
-        '<p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">' + esc(parsed.text || parsed.tagline) + '</p>' +
+        '<div class="build-card-tag">' + esc(build.tier || 'Gaming PC') + '</div>' +
+        '<h1>' + esc(shortTitle(build.title)) + '</h1>' +
+        '<p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px">' + esc(build.tagline || '') + (build.description ? ' ' + esc(build.description) : '') + '</p>' +
         '<div class="price-row">' +
-          '<div class="build-price">$' + price.toLocaleString() + '</div>' +
-          '<span class="condition-badge">Refurbished &middot; Cleaned &amp; tested</span>' +
+          (build.price ? '<div class="build-price">$' + Number(build.price).toLocaleString() + '</div>' : '') +
+          '<span class="condition-badge">' + (sold ? 'SOLD' : 'Refurbished &middot; Cleaned &amp; tested') + '</span>' +
         '</div>' +
         '<table class="spec-table">' +
-          parsed.specs.map(function(s) {
+          (build.specs || []).map(function(s) {
             return '<tr><td>' + esc(s.label) + '</td><td>' + esc(s.value) + '</td></tr>';
           }).join('') +
         '</table>' +
         '<div class="includes">' +
-          '<h3>What\'s included:</h3>' +
+          '<h3>Every build includes:</h3>' +
           '<ul>' +
             '<li>Fully assembled &amp; stress-tested gaming PC</li>' +
             '<li>Power cable</li>' +
             '<li>Clean Windows 11 Pro with latest drivers</li>' +
             '<li>30-day return window + 90-day hardware warranty</li>' +
-            parsed.extras.map(function(e) { return '<li>' + esc(e) + '</li>'; }).join('') +
+            (build.extras || []).filter(function(e) {
+              var std = ['fully assembled', 'power cable', 'windows 11', '30-day', 'stress-tested'];
+              return !std.some(function(s) { return e.toLowerCase().indexOf(s) !== -1; });
+            }).map(function(e) { return '<li>' + esc(e) + '</li>'; }).join('') +
           '</ul>' +
         '</div>' +
-        '<div class="buy-section">' +
-          '<div id="buy-button-' + idx + '"></div>' +
-          '<p style="font-size:13px;color:var(--text-light);margin-top:10px;text-align:center">Free local pickup in Corona, CA &middot; Nationwide shipping available</p>' +
+        '<div class="buy-section">' + cta +
+          '<p style="font-size:13px;color:var(--text-light);margin-top:10px;text-align:center">Local pickup in Corona, CA &middot; Trade-ins welcome</p>' +
         '</div>' +
       '</div>' +
     '</div>';
 
   showPage('product-detail-page');
-
-  // Mount buy button for this product
-  mountBuyButton(idx, product);
 }
 
 function switchDetailImg(url, thumbEl) {
@@ -598,108 +586,66 @@ function switchDetailImg(url, thumbEl) {
 }
 
 // ============================================================
-// SHOPIFY BUY BUTTON SDK â€” Initialize once, create per product
+// CONTACT / INQUIRY
 // ============================================================
-function initBuyButtonSDK() {
-  return new Promise(function(resolve) {
-    if (window.ShopifyBuy && window.ShopifyBuy.UI) {
-      resolve();
-      return;
+function openInquiry(buildTitle) {
+  showPage('contact');
+  var sel = document.getElementById('inq-build');
+  if (sel && buildTitle) {
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].text === buildTitle) { sel.selectedIndex = i; break; }
     }
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-    script.onload = function() { resolve(); };
-    document.head.appendChild(script);
-  });
+  }
 }
 
-async function mountBuyButton(idx, product) {
-  await initBuyButtonSDK();
+async function submitInquiry(ev) {
+  ev.preventDefault();
+  var name = document.getElementById('inq-name').value.trim();
+  var contact = document.getElementById('inq-contact').value.trim();
+  var build = document.getElementById('inq-build').value;
+  var msg = document.getElementById('inq-msg').value.trim();
+  var status = document.getElementById('inq-status');
+  var btn = document.getElementById('inq-submit');
 
-  var client = ShopifyBuy.buildClient({
-    domain: SHOPIFY_DOMAIN,
-    storefrontAccessToken: STOREFRONT_TOKEN
-  });
+  if (!name || !contact || !msg) {
+    status.textContent = 'Please fill in your name, contact info, and a message.';
+    status.className = 'form-status error';
+    return false;
+  }
 
-  // Extract numeric product ID from GID
-  var gid = product.id; // "gid://shopify/Product/XXXXX"
-  var numericId = gid.split('/').pop();
+  if (CONFIG.INQUIRY_ENDPOINT) {
+    btn.disabled = true;
+    status.textContent = 'Sending…';
+    status.className = 'form-status';
+    try {
+      var resp = await fetch(CONFIG.INQUIRY_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, contact: contact, build: build, message: msg })
+      });
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      status.textContent = "Got it — I'll get back to you fast. Usually same day.";
+      status.className = 'form-status success';
+      document.getElementById('inquiry-form').reset();
+    } catch (err) {
+      console.error('Inquiry failed:', err);
+      mailtoFallback(name, contact, build, msg);
+    }
+    btn.disabled = false;
+  } else {
+    mailtoFallback(name, contact, build, msg);
+  }
+  return false;
+}
 
-  var node = document.getElementById('buy-button-' + idx);
-  if (!node) return;
-
-  ShopifyBuy.UI.onReady(client).then(function(ui) {
-    ui.createComponent('product', {
-      id: numericId,
-      node: node,
-      moneyFormat: '%24%7B%7Bamount%7D%7D',
-      options: {
-        product: {
-          contents: { img: false, title: false, price: false },
-          styles: {
-            product: { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } },
-            button: {
-              "background-color": "#1b2a4a",
-              "font-family": "'DM Sans', sans-serif",
-              "font-size": "16px",
-              "font-weight": "600",
-              "padding-top": "16px",
-              "padding-bottom": "16px",
-              "width": "100%",
-              "border-radius": "8px",
-              ":hover": { "background-color": "#2A3F6B" },
-              ":focus": { "background-color": "#2A3F6B" }
-            }
-          },
-          text: { button: "Add to Cart" }
-        },
-        modalProduct: {
-          contents: { img: false, imgWithCarousel: false, button: false, buttonWithQuantity: true },
-          styles: {
-            product: { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
-            button: {
-              "background-color": "#1b2a4a",
-              "font-family": "'DM Sans', sans-serif",
-              "font-size": "16px",
-              "font-weight": "600",
-              "border-radius": "8px",
-              ":hover": { "background-color": "#2A3F6B" },
-              ":focus": { "background-color": "#2A3F6B" }
-            }
-          },
-          text: { button: "Add to cart" }
-        },
-        option: {},
-        cart: {
-          styles: {
-            button: {
-              "background-color": "#1b2a4a",
-              "font-family": "'DM Sans', sans-serif",
-              "font-weight": "600",
-              "border-radius": "8px",
-              ":hover": { "background-color": "#2A3F6B" },
-              ":focus": { "background-color": "#2A3F6B" }
-            }
-          },
-          text: { total: "Subtotal", button: "Checkout" }
-        },
-        toggle: {
-          styles: {
-            toggle: {
-              "background-color": "#1b2a4a",
-              ":hover": { "background-color": "#2A3F6B" },
-              ":focus": { "background-color": "#2A3F6B" }
-            }
-          }
-        }
-      }
-    });
-
-    // Force reflow fix
-    setTimeout(function() { window.dispatchEvent(new Event('resize')); }, 1000);
-    setTimeout(function() { window.dispatchEvent(new Event('resize')); }, 2500);
-  });
+function mailtoFallback(name, contact, build, msg) {
+  var subject = 'PC Inquiry' + (build ? ' — ' + build : '') + ' (from ' + name + ')';
+  var body = 'Name: ' + name + '\nContact: ' + contact + (build ? '\nInterested in: ' + build : '') + '\n\n' + msg;
+  window.location.href = 'mailto:' + CONFIG.CONTACT_EMAIL +
+    '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  var status = document.getElementById('inq-status');
+  status.textContent = 'Opening your email app… If nothing happens, email ' + CONFIG.CONTACT_EMAIL + ' or DM @romans_goodbuild on Instagram.';
+  status.className = 'form-status';
 }
 
 // ============================================================
@@ -726,28 +672,28 @@ function esc(s) {
 }
 
 // ============================================================
-// INIT â€” Load products on page load
-// ============================================================
-
-// ============================================================
 // GRID RESPONSIVE HANDLER
 // ============================================================
 function updateGridColumns() {
   var grid = document.getElementById('builds-grid');
-  if (!grid || !allProducts.length) return;
-  if (window.innerWidth > 900) {
-    if (allProducts.length === 1) grid.style.gridTemplateColumns = '1fr';
-    else if (allProducts.length === 2) grid.style.gridTemplateColumns = 'repeat(2,1fr)';
-    else grid.style.gridTemplateColumns = 'repeat(3,1fr)';
+  if (!grid) return;
+  var n = allBuilds.length;
+  if (window.innerWidth > 900 && n) {
+    grid.style.gridTemplateColumns = n === 1 ? '1fr' : (n === 2 ? 'repeat(2,1fr)' : 'repeat(3,1fr)');
   } else {
     grid.style.gridTemplateColumns = '';
   }
 }
 window.addEventListener('resize', updateGridColumns);
 
+// ============================================================
+// INIT
+// ============================================================
 async function init() {
-  allProducts = await fetchProducts();
-  renderProductCards(allProducts);
+  var builds = await fetchBuilds();
+  allBuilds = builds.filter(function(b) { return b.status === 'available'; });
+  soldBuilds = builds.filter(function(b) { return b.status === 'sold'; });
+  renderBuilds();
 }
 
 init();

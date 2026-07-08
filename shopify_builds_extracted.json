@@ -1,0 +1,426 @@
+[
+  {
+    "id": "10604112806198",
+    "title": "The Spectra \u2014 Intel i9-14900KF / RTX 4080 Super / 32GB DDR5 Gaming PC",
+    "tagline": "Super clean build with fully customizable RGB. A powerful, professional-looking rig that crushes everything you throw at it.",
+    "description": "From Valorant to Marvel Rivals, Fortnite, Apex, and everything in between. Doubles as a workstation for streamers, video editors, videographers, or anyone else who needs a high-horsepower rig for their daily work. PC trade-ins welcome \u2014 trade in your old PC for a discount towards this one!",
+    "tier": "Gaming PC",
+    "price": 2300.0,
+    "status": "sold",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3750.jpg?v=1771551763",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3751.jpg?v=1771551763",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3752.jpg?v=1771551763"
+    ],
+    "extras": [
+      "WiFi antenna",
+      "Power cable",
+      "Fully customizable RGB"
+    ],
+    "specs": [
+      {
+        "label": "CPU",
+        "value": "Intel Core i9-14900KF"
+      },
+      {
+        "label": "GPU",
+        "value": "NVIDIA RTX 4080 Super \u2014 Zotac 16GB VRAM"
+      },
+      {
+        "label": "RAM",
+        "value": "32GB (2x16GB) G.Skill Trident DDR5 6000MHz CL36"
+      },
+      {
+        "label": "Storage",
+        "value": "Samsung 980 1TB M.2 NVMe SSD"
+      },
+      {
+        "label": "Motherboard",
+        "value": "Gigabyte Z790 Aorus Elite AX"
+      },
+      {
+        "label": "PSU",
+        "value": "MSI MPG 1000W 80+ Gold PCIe 5.0"
+      },
+      {
+        "label": "Case",
+        "value": "Lian Li O11 Vision"
+      },
+      {
+        "label": "Cooling",
+        "value": "Thermalright 360mm Mjolnir Vision AIO Liquid Cooler"
+      },
+      {
+        "label": "OS",
+        "value": "Windows 11 Pro (activated)"
+      }
+    ],
+    "slug": "spectra",
+    "images_local": [
+      "images/builds/spectra_1.jpg",
+      "images/builds/spectra_2.jpg",
+      "images/builds/spectra_3.jpg"
+    ]
+  },
+  {
+    "id": "10686898929974",
+    "title": "Custom Built Gaming PC - AMD Ryzen 7 9800X3D + RX 7900 XTX - 32GB DDR5 - 2TB NVMe - High-End Gaming Build",
+    "tagline": "Experience flagship gaming performance with this premium build featuring AMD's cutting-edge 9800X3D processor and the powerful RX 7900 XTX graphics card. This configuration crushes 4K gaming, handles demanding titles like Cyberpunk 2077 and Call of Duty at maximum settings, and excels at content creation and streaming with its 32GB of fast DDR5 memory. The sleek black and white aesthetic with RGB lighting creates a stunning visual centerpiece for any setup. PC trade-ins welcome for additional savings!",
+    "description": "",
+    "tier": "Gaming PC",
+    "price": 2000.0,
+    "status": "sold",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/7656E349-CA9A-4DD8-9D47-8A0CEC1D259B.jpg?v=1776878270",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/D7FD3BC9-250B-4D76-A41E-4EDE44D101D5.jpg?v=1776878270",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/3EAAB882-9266-4C53-B650-F0EA2EAA94A4.jpg?v=1776878270"
+    ],
+    "extras": [
+      "WiFi antenna",
+      "Power cable",
+      "Fully customizable RGB"
+    ],
+    "specs": [
+      {
+        "label": "CPU",
+        "value": "AMD Ryzen 7 9800X3D"
+      },
+      {
+        "label": "GPU",
+        "value": "AMD Radeon RX 7900 XTX \u2014 PowerColor Red Devil 24GB VRAM"
+      },
+      {
+        "label": "RAM",
+        "value": "32GB (2x16GB) Corsair Vengeance RGB DDR5-6000 CL36"
+      },
+      {
+        "label": "Storage",
+        "value": "WD Green SN350 2TB NVMe SSD"
+      },
+      {
+        "label": "Motherboard",
+        "value": "ASRock B650M-HDV/M.2"
+      },
+      {
+        "label": "PSU",
+        "value": "EVGA SuperNOVA 1000 GT 1000W 80+ Gold"
+      },
+      {
+        "label": "Case",
+        "value": "Y40 Black White"
+      },
+      {
+        "label": "Cooling",
+        "value": "TR Mjolnir Vision"
+      },
+      {
+        "label": "OS",
+        "value": "Windows 11 Home (activated)"
+      }
+    ],
+    "slug": "custom-built-gaming",
+    "images_local": [
+      "images/builds/custom-built-gaming_1.jpg",
+      "images/builds/custom-built-gaming_2.jpg",
+      "images/builds/custom-built-gaming_3.jpg"
+    ]
+  },
+  {
+    "id": "10603562008886",
+    "title": "The Blizzard \u2014 Ryzen 7 7700X / RX 9070 XT / 32GB DDR5 Gaming PC",
+    "tagline": "Super clean build with fully customizable RGB. Powerful, professional-looking rig that crushes any game you throw at it.",
+    "description": "From Valorant to Marvel Rivals, Fortnite, Apex, and everything in between. Doubles as a workstation for streamers, video editors, videographers, or anyone else who needs a high-horsepower rig for their daily work. PC trade-ins welcome \u2014 trade in your old PC for a discount towards this one!",
+    "tier": "High Performance",
+    "price": 2000.0,
+    "status": "sold",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/IMG-6498.jpg?v=1771461735",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/IMG-6497.jpg?v=1771461735",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/IMG-6499.jpg?v=1771461735"
+    ],
+    "extras": [],
+    "specs": [
+      {
+        "label": "CPU",
+        "value": "AMD Ryzen 7 7700X"
+      },
+      {
+        "label": "GPU",
+        "value": "RX 9070 XT \u2014 XFX Mercury Custom White"
+      },
+      {
+        "label": "RAM",
+        "value": "32GB (2x16GB) TEAMGROUP DDR5 5200MHz RGB"
+      },
+      {
+        "label": "Storage",
+        "value": "Patriot P400L 1TB M.2 NVMe SSD"
+      },
+      {
+        "label": "Motherboard",
+        "value": "MSI MPG B650 Edge WiFi"
+      },
+      {
+        "label": "PSU",
+        "value": "Thermaltake Snow 1000W 80+ Gold"
+      },
+      {
+        "label": "Case",
+        "value": "NZXT H6 Flow"
+      },
+      {
+        "label": "Cooling",
+        "value": "Thermalright 360mm AIO Liquid Cooler"
+      },
+      {
+        "label": "OS",
+        "value": "Windows 11 Pro (activated)"
+      }
+    ],
+    "slug": "blizzard",
+    "images_local": [
+      "images/builds/blizzard_1.jpg",
+      "images/builds/blizzard_2.jpg",
+      "images/builds/blizzard_3.jpg"
+    ]
+  },
+  {
+    "id": "10604136268086",
+    "title": "\"Lightshow\" \u2014 RTX 4070 Ti / AMD 7600X3D / 32GB DDR5 / 1TB SSD \u2014 Built for 1440p Gaming",
+    "tagline": "This King 95 build delivers exceptional 1440p gaming performance with the 7600X3D's massive cache advantage and RTX 4070 Ti's raw power. Easily handle AAA titles like Cyberpunk 2077, Elden Ring, and Call of Duty at high settings while having headroom for streaming or content creation with 32GB of fast DDR5. PC trade-ins welcome for additional savings on your upgrade.",
+    "description": "",
+    "tier": "Gaming PC",
+    "price": 1500.0,
+    "status": "sold",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3761.jpg?v=1771562193",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3762.jpg?v=1771562193",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3764.jpg?v=1771562193"
+    ],
+    "extras": [
+      "WiFi antenna",
+      "Power cable"
+    ],
+    "specs": [
+      {
+        "label": "CPU",
+        "value": "AMD Ryzen 5 7600X3D"
+      },
+      {
+        "label": "GPU",
+        "value": "NVIDIA RTX 4070 Ti \u2014 12GB VRAM"
+      },
+      {
+        "label": "RAM",
+        "value": "32GB (2x16GB) G.Skill Trident Z5 DDR5-6000 CL30"
+      },
+      {
+        "label": "Storage",
+        "value": "1TB WD Black SN850X"
+      },
+      {
+        "label": "Motherboard",
+        "value": "MSI MPG X670E Carbon WiFi"
+      },
+      {
+        "label": "PSU",
+        "value": "Cougar GEX850W 850W 80+ Gold"
+      },
+      {
+        "label": "Case",
+        "value": "King 95"
+      },
+      {
+        "label": "Cooling",
+        "value": "DeepCool LS720"
+      },
+      {
+        "label": "OS",
+        "value": "Windows 11 Home (activated)"
+      }
+    ],
+    "slug": "lightshow",
+    "images_local": [
+      "images/builds/lightshow_1.jpg",
+      "images/builds/lightshow_2.jpg",
+      "images/builds/lightshow_3.jpg"
+    ]
+  },
+  {
+    "id": "10602831675702",
+    "title": "The Frost \u2014 i7-13700K / RTX 4070 Ti / 32GB DDR5 Gaming PC",
+    "tagline": "i7-13700K + RTX 4070 Ti \u2014 clean white build, serious power",
+    "description": "A stunning all-white Lian Li build with Intel i7-13700K and an RTX 4070 Ti. 360mm AIO cooling keeps everything frosty under load. Looks as good as it performs.",
+    "tier": "High Performance",
+    "price": 1499.99,
+    "status": "sold",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3704.jpg?v=1771352154",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3708.jpg?v=1771352155",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3709.jpg?v=1771352155"
+    ],
+    "extras": [],
+    "specs": [
+      {
+        "label": "CPU",
+        "value": "Intel Core i7-13700K"
+      },
+      {
+        "label": "GPU",
+        "value": "NVIDIA RTX 4070 Ti \u2014 ASUS TUF Gaming"
+      },
+      {
+        "label": "RAM",
+        "value": "32GB (2x16GB) TEAMGROUP DDR5 5200MHz CL40"
+      },
+      {
+        "label": "Storage",
+        "value": "Samsung 970 EVO Plus 1TB M.2 NVMe SSD"
+      },
+      {
+        "label": "Motherboard",
+        "value": "ASUS Prime Z690-A"
+      },
+      {
+        "label": "PSU",
+        "value": "MSI MAG A850GL 850W"
+      },
+      {
+        "label": "Case",
+        "value": "Lian Li LANCOOL 216 (White)"
+      },
+      {
+        "label": "Cooling",
+        "value": "Kingcool Pure Flow 360mm AIO Liquid Cooler"
+      },
+      {
+        "label": "OS",
+        "value": "Windows 11 Pro (activated)"
+      }
+    ],
+    "slug": "frost",
+    "images_local": [
+      "images/builds/frost_1.jpg",
+      "images/builds/frost_2.jpg",
+      "images/builds/frost_3.jpg"
+    ]
+  },
+  {
+    "id": "10602831642934",
+    "title": "The Ember \u2014 Ryzen 7 7700X / RTX 4070 Ti / 32GB DDR5 Gaming PC",
+    "tagline": "Ryzen 7 7700X + RTX 4070 Ti \u2014 ready for 1440p and beyond",
+    "description": "A 1440p beast wrapped in a clean Corsair 4000D with red-accent RGB. Powered by AMD Ryzen 7 7700X and NVIDIA RTX 4070 Ti \u2014 this thing eats modern titles for breakfast.",
+    "tier": "High Performance",
+    "price": 1499.99,
+    "status": "sold",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3698.jpg?v=1771351912",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3700.jpg?v=1771351912",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3702.jpg?v=1771351912"
+    ],
+    "extras": [],
+    "specs": [
+      {
+        "label": "CPU",
+        "value": "AMD Ryzen 7 7700X"
+      },
+      {
+        "label": "GPU",
+        "value": "NVIDIA RTX 4070 Ti \u2014 ASUS TUF Gaming"
+      },
+      {
+        "label": "RAM",
+        "value": "32GB (2x16GB) G.Skill Ripjaws DDR5 5600MHz CL36"
+      },
+      {
+        "label": "Storage",
+        "value": "2TB Teamgroup M.2 NVMe SSD"
+      },
+      {
+        "label": "Motherboard",
+        "value": "ASUS Prime X670-P"
+      },
+      {
+        "label": "PSU",
+        "value": "EVGA 850W 80+ Gold"
+      },
+      {
+        "label": "Case",
+        "value": "Corsair 4000D"
+      },
+      {
+        "label": "Cooling",
+        "value": "EKWB 240mm AIO Liquid Cooler"
+      },
+      {
+        "label": "OS",
+        "value": "Windows 11 Pro (Activated)"
+      }
+    ],
+    "slug": "ember",
+    "images_local": [
+      "images/builds/ember_1.jpg",
+      "images/builds/ember_2.jpg",
+      "images/builds/ember_3.jpg"
+    ]
+  },
+  {
+    "id": "10602831708470",
+    "title": "The Shadow \u2014 i5-12600K / RTX 3080 / 32GB DDR4 Gaming PC",
+    "tagline": "i5-12600K + RTX 3080 \u2014 1080p powerhouse at a great price",
+    "description": "Stealthy Corsair 4000D build with an i5-12600K and RTX 3080 \u2014 a proven 1080p powerhouse that still crushes modern titles. Incredible value for the performance.",
+    "tier": "Mid-Range",
+    "price": 999.99,
+    "status": "sold",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3657.jpg?v=1771352207",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3659.jpg?v=1771352209",
+      "https://cdn.shopify.com/s/files/1/0970/9928/4790/files/DSC_3661.jpg?v=1771352207"
+    ],
+    "extras": [],
+    "specs": [
+      {
+        "label": "CPU",
+        "value": "Intel Core i5-12600K"
+      },
+      {
+        "label": "GPU",
+        "value": "NVIDIA GeForce RTX 3080"
+      },
+      {
+        "label": "RAM",
+        "value": "32GB (2x16GB) T-Force DDR4 3200MHz CL16"
+      },
+      {
+        "label": "Storage",
+        "value": "WD Blue 500GB M.2 NVMe SSD + 1TB HDD"
+      },
+      {
+        "label": "Motherboard",
+        "value": "MSI Pro B760-P WiFi DDR4"
+      },
+      {
+        "label": "PSU",
+        "value": "EVGA SuperNOVA 850W 80+ Gold"
+      },
+      {
+        "label": "Case",
+        "value": "Corsair 4000D"
+      },
+      {
+        "label": "Cooling",
+        "value": "DeepCool AK620"
+      },
+      {
+        "label": "OS",
+        "value": "Windows 11 Pro (activated)"
+      }
+    ],
+    "slug": "shadow",
+    "images_local": [
+      "images/builds/shadow_1.jpg",
+      "images/builds/shadow_2.jpg",
+      "images/builds/shadow_3.jpg"
+    ]
+  }
+]
