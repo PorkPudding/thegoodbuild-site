@@ -78,6 +78,7 @@ about refurbished parts is a selling point. Avoid hypey marketing language.
 - The site is plain static hosting — any "backend" behavior must live in the
   dashboard's Vercel functions, not here.
 - Compress photos before committing (target ≲150KB each, max ~1400px).
-- Old Shopify product data was archived to `builds.json` on 2026-07-08 before
-  cancelling Shopify; the extracted raw copy is `shopify_builds_extracted.json`
-  (safe to delete once builds.json is trusted).
+- Shopify history: the store's product data was archived into `builds.json` on
+  2026-07-08, the subscription was cancelled the same day, and the raw extracted
+  copy (`shopify_builds_extracted.json`) was deleted once the dashboard feed was
+  live. Photos for those builds live on in `images/builds/`.
