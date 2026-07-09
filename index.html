@@ -103,13 +103,14 @@ section[id]{scroll-margin-top:96px}
 .build-card-price{font-family:var(--sg);font-weight:700;font-size:18px;color:var(--accent);white-space:nowrap}
 .build-card-specs{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13px;margin-top:12px;color:var(--text-muted)}
 .build-card-specs .k{color:var(--text-faint)}
-.build-card-perf{margin-top:14px;font-size:12px;font-family:var(--sg);letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
 .builds-empty{grid-column:1/-1;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:40px 32px;text-align:center;font-size:15.5px;color:var(--text-muted)}
 .builds-loading{grid-column:1/-1;text-align:center;padding:48px 20px;color:var(--text-faint);font-size:14px}
 
 /* ===== RECENT (SOLD) ===== */
 .sold-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
 .sold-item{position:relative;height:190px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg-deep)}
+.sold-item.clickable{cursor:pointer;transition:border-color .18s}
+.sold-item.clickable:hover{border-color:var(--border-hover)}
 .sold-item img{width:100%;height:100%;object-fit:cover}
 .sold-badge{position:absolute;bottom:10px;left:10px;background:rgba(16,18,20,.85);border:1px solid var(--border-strong);border-radius:4px;padding:5px 10px;font-family:var(--sg);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);pointer-events:none}
 
@@ -194,6 +195,43 @@ section[id]{scroll-margin-top:96px}
 .policy strong{color:var(--text)}
 body.policy-open .home-page{display:none}
 
+/* ===== BUILD DETAIL OVERLAY ===== */
+.build-overlay{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+.build-overlay.open{display:flex}
+.build-overlay-backdrop{position:absolute;inset:0;background:rgba(12,14,16,.95)}
+.build-panel{position:relative;z-index:1;width:min(1080px,100%);max-height:90vh;background:var(--surface);border:1px solid var(--border-strong);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.build-close{position:absolute;top:12px;right:12px;z-index:5;width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:rgba(16,18,20,.72);border:1px solid var(--border-strong);border-radius:6px;color:var(--text);font-size:22px;line-height:1;cursor:pointer;transition:border-color .18s,color .18s}
+.build-close:hover{border-color:var(--accent);color:var(--accent)}
+.build-detail{display:grid;grid-template-columns:1.05fr .95fr;overflow-y:auto}
+.build-gallery{padding:24px}
+.build-gallery-main{position:relative;width:100%;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--bg-deep)}
+.build-gallery-main img{width:100%;height:100%;object-fit:cover}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(16,18,20,.72);border:1px solid var(--border-strong);border-radius:6px;color:var(--text);font-size:24px;line-height:1;cursor:pointer;transition:border-color .18s,color .18s}
+.gallery-arrow:hover{border-color:var(--accent);color:var(--accent)}
+.gallery-arrow.prev{left:12px}
+.gallery-arrow.next{right:12px}
+.build-thumbs{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.build-thumb{width:66px;height:50px;padding:0;border-radius:6px;overflow:hidden;border:1px solid var(--border);background:var(--bg-deep);cursor:pointer;transition:border-color .18s}
+.build-thumb img{width:100%;height:100%;object-fit:cover}
+.build-thumb:hover{border-color:var(--border-hover)}
+.build-thumb.active{border-color:var(--accent)}
+.build-info{padding:28px 30px 32px;border-left:1px solid var(--border)}
+.build-info-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding-right:44px}
+.build-detail-title{font-family:var(--sg);font-weight:700;font-size:23px;line-height:1.18;letter-spacing:-.5px;color:var(--text)}
+.build-detail-price{font-family:var(--sg);font-weight:700;font-size:22px;color:var(--accent);white-space:nowrap}
+.build-detail-sold{font-family:var(--sg);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border-strong);border-radius:4px;padding:6px 10px;white-space:nowrap;align-self:center}
+.build-spec-table{margin-top:20px;border-top:1px solid var(--border)}
+.spec-row{display:grid;grid-template-columns:132px 1fr;gap:14px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px}
+.spec-k{color:var(--text-faint);font-family:var(--sg);font-size:12.5px;letter-spacing:.5px;text-transform:uppercase}
+.spec-v{color:var(--text)}
+.build-detail-desc{font-size:14.5px;color:var(--text-muted);line-height:1.7;margin-top:20px}
+.build-detail-extras{margin-top:22px}
+.build-detail-extras h4{font-family:var(--sg);font-weight:600;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--text-faint)}
+.build-detail-extras ul{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:8px}
+.build-detail-extras li{font-size:14px;color:var(--text-muted);padding-left:18px;position:relative}
+.build-detail-extras li::before{content:'–';position:absolute;left:0;color:var(--accent)}
+.build-detail-cta{margin-top:26px;width:100%}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:1000px){
   .hero h1{font-size:52px}
@@ -239,6 +277,13 @@ body.policy-open .home-page{display:none}
   .form-row input:last-child{margin-top:14px}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:8px}
+}
+@media(max-width:760px){
+  .build-overlay{padding:0}
+  .build-panel{width:100%;height:100%;max-height:100vh;border-radius:0;border:none}
+  .build-detail{grid-template-columns:1fr}
+  .build-info{border-left:none;border-top:1px solid var(--border);padding:24px 22px 32px}
+  .spec-row{grid-template-columns:112px 1fr}
 }
 </style>
 </head>
@@ -463,6 +508,15 @@ body.policy-open .home-page{display:none}
     </div>
   </footer>
 
+  <!-- ===== BUILD DETAIL OVERLAY (populated by JS on open) ===== -->
+  <div class="build-overlay" id="build-overlay" aria-hidden="true">
+    <div class="build-overlay-backdrop" onclick="closeBuildDetail()"></div>
+    <div class="build-panel" role="dialog" aria-modal="true" aria-label="Build details">
+      <button type="button" class="build-close" aria-label="Close" onclick="closeBuildDetail()">&times;</button>
+      <div class="build-detail" id="build-overlay-inner"></div>
+    </div>
+  </div>
+
 </div><!-- /.wrap -->
 
 <script>
@@ -480,6 +534,7 @@ var CONFIG = {
 // Global state
 var allBuilds = [];   // available builds
 var soldBuilds = [];  // recent (sold) builds
+var buildIndex = {};  // id -> build, for detail-overlay lookup / deep-linking
 var SOLD_CAP = 8;     // two rows of four in the sold gallery
 
 // ============================================================
@@ -544,17 +599,6 @@ var SPEC_ROWS = [
   { key: 'SSD', match: ['ssd', 'storage', 'nvme', 'drive'] }
 ];
 
-// Footer perf line: prefer a performance descriptor in extras, else the tier.
-function perfLine(build) {
-  var extras = build.extras || [];
-  var perfRe = /(\d{3,4}\s?p\b|4k|\d+\+?\s*fps|\d+\s*hz)/i;
-  for (var i = 0; i < extras.length; i++) {
-    if (perfRe.test(String(extras[i]))) return String(extras[i]);
-  }
-  if (build.tier && String(build.tier).trim()) return String(build.tier).trim();
-  return '';
-}
-
 function priceLabel(build) {
   return build.price ? '$' + Number(build.price).toLocaleString() : '';
 }
@@ -570,13 +614,12 @@ function availableCard(build) {
     var v = specValue(build, SPEC_ROWS[i].match);
     if (v) specRows += '<span class="k">' + SPEC_ROWS[i].key + '</span><span>' + esc(v) + '</span>';
   }
-  var perf = perfLine(build);
   var card = document.createElement('article');
   card.className = 'build-card clickable';
   card.setAttribute('role', 'button');
   card.setAttribute('tabindex', '0');
-  card.onclick = function () { openInquiry(name); };
-  card.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openInquiry(name); } };
+  card.onclick = function () { openBuildDetail(build); };
+  card.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openBuildDetail(build); } };
   card.innerHTML =
     '<div class="build-card-photo"><img src="' + esc(img) + '" alt="' + esc(build.title) + '" loading="lazy"></div>' +
     '<div class="build-card-body">' +
@@ -585,16 +628,20 @@ function availableCard(build) {
         '<span class="build-card-price">' + esc(priceLabel(build)) + '</span>' +
       '</div>' +
       '<div class="build-card-specs">' + specRows + '</div>' +
-      (perf ? '<div class="build-card-perf">' + esc(perf) + '</div>' : '') +
     '</div>';
   return card;
 }
 
-// RENDER — sold gallery photo
+// RENDER — sold gallery photo (clicks into the same detail overlay)
 function soldItem(build) {
   var img = (build.images && build.images[0]) || 'images/logo.png';
   var el = document.createElement('div');
-  el.className = 'sold-item';
+  el.className = 'sold-item clickable';
+  el.setAttribute('role', 'button');
+  el.setAttribute('tabindex', '0');
+  el.setAttribute('aria-label', shortTitle(build.title) + ' — sold, view details');
+  el.onclick = function () { openBuildDetail(build); };
+  el.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openBuildDetail(build); } };
   el.innerHTML =
     '<img src="' + esc(img) + '" alt="' + esc(build.title) + '" loading="lazy">' +
     '<span class="sold-badge">Sold</span>';
@@ -750,6 +797,183 @@ function mailtoFallback(name, contact, build, msg) {
 }
 
 // ============================================================
+// BUILD DETAIL OVERLAY (click-into-detail, Night Bench)
+// ============================================================
+var currentBuild = null;
+var currentImages = [];
+var currentImgIndex = 0;
+var overlayOpen = false;
+
+function findBuild(id) { return (id != null) ? (buildIndex[String(id)] || null) : null; }
+function isBuildHash() { return /^#build-/.test(location.hash || ''); }
+function buildIdFromHash() { var m = /^#build-(.+)$/.exec(location.hash || ''); return m ? decodeURIComponent(m[1]) : null; }
+function homeUrl() { return location.pathname + location.search; }
+
+// Open from a card/photo click: show it and push a history entry so the phone
+// back button (and Esc) close the overlay instead of leaving the site.
+function openBuildDetail(build) {
+  if (!build) return;
+  showOverlay(build);
+  history.pushState({ tgbOverlay: build.id }, '', '#build-' + encodeURIComponent(build.id));
+}
+
+// User-initiated close (Esc / backdrop / ×). Pop our pushed entry so the URL
+// and history stay clean; popstate then hides the overlay.
+function closeBuildDetail() {
+  if (isBuildHash()) history.back();
+  else hideOverlay();
+}
+
+function showOverlay(build) {
+  currentBuild = build;
+  currentImages = (build.images && build.images.length) ? build.images.slice() : ['images/logo.png'];
+  currentImgIndex = 0;
+  renderOverlay(build);
+  var ov = document.getElementById('build-overlay');
+  ov.classList.add('open');
+  ov.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';   // lock background scroll
+  overlayOpen = true;
+  var cb = ov.querySelector('.build-close');
+  if (cb) cb.focus();
+}
+
+function hideOverlay() {
+  var ov = document.getElementById('build-overlay');
+  ov.classList.remove('open');
+  ov.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  overlayOpen = false;
+  currentBuild = null;
+}
+
+function renderOverlay(build) {
+  var inner = document.getElementById('build-overlay-inner');
+  var title = build.title || '';
+  var isSold = build.status === 'sold';
+  var imgs = currentImages;
+  var hasMulti = imgs.length > 1;
+
+  var thumbs = '';
+  if (hasMulti) {
+    for (var t = 0; t < imgs.length; t++) {
+      thumbs += '<button type="button" class="build-thumb' + (t === 0 ? ' active' : '') +
+        '" onclick="gallerySet(' + t + ')" aria-label="View image ' + (t + 1) + '">' +
+        '<img src="' + esc(imgs[t]) + '" alt="" loading="lazy"></button>';
+    }
+  }
+  var gallery =
+    '<div class="build-gallery">' +
+      '<div class="build-gallery-main">' +
+        '<img id="gallery-main-img" src="' + esc(imgs[0]) + '" alt="' + esc(title) + '">' +
+        (hasMulti ?
+          '<button type="button" class="gallery-arrow prev" onclick="galleryGo(-1)" aria-label="Previous image">‹</button>' +
+          '<button type="button" class="gallery-arrow next" onclick="galleryGo(1)" aria-label="Next image">›</button>' : '') +
+      '</div>' +
+      (hasMulti ? '<div class="build-thumbs">' + thumbs + '</div>' : '') +
+    '</div>';
+
+  var priceHtml = isSold
+    ? '<span class="build-detail-sold">Sold</span>'
+    : (priceLabel(build) ? '<span class="build-detail-price">' + esc(priceLabel(build)) + '</span>' : '');
+
+  var specRows = '';
+  var specs = build.specs || [];
+  for (var s = 0; s < specs.length; s++) {
+    var lab = specs[s] && specs[s].label;
+    var val = specs[s] && specs[s].value;
+    if (lab || val) {
+      specRows += '<div class="spec-row"><span class="spec-k">' + esc(lab) + '</span><span class="spec-v">' + esc(val) + '</span></div>';
+    }
+  }
+  var specHtml = specRows ? '<div class="build-spec-table">' + specRows + '</div>' : '';
+
+  var desc = build.description || build.tagline || '';
+  var descHtml = desc ? '<p class="build-detail-desc">' + esc(desc) + '</p>' : '';
+
+  var extras = build.extras || [];
+  var lis = '';
+  for (var e = 0; e < extras.length; e++) { if (extras[e]) lis += '<li>' + esc(extras[e]) + '</li>'; }
+  var extrasHtml = lis ? '<div class="build-detail-extras"><h4>Included</h4><ul>' + lis + '</ul></div>' : '';
+
+  var cta = isSold
+    ? '<button type="button" class="btn-secondary build-detail-cta" onclick="ctaLikeThis()">Want one like this?</button>'
+    : '<button type="button" class="btn-primary build-detail-cta" onclick="ctaAskAbout()">Ask about this build</button>';
+
+  var info =
+    '<div class="build-info">' +
+      '<div class="build-info-head">' +
+        '<h2 class="build-detail-title">' + esc(title) + '</h2>' +
+        priceHtml +
+      '</div>' +
+      specHtml + descHtml + extrasHtml + cta +
+    '</div>';
+
+  inner.innerHTML = gallery + info;
+}
+
+// ---- gallery navigation ----
+function galleryGo(delta) {
+  if (currentImages.length < 2) return;
+  currentImgIndex = (currentImgIndex + delta + currentImages.length) % currentImages.length;
+  updateGalleryImage();
+}
+function gallerySet(i) {
+  if (i < 0 || i >= currentImages.length) return;
+  currentImgIndex = i;
+  updateGalleryImage();
+}
+function updateGalleryImage() {
+  var mainImg = document.getElementById('gallery-main-img');
+  if (mainImg) mainImg.src = currentImages[currentImgIndex];   // feed URL — set as src, not HTML
+  var thumbs = document.querySelectorAll('.build-thumb');
+  for (var i = 0; i < thumbs.length; i++) { thumbs[i].classList.toggle('active', i === currentImgIndex); }
+}
+
+// ---- CTAs: close overlay, preselect the dropdown, smooth-scroll to contact ----
+// Use replaceState (not history.back) so we strip #build-<id> WITHOUT a history
+// traversal — a traversal would let the browser restore scroll and fight the
+// smooth-scroll to #contact.
+function ctaAskAbout() {
+  var t = currentBuild ? shortTitle(currentBuild.title) : '';
+  hideOverlay();
+  if (isBuildHash()) history.replaceState({}, '', homeUrl());
+  openInquiry(t);
+}
+function ctaLikeThis() {
+  hideOverlay();
+  if (isBuildHash()) history.replaceState({}, '', homeUrl());
+  openInquiry('A build like one of your previous ones');
+}
+
+// ---- deep-link + back/forward wiring ----
+function handleInitialHash() {
+  var id = buildIdFromHash();
+  if (!id) return;
+  var b = findBuild(id);
+  if (b) {
+    // Put a clean homepage entry behind the overlay so back/Esc collapse to the
+    // homepage instead of leaving the site.
+    history.replaceState({}, '', homeUrl());
+    history.pushState({ tgbOverlay: b.id }, '', '#build-' + encodeURIComponent(b.id));
+    showOverlay(b);
+  } else {
+    history.replaceState({}, '', homeUrl());   // unknown id — fail silently to homepage
+  }
+}
+window.addEventListener('popstate', function () {
+  var id = buildIdFromHash();
+  if (id) { var b = findBuild(id); if (b) { showOverlay(b); return; } }
+  hideOverlay();
+});
+document.addEventListener('keydown', function (e) {
+  if (!overlayOpen) return;
+  if (e.key === 'Escape') { e.preventDefault(); closeBuildDetail(); }
+  else if (e.key === 'ArrowLeft') { galleryGo(-1); }
+  else if (e.key === 'ArrowRight') { galleryGo(1); }
+});
+
+// ============================================================
 // NAV / MOBILE MENU / RETURN POLICY
 // ============================================================
 function toggleMenu() {
@@ -782,7 +1006,10 @@ async function init() {
   var builds = await fetchBuilds();
   allBuilds = builds.filter(function (b) { return b.status === 'available'; });
   soldBuilds = builds.filter(function (b) { return b.status === 'sold'; });
+  buildIndex = {};
+  builds.forEach(function (b) { if (b && b.id != null) buildIndex[String(b.id)] = b; });
   renderBuilds();
+  handleInitialHash();   // deep-link: open #build-<id> once the feed is loaded
 }
 
 init();
