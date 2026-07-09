@@ -820,6 +820,65 @@ function injectFaqJsonLd() {
 }
 
 // ============================================================
+// LEAD SOURCE  (R44 — which channel produced this lead)
+// ============================================================
+// Capture a compact channel string ONCE per session, first-touch-wins, so
+// bouncing around the SPA or opening the form later doesn't lose it:
+//   - a ?utm_source (+ optional utm_medium / utm_campaign) → "instagram/bio"
+//   - else a non-empty referrer from another host          → "facebook.com"
+//   - else (direct)                                        → "" (sent as nothing)
+// It's appended to the inquiry message server-side as a "[via <source>]" tag —
+// plain text, capped, never trusted (the dashboard validator re-sanitizes it).
+var LEAD_SRC_KEY = 'tgb_lead_src';
+var LEAD_SRC_CAP = 120;
+
+function sanitizeSource(s) {
+  s = String(s == null ? '' : s)
+    .replace(/[\x00-\x1F\x7F]/g, ' ')  // drop control bytes
+    .replace(/\s+/g, ' ')              // collapse whitespace
+    .trim();
+  return s.length > LEAD_SRC_CAP ? s.slice(0, LEAD_SRC_CAP).trim() : s;
+}
+
+// Derive the source live from the current URL + referrer (no persistence).
+function deriveLeadSource() {
+  try {
+    var params = new URLSearchParams(location.search || '');
+    var us = (params.get('utm_source') || '').trim();
+    if (us) {
+      var parts = [us];
+      var um = (params.get('utm_medium') || '').trim();
+      var uc = (params.get('utm_campaign') || '').trim();
+      if (um) parts.push(um);   // only include parts that exist
+      if (uc) parts.push(uc);
+      return sanitizeSource(parts.join('/'));
+    }
+    var ref = document.referrer || '';
+    if (ref) {
+      var host = '';
+      try { host = new URL(ref).hostname; } catch (e) { host = ''; }
+      if (host && host !== location.hostname) return sanitizeSource(host);
+    }
+  } catch (e) { /* URL/searchParams unsupported — treat as direct */ }
+  return '';
+}
+
+// First-touch-wins: the first captured value (even "" for a direct visit) is
+// pinned in sessionStorage; later loads in the same session keep it. Falls back
+// to a live derive if sessionStorage is unavailable (private mode / blocked).
+function captureLeadSource() {
+  try {
+    var existing = sessionStorage.getItem(LEAD_SRC_KEY);
+    if (existing !== null) return existing;   // already captured this session
+    var src = deriveLeadSource();
+    sessionStorage.setItem(LEAD_SRC_KEY, src);
+    return src;
+  } catch (e) {
+    return deriveLeadSource();
+  }
+}
+
+// ============================================================
 // CONTACT / INQUIRY  (submit contract preserved exactly)
 // ============================================================
 function openInquiry(buildTitle) {
@@ -853,11 +912,14 @@ async function submitInquiry(ev) {
     status.textContent = 'Sending…';
     status.className = 'form-status';
     try {
+      var payload = { name: name, contact: contact, build: build, message: msg,
+                      company: (document.getElementById('inq-company') || { value: '' }).value };
+      var source = captureLeadSource();   // "" for a direct visit → send nothing
+      if (source) payload.source = source;
       var resp = await fetch(CONFIG.INQUIRY_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, contact: contact, build: build, message: msg,
-                               company: (document.getElementById('inq-company') || { value: '' }).value })
+        body: JSON.stringify(payload)
       });
       if (!resp.ok) throw new Error('HTTP ' + resp.status);
       status.textContent = "Got it — I'll get back to you fast. Usually same day.";
@@ -1090,6 +1152,7 @@ function goHome() {
 // INIT
 // ============================================================
 async function init() {
+  captureLeadSource();   // R44: pin the lead channel at first load (first-touch-wins)
   renderFaq();
   injectFaqJsonLd();     // FAQPage structured data from the FAQS array
   var builds = await fetchBuilds();
