@@ -73,8 +73,11 @@ about refurbished parts is a selling point. Avoid hypey marketing language.
 
 ## Working notes
 
-- Design system: navy/blue palette, DM Sans + Outfit fonts, CSS variables in
-  `:root`. Match it for anything new.
+- Design system: "Night Bench" (2026-07-09 redesign) — dark bg `#101214`/`#0C0E10`,
+  surface `#16191D`, borders `#23272C`/`#2E343B`/`#3A4149`, text `#E9EBED`/`#A6ADB5`/
+  `#6B737C`, ONE signal-green accent `#3DDC84` (hover `#6FEBA6`), Space Grotesk
+  (display) + IBM Plex Sans (body), radii 10/8/6/4px, NO emoji icons (dots ●,
+  numerals, +/− only). CSS variables in `:root`. Match it for anything new.
 - The site is plain static hosting — any "backend" behavior must live in the
   dashboard's Vercel functions, not here.
 - Compress photos before committing (target ≲150KB each, max ~1400px).
