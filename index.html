@@ -685,10 +685,16 @@ function updateGridColumns() {
   var grid = document.getElementById('builds-grid');
   if (!grid) return;
   var n = allBuilds.length;
-  if (window.innerWidth > 900 && n) {
-    grid.style.gridTemplateColumns = n === 1 ? '1fr' : (n === 2 ? 'repeat(2,1fr)' : 'repeat(3,1fr)');
+  if (window.innerWidth > 900 && n && n < 3) {
+    // 1–2 cards: keep them at the natural three-column card width, centered.
+    // A lone '1fr' card stretched to the full 1200px row against the fixed
+    // 280px gallery height — a letterboxed crop showing only the middle of
+    // the PC photo. 384px = (1200 - 2*24px gap) / 3.
+    grid.style.gridTemplateColumns = 'repeat(' + n + ', minmax(0, 384px))';
+    grid.style.justifyContent = 'center';
   } else {
     grid.style.gridTemplateColumns = '';
+    grid.style.justifyContent = '';
   }
 }
 window.addEventListener('resize', updateGridColumns);
