@@ -12,11 +12,14 @@
 <meta property="og:title" content="The Good Build &mdash; Custom Gaming PCs in Corona, CA">
 <meta property="og:description" content="Hand-built gaming PCs in Corona, California. Assembled with care, stress-tested, and sold locally.">
 <meta property="og:url" content="https://thegoodbuild.shop/">
-<meta property="og:image" content="https://thegoodbuild.shop/images/logo.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://seet3d5x4highrvy.public.blob.vercel-storage.com/builds/B-025/1.jpg">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1600">
+<meta property="og:image:alt" content="A hand-built gaming PC on the bench — Ryzen 7 7800X3D / RTX 4080 Super">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Good Build &mdash; Custom Gaming PCs in Corona, CA">
 <meta name="twitter:description" content="Hand-built gaming PCs in Corona, California. Assembled with care, stress-tested, and sold locally.">
-<meta name="twitter:image" content="https://thegoodbuild.shop/images/logo.png">
+<meta name="twitter:image" content="https://seet3d5x4highrvy.public.blob.vercel-storage.com/builds/B-025/1.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -25,7 +28,10 @@
   "description": "Hand-built custom gaming PCs, stress-tested and sold locally in Corona, California.",
   "email": "support@thegoodbuild.shop",
   "url": "https://thegoodbuild.shop",
+  "image": "https://seet3d5x4highrvy.public.blob.vercel-storage.com/builds/B-025/1.jpg",
+  "priceRange": "$400 - $3,000",
   "address": {"@type": "PostalAddress", "addressLocality": "Corona", "addressRegion": "CA", "addressCountry": "US"},
+  "geo": {"@type": "GeoCoordinates", "latitude": 33.8753, "longitude": -117.5664},
   "areaServed": ["Corona CA", "Riverside County CA", "Inland Empire", "Orange County CA"],
   "sameAs": ["https://www.instagram.com/romans_goodbuild", "https://www.tiktok.com/@thegoodbuild"]
 }
@@ -392,6 +398,7 @@ body.policy-open .home-page{display:none}
       <h2 class="h2">One builder. No BS.</h2>
       <p>The Good Build started in a garage in Corona, California. What began as a hobby &mdash; buying, building, and flipping PCs &mdash; turned into something bigger when people kept coming back and bringing their friends.</p>
       <p>Every system on this site was built by me. I source the parts, I assemble the machine, I test it, and I stand behind it. No warehouse, no investors, no corporate nonsense.</p>
+      <p>Curious what 500+ builds looks like? <a href="https://thegoodbuild.vercel.app/past-builds/" target="_blank" rel="noopener">Browse the full build archive</a> &mdash; hundreds of documented machines with specs and photos.</p>
       <div class="about-stats">
         <div><div class="v">500+</div><div class="l">Builds completed</div></div>
         <div><div class="v">2+ yrs</div><div class="l">In business</div></div>
@@ -697,6 +704,59 @@ function updateGridColumns() {
 }
 window.addEventListener('resize', updateGridColumns);
 
+// Emit Product structured data for the AVAILABLE builds after the feed renders
+// (one @graph script tag). Sold builds are deliberately excluded. Each Product
+// gets an Offer only when it has a usable price; the whole thing is try/caught
+// so a malformed feed entry can never affect the page render.
+function absUrl(u) {
+  try { return new URL(u, document.baseURI).href; } catch (e) { return u; }
+}
+function injectProductJsonLd(builds) {
+  try {
+    if (!builds || !builds.length) return;
+    var items = builds.map(function (b) {
+      var product = {
+        "@type": "Product",
+        "name": shortTitle(b.title) || b.title || 'Custom Gaming PC',
+        "category": "Desktop Computer",
+        "brand": { "@type": "Brand", "name": "The Good Build" }
+      };
+      var desc = b.tagline || b.description || '';
+      if (desc) product.description = desc;
+      var img = (b.images && b.images[0]) || '';
+      if (img) product.image = absUrl(img);
+      var price = Number(b.price);
+      if (price > 0) {
+        product.offers = {
+          "@type": "Offer",
+          "price": price,
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/RefurbishedCondition",
+          "url": "https://thegoodbuild.shop/#build-" + encodeURIComponent(b.id),
+          "availableAtOrFrom": {
+            "@type": "Place",
+            "name": "The Good Build — Corona, CA (local pickup)",
+            "address": { "@type": "PostalAddress", "addressLocality": "Corona", "addressRegion": "CA", "addressCountry": "US" }
+          },
+          "seller": { "@type": "LocalBusiness", "name": "The Good Build" }
+        };
+      }
+      return product;
+    });
+    var data = { "@context": "https://schema.org", "@graph": items };
+    var prev = document.getElementById('product-jsonld');
+    if (prev) prev.remove();
+    var s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.id = 'product-jsonld';
+    s.textContent = JSON.stringify(data);
+    document.head.appendChild(s);
+  } catch (err) {
+    console.error('Product JSON-LD injection failed:', err);
+  }
+}
+
 // ============================================================
 // FAQ ACCORDION — single-open, first item open by default
 // ============================================================
@@ -729,6 +789,34 @@ function renderFaq() {
     });
     list.appendChild(item);
   });
+}
+
+// Emit FAQPage structured data from the SAME FAQS array that renders the
+// accordion (single source of truth). Injected once at init; wrapped so a
+// bad entry can never break the page. Google executes this JS and reads it.
+function injectFaqJsonLd() {
+  try {
+    var data = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": FAQS.map(function (f) {
+        return {
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": { "@type": "Answer", "text": f.a }
+        };
+      })
+    };
+    var prev = document.getElementById('faq-jsonld');
+    if (prev) prev.remove();
+    var s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.id = 'faq-jsonld';
+    s.textContent = JSON.stringify(data);
+    document.head.appendChild(s);
+  } catch (err) {
+    console.error('FAQ JSON-LD injection failed:', err);
+  }
 }
 
 // ============================================================
@@ -1003,12 +1091,14 @@ function goHome() {
 // ============================================================
 async function init() {
   renderFaq();
+  injectFaqJsonLd();     // FAQPage structured data from the FAQS array
   var builds = await fetchBuilds();
   allBuilds = builds.filter(function (b) { return b.status === 'available'; });
   soldBuilds = builds.filter(function (b) { return b.status === 'sold'; });
   buildIndex = {};
   builds.forEach(function (b) { if (b && b.id != null) buildIndex[String(b.id)] = b; });
   renderBuilds();
+  injectProductJsonLd(allBuilds);   // Product structured data for available builds
   handleInitialHash();   // deep-link: open #build-<id> once the feed is loaded
 }
 
