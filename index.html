@@ -127,6 +127,16 @@ section[id]{scroll-margin-top:96px}
 .why-card h3{font-family:var(--sg);font-weight:700;font-size:18px;margin-top:12px}
 .why-card p{font-size:14px;color:var(--text-muted);line-height:1.65;margin-top:10px}
 
+/* ===== REVIEWS / TESTIMONIALS ===== */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
+.review-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:26px 26px 28px;display:flex;flex-direction:column}
+.review-card .rating{font-family:var(--sg);font-weight:700;font-size:13px;letter-spacing:2px;color:var(--accent)}
+.review-card blockquote{font-size:14.5px;color:var(--text);line-height:1.7;margin-top:14px;flex:1}
+.review-card .who{margin-top:20px}
+.review-card .name{font-family:var(--sg);font-weight:700;font-size:14px;color:var(--text)}
+.review-card .src{font-size:12.5px;color:var(--text-faint);margin-top:3px}
+.reviews-cta{margin-top:30px}
+
 /* ===== HOW IT WORKS ===== */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
 .step{padding:28px 26px;border-right:1px solid var(--border);background:var(--surface)}
@@ -242,6 +252,7 @@ body.policy-open .home-page{display:none}
 @media(max-width:1000px){
   .hero h1{font-size:52px}
   .why-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:860px){
   .nav{padding:16px 22px}
@@ -258,6 +269,7 @@ body.policy-open .home-page{display:none}
   .builds-grid{grid-template-columns:1fr}
   .sold-grid{grid-template-columns:repeat(2,1fr)}
   .why-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:repeat(2,1fr)}
   .step{border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
   .step:nth-child(2n){border-right:none}
@@ -368,6 +380,42 @@ body.policy-open .home-page{display:none}
       <div class="why-card"><div class="num">04</div><h3>Real support from a real person</h3><p>Got a question? You're talking to the person who built your PC &mdash; not a call center.</p></div>
       <div class="why-card"><div class="num">05</div><h3>Buy local, skip the gamble</h3><p>See the PC running before you pay. No shipping damage, no mystery sellers &mdash; meet in Corona, test it, and take it home. Trade-ins welcome.</p></div>
       <div class="why-card"><div class="num">06</div><h3>500+ happy customers</h3><p>Building and selling since 2023. Hundreds of satisfied buyers and counting.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS / TESTIMONIALS ===== -->
+  <section class="section" id="reviews">
+    <div class="eyebrow">Reviews</div>
+    <h2 class="h2">Don't take my word for it.</h2>
+    <p class="lead">5.0 on Google across 10 reviews. Here are a few, in the buyers' own words.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="rating">5.0</div>
+        <blockquote>I got the pc a few months back no issues and pickup/transaction was very professional, quick, and easy.</blockquote>
+        <div class="who">
+          <div class="name">Jaden Thuong</div>
+          <div class="src">Google review</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="rating">5.0</div>
+        <blockquote>I recently had a custom PC built. The same day all the parts came in it was ready to pick up. I’ve had the PC for a week now and it is absolutely phenomenal. They do a good job ensuring quality and performance as well.</blockquote>
+        <div class="who">
+          <div class="name">Brandon Eliason</div>
+          <div class="src">Google review</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="rating">5.0</div>
+        <blockquote>This company provided a computer for our church. Not only was the computer well built, but the attention to detail and the follow up were incredible. Our team accidentally installed something incorrectly and the owner. Roman came out himself and fixed the issue.</blockquote>
+        <div class="who">
+          <div class="name">Sam Thomsic</div>
+          <div class="src">Google review</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-cta">
+      <a href="https://maps.google.com/?cid=6134385400375701716" class="btn-secondary" target="_blank" rel="noopener">Read all 10 reviews on Google</a>
     </div>
   </section>
 
